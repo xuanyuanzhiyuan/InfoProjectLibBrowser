@@ -21,6 +21,7 @@
 		4B30723718D59EFC00A77771 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721918D59EFC00A77771 /* UIKit.framework */; };
 		4B30723F18D59EFC00A77771 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B30723D18D59EFC00A77771 /* InfoPlist.strings */; };
 		4B30724118D59EFC00A77771 /* InfoProjectLibBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */; };
+		4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		4B30723C18D59EFC00A77771 /* InfoProjectLibBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfoProjectLibBrowserTests-Info.plist"; sourceTree = "<group>"; };
 		4B30723E18D59EFC00A77771 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoProjectLibBrowserTests.m; sourceTree = "<group>"; };
+		4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectDetail.h; sourceTree = "<group>"; };
+		4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				4B30722B18D59EFC00A77771 /* iplbViewController.m */,
 				4B30722D18D59EFC00A77771 /* Images.xcassets */,
 				4B30721C18D59EFC00A77771 /* Supporting Files */,
+				4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */,
+				4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */,
 			);
 			path = InfoProjectLibBrowser;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				4B30722C18D59EFC00A77771 /* iplbViewController.m in Sources */,
 				4B30722218D59EFC00A77771 /* main.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
+				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +467,7 @@
 				4B30724618D59EFC00A77771 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B30724718D59EFC00A77771 /* Build configuration list for PBXNativeTarget "InfoProjectLibBrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +476,7 @@
 				4B30724918D59EFC00A77771 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
