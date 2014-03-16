@@ -14,7 +14,6 @@
 		4B30722218D59EFC00A77771 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30722118D59EFC00A77771 /* main.m */; };
 		4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30722518D59EFC00A77771 /* iplbAppDelegate.m */; };
 		4B30722918D59EFC00A77771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B30722718D59EFC00A77771 /* Main.storyboard */; };
-		4B30722C18D59EFC00A77771 /* iplbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30722B18D59EFC00A77771 /* iplbViewController.m */; };
 		4B30722E18D59EFC00A77771 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B30722D18D59EFC00A77771 /* Images.xcassets */; };
 		4B30723518D59EFC00A77771 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30723418D59EFC00A77771 /* XCTest.framework */; };
 		4B30723618D59EFC00A77771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721518D59EFC00A77771 /* Foundation.framework */; };
@@ -50,8 +49,6 @@
 		4B30722418D59EFC00A77771 /* iplbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iplbAppDelegate.h; sourceTree = "<group>"; };
 		4B30722518D59EFC00A77771 /* iplbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iplbAppDelegate.m; sourceTree = "<group>"; };
 		4B30722818D59EFC00A77771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4B30722A18D59EFC00A77771 /* iplbViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iplbViewController.h; sourceTree = "<group>"; };
-		4B30722B18D59EFC00A77771 /* iplbViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iplbViewController.m; sourceTree = "<group>"; };
 		4B30722D18D59EFC00A77771 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4B30723318D59EFC00A77771 /* InfoProjectLibBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfoProjectLibBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B30723418D59EFC00A77771 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -130,8 +127,6 @@
 				4B30722418D59EFC00A77771 /* iplbAppDelegate.h */,
 				4B30722518D59EFC00A77771 /* iplbAppDelegate.m */,
 				4B30722718D59EFC00A77771 /* Main.storyboard */,
-				4B30722A18D59EFC00A77771 /* iplbViewController.h */,
-				4B30722B18D59EFC00A77771 /* iplbViewController.m */,
 				4B30722D18D59EFC00A77771 /* Images.xcassets */,
 				4B30721C18D59EFC00A77771 /* Supporting Files */,
 				4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */,
@@ -290,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */,
-				4B30722C18D59EFC00A77771 /* iplbViewController.m in Sources */,
 				4B30722218D59EFC00A77771 /* main.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,

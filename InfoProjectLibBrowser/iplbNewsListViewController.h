@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbNewsListViewController : UIViewController
+@interface iplbNewsListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end
