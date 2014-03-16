@@ -28,7 +28,8 @@ NSArray *news;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    news = [NSArray arrayWithObjects:@"基站信息系统发布2.0版本",@"广东电信规划设计院中标XX项目",@"", nil];
+    news = [NSArray arrayWithObjects:@"基站信息系统发布2.0版本",@"广东电信规划设计院中标XX项目",@"资源系统已升级至V1.5", nil];
+    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
 }
 
 - (void)didReceiveMemoryWarning

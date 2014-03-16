@@ -25,6 +25,9 @@
 		4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681618D5A62700C94357 /* iplbNewsListViewController.m */; };
 		4B96681A18D5AB3F00C94357 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B96681818D5AB3F00C94357 /* news.png */; };
 		4B96681B18D5AB3F00C94357 /* projects.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B96681918D5AB3F00C94357 /* projects.png */; };
+		4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */; };
+		4B96682218D5E2D100C94357 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B96682118D5E2D100C94357 /* config.plist */; };
+		4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96682718D5E3F000C94357 /* iplbConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,11 @@
 		4B96681618D5A62700C94357 /* iplbNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbNewsListViewController.m; path = InfoProjectLibBrowser/iplbNewsListViewController.m; sourceTree = "<group>"; };
 		4B96681818D5AB3F00C94357 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
 		4B96681918D5AB3F00C94357 /* projects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projects.png; sourceTree = "<group>"; };
+		4B96681E18D5D5DD00C94357 /* iplbProjectsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectsRepository.h; sourceTree = "<group>"; };
+		4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectsRepository.m; sourceTree = "<group>"; };
+		4B96682118D5E2D100C94357 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		4B96682618D5E3F000C94357 /* iplbConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbConfiguration.h; sourceTree = "<group>"; };
+		4B96682718D5E3F000C94357 /* iplbConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbConfiguration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +100,9 @@
 		4B30720918D59EFC00A77771 = {
 			isa = PBXGroup;
 			children = (
+				4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */,
 				4B9667CD18D5A54E00C94357 /* Resources */,
 				4B9667CC18D5A53700C94357 /* ViewControllers */,
-				4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */,
 				4B30723A18D59EFC00A77771 /* InfoProjectLibBrowserTests */,
 				4B30721418D59EFC00A77771 /* Frameworks */,
 				4B30721318D59EFC00A77771 /* Products */,
@@ -129,8 +137,7 @@
 				4B30722718D59EFC00A77771 /* Main.storyboard */,
 				4B30722D18D59EFC00A77771 /* Images.xcassets */,
 				4B30721C18D59EFC00A77771 /* Supporting Files */,
-				4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */,
-				4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */,
+				4B96681D18D5C80700C94357 /* Models */,
 			);
 			path = InfoProjectLibBrowser;
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 				4B30721E18D59EFC00A77771 /* InfoPlist.strings */,
 				4B30722118D59EFC00A77771 /* main.m */,
 				4B30722318D59EFC00A77771 /* InfoProjectLibBrowser-Prefix.pch */,
+				4B96682118D5E2D100C94357 /* config.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,6 +190,19 @@
 				4B96681918D5AB3F00C94357 /* projects.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		4B96681D18D5C80700C94357 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */,
+				4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */,
+				4B96681E18D5D5DD00C94357 /* iplbProjectsRepository.h */,
+				4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */,
+				4B96682618D5E3F000C94357 /* iplbConfiguration.h */,
+				4B96682718D5E3F000C94357 /* iplbConfiguration.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +284,7 @@
 			files = (
 				4B96681B18D5AB3F00C94357 /* projects.png in Resources */,
 				4B96681A18D5AB3F00C94357 /* news.png in Resources */,
+				4B96682218D5E2D100C94357 /* config.plist in Resources */,
 				4B30722E18D59EFC00A77771 /* Images.xcassets in Resources */,
 				4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */,
 				4B30722918D59EFC00A77771 /* Main.storyboard in Resources */,
@@ -288,6 +310,8 @@
 				4B30722218D59EFC00A77771 /* main.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
+				4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */,
+				4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */,
 				4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
