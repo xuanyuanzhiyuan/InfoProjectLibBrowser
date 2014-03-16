@@ -22,6 +22,10 @@
 		4B30723F18D59EFC00A77771 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B30723D18D59EFC00A77771 /* InfoPlist.strings */; };
 		4B30724118D59EFC00A77771 /* InfoProjectLibBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */; };
 		4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */; };
+		4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9667CF18D5A59400C94357 /* iplbProjectListViewController.m */; };
+		4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681618D5A62700C94357 /* iplbNewsListViewController.m */; };
+		4B96681A18D5AB3F00C94357 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B96681818D5AB3F00C94357 /* news.png */; };
+		4B96681B18D5AB3F00C94357 /* projects.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B96681918D5AB3F00C94357 /* projects.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,12 @@
 		4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoProjectLibBrowserTests.m; sourceTree = "<group>"; };
 		4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectDetail.h; sourceTree = "<group>"; };
 		4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectDetail.m; sourceTree = "<group>"; };
+		4B9667CE18D5A59400C94357 /* iplbProjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectListViewController.h; path = InfoProjectLibBrowser/iplbProjectListViewController.h; sourceTree = "<group>"; };
+		4B9667CF18D5A59400C94357 /* iplbProjectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectListViewController.m; path = InfoProjectLibBrowser/iplbProjectListViewController.m; sourceTree = "<group>"; };
+		4B96681518D5A62700C94357 /* iplbNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbNewsListViewController.h; path = InfoProjectLibBrowser/iplbNewsListViewController.h; sourceTree = "<group>"; };
+		4B96681618D5A62700C94357 /* iplbNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbNewsListViewController.m; path = InfoProjectLibBrowser/iplbNewsListViewController.m; sourceTree = "<group>"; };
+		4B96681818D5AB3F00C94357 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		4B96681918D5AB3F00C94357 /* projects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projects.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,8 @@
 		4B30720918D59EFC00A77771 = {
 			isa = PBXGroup;
 			children = (
+				4B9667CD18D5A54E00C94357 /* Resources */,
+				4B9667CC18D5A53700C94357 /* ViewControllers */,
 				4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */,
 				4B30723A18D59EFC00A77771 /* InfoProjectLibBrowserTests */,
 				4B30721418D59EFC00A77771 /* Frameworks */,
@@ -155,6 +167,26 @@
 				4B30723D18D59EFC00A77771 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B9667CC18D5A53700C94357 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B9667CE18D5A59400C94357 /* iplbProjectListViewController.h */,
+				4B9667CF18D5A59400C94357 /* iplbProjectListViewController.m */,
+				4B96681518D5A62700C94357 /* iplbNewsListViewController.h */,
+				4B96681618D5A62700C94357 /* iplbNewsListViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4B9667CD18D5A54E00C94357 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B96681818D5AB3F00C94357 /* news.png */,
+				4B96681918D5AB3F00C94357 /* projects.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +266,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B96681B18D5AB3F00C94357 /* projects.png in Resources */,
+				4B96681A18D5AB3F00C94357 /* news.png in Resources */,
 				4B30722E18D59EFC00A77771 /* Images.xcassets in Resources */,
 				4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */,
 				4B30722918D59EFC00A77771 /* Main.storyboard in Resources */,
@@ -255,10 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */,
 				4B30722C18D59EFC00A77771 /* iplbViewController.m in Sources */,
 				4B30722218D59EFC00A77771 /* main.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
+				4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

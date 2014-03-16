@@ -1,23 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YOS-3s-9GN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Iplb Project List View Controller - 产品列表-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="iplbViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="iplbProjectListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4TR-cM-fJV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sme-Y3-kpz"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="产品列表" image="projects.png" id="P9b-g3-4JQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="845" y="-386"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hXj-rk-io3">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YOS-3s-9GN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="m5Q-rN-DgS">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="tIE-Z5-3Ex"/>
+                        <segue destination="vsr-FR-r82" kind="relationship" relationship="viewControllers" id="qvv-cM-9gd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cAi-BP-PGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="138"/>
+        </scene>
+        <!--Iplb News List View Controller - 最新消息-->
+        <scene sceneID="fAZ-OT-DGw">
+            <objects>
+                <viewController id="vsr-FR-r82" customClass="iplbNewsListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qTc-rp-IDL"/>
+                        <viewControllerLayoutGuide type="bottom" id="vhF-ct-CXo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wOF-LJ-Jku">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="最新消息" image="news.png" id="b3q-JB-PXP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXE-Jw-UWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="421"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="news.png" width="30" height="30"/>
+        <image name="projects.png" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
