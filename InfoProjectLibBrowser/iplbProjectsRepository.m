@@ -12,7 +12,7 @@
 @implementation iplbProjectsRepository
 -(NSArray *) getAllProjectInfos
 {
-    NSLog([iplbConfiguration getConfiguration:@"ServerRootURL"]);
+    NSLog(@"%@",[iplbConfiguration getConfiguration:@"ServerRootURL"]);
     NSString *projectInfosJSON =[NSString stringWithContentsOfURL:[NSURL URLWithString:[iplbConfiguration getConfiguration:@"ServerRootURL"]] encoding:NSUTF8StringEncoding error:nil];
 
     NSArray* objects = [NSJSONSerialization
