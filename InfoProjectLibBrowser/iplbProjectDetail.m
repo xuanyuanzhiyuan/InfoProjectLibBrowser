@@ -10,4 +10,14 @@
 
 @implementation iplbProjectDetail
 
++(iplbProjectDetail *) productWithDictionary:(NSDictionary *) dic
+{
+    iplbProjectDetail *detail = [iplbProjectDetail new];
+    detail.projectName = [dic valueForKey:@"name"];
+    detail.ProjectDesc = [dic valueForKey:@"desc"];
+    detail.iconURL = [dic valueForKey:@"iconURL"];
+    detail.detailURL = [dic valueForKey:@"detailURL"];
+    return detail;
+}
+
 @end

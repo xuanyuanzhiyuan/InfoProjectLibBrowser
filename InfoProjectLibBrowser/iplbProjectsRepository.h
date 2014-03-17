@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface iplbProjectsRepository : NSObject
--(NSArray *) getAllProjectInfos;
+-(NSMutableArray *) getAllProjectInfos;
 @end

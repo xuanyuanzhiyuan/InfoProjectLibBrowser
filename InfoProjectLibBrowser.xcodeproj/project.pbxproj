@@ -20,6 +20,7 @@
 		4B30723718D59EFC00A77771 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721918D59EFC00A77771 /* UIKit.framework */; };
 		4B30723F18D59EFC00A77771 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B30723D18D59EFC00A77771 /* InfoPlist.strings */; };
 		4B30724118D59EFC00A77771 /* InfoProjectLibBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */; };
+		4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */; };
 		4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */; };
 		4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9667CF18D5A59400C94357 /* iplbProjectListViewController.m */; };
 		4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681618D5A62700C94357 /* iplbNewsListViewController.m */; };
@@ -58,6 +59,8 @@
 		4B30723C18D59EFC00A77771 /* InfoProjectLibBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InfoProjectLibBrowserTests-Info.plist"; sourceTree = "<group>"; };
 		4B30723E18D59EFC00A77771 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoProjectLibBrowserTests.m; sourceTree = "<group>"; };
+		4B3752EB18D749B500290BC5 /* iplbProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectDetailViewController.h; path = InfoProjectLibBrowser/iplbProjectDetailViewController.h; sourceTree = "<group>"; };
+		4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectDetailViewController.m; path = InfoProjectLibBrowser/iplbProjectDetailViewController.m; sourceTree = "<group>"; };
 		4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectDetail.h; sourceTree = "<group>"; };
 		4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectDetail.m; sourceTree = "<group>"; };
 		4B9667CE18D5A59400C94357 /* iplbProjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectListViewController.h; path = InfoProjectLibBrowser/iplbProjectListViewController.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				4B9667CF18D5A59400C94357 /* iplbProjectListViewController.m */,
 				4B96681518D5A62700C94357 /* iplbNewsListViewController.h */,
 				4B96681618D5A62700C94357 /* iplbNewsListViewController.m */,
+				4B3752EB18D749B500290BC5 /* iplbProjectDetailViewController.h */,
+				4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				4B30722218D59EFC00A77771 /* main.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
+				4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */,
 				4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */,
 				4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */,
 				4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */,

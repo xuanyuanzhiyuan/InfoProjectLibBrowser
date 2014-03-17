@@ -11,6 +11,7 @@
 @interface iplbProjectDetail : NSObject
 @property NSString *projectName;
 @property NSString *ProjectDesc;
-@property NSString *ProjectID;
 @property NSString *iconURL;
+@property NSString *detailURL;
++(iplbProjectDetail *) productWithDictionary:(NSDictionary *)dic;
 @end
