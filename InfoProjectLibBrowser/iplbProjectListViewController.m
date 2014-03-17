@@ -8,6 +8,7 @@
 
 #import "iplbProjectListViewController.h"
 #import "iplbProjectsRepository.h"
+#import "iplbProjectDetail.h"
 
 @interface iplbProjectListViewController ()
 
@@ -29,11 +30,11 @@ NSArray *products;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    products = [NSArray arrayWithObjects:@"广东电信综合资源",@"深圳移动基站信息系统",@"广东电信光导航系统", nil];
     //下移20px，避免和status bar挤在一起
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
-    [resp getAllProjectInfos];
+    //获取项目列表
+    products = [resp getAllProjectInfos];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,9 +57,11 @@ NSArray *products;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    cell.textLabel.text = [products objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"news.png"];
+    iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
+    cell.textLabel.text = pd.projectName;
+    NSURL *url = [NSURL URLWithString:pd.iconURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    cell.imageView.image = [[UIImage alloc] initWithData:data];
     return cell;
 }
 
