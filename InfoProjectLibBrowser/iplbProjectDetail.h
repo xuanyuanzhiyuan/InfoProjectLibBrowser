@@ -10,8 +10,11 @@
 
 @interface iplbProjectDetail : NSObject
 @property NSString *projectName;
-@property NSString *ProjectDesc;
+@property NSString *projectDesc;
 @property NSString *iconURL;
 @property NSString *detailURL;
-+(iplbProjectDetail *) productWithDictionary:(NSDictionary *)dic;
+@property NSString *detailInfo;
+@property NSArray *screenShots;
++(iplbProjectDetail *) projectSummaryWithDictionary:(NSDictionary *) dic;
++(iplbProjectDetail *) projectDetailWithDictionary:(NSDictionary *) dic;
 @end

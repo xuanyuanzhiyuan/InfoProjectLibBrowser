@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "iplbProjectDetail.h"
 
 @interface iplbProjectsRepository : NSObject
 -(NSMutableArray *) getAllProjectInfos;
+-(iplbProjectDetail *) getProjectDetailInfo:(NSString *)url;
 @end

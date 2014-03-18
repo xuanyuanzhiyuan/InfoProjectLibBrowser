@@ -7,12 +7,23 @@
 //
 
 #import "iplbProjectDetailViewController.h"
+#import "iplbProjectDetail.h"
+#import "iplbProjectsRepository.h"
 
 @interface iplbProjectDetailViewController ()
 
 @end
 
 @implementation iplbProjectDetailViewController
+
+iplbProjectDetail *projectDetail;
+
+@synthesize scrollView;
+@synthesize pageControl;
+@synthesize nameLabel;
+@synthesize descText;
+@synthesize iconImage;
+@synthesize detailText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +37,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    iplbProjectsRepository * resp = [iplbProjectsRepository new];
+	projectDetail = [resp getProjectDetailInfo:self.detailURL];
+    self.detailText.text = projectDetail.detailInfo;
+    self.nameLabel.text = projectDetail.projectName;
+    self.descText.text = projectDetail.projectDesc;
+    NSURL *url = [NSURL URLWithString:projectDetail.iconURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    self.iconImage.image = [[UIImage alloc] initWithData:data];
 }
 
 - (void)didReceiveMemoryWarning

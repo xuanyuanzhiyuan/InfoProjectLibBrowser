@@ -58,7 +58,7 @@ NSArray *products;
     }
     iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
     cell.textLabel.text = pd.projectName;
-    cell.detailTextLabel.text = pd.ProjectDesc;
+    cell.detailTextLabel.text = pd.projectDesc;
     NSURL *url = [NSURL URLWithString:pd.iconURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.imageView.image = [[UIImage alloc] initWithData:data];
@@ -69,8 +69,11 @@ NSArray *products;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showProdDetails"]){
+        NSLog(@"jdslkjfsdlkfsdlk");
         iplbProjectDetailViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        iplbProjectDetail *detail = [products objectAtIndex:myIndexPath.row];
+        detailViewController.detailURL = detail.detailURL;
     }
 }
 @end
