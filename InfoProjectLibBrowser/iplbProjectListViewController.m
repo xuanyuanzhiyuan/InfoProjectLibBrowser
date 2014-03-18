@@ -51,7 +51,7 @@ NSArray *products;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *tableIdentifier = @"TableCell";
+    static NSString *tableIdentifier = @"projectListCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
