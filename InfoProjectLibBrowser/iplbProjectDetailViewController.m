@@ -19,6 +19,7 @@
 iplbProjectDetail *projectDetail;
 
 @synthesize scrollView;
+@synthesize pageScrollView;
 @synthesize pageControl;
 @synthesize nameLabel;
 @synthesize descText;
@@ -45,6 +46,19 @@ iplbProjectDetail *projectDetail;
     NSURL *url = [NSURL URLWithString:projectDetail.iconURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     self.iconImage.image = [[UIImage alloc] initWithData:data];
+    //显示截图
+    self.scrollView.delegate=self;
+    self.scrollView.contentSize = CGSizeMake(273 * [projectDetail.screenShots count], 137);
+    int scrollWidth=0;
+    for (NSString *screenshotsURL in projectDetail.screenShots){
+        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 100, 100)];
+        NSURL *url = [NSURL URLWithString:screenshotsURL];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        img.image = [[UIImage alloc] initWithData:data];
+        [self.scrollView addSubview:img];
+        scrollWidth = scrollWidth + 273;
+    }
+    [self.scrollView  setContentSize:CGSizeMake(scrollWidth, 30)];
 }
 
 - (void)didReceiveMemoryWarning
