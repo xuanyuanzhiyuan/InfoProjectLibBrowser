@@ -22,7 +22,7 @@ iplbProjectDetail *projectDetail;
 @synthesize pageScrollView;
 @synthesize pageControl;
 @synthesize nameLabel;
-@synthesize descText;
+@synthesize descLabel;
 @synthesize iconImage;
 @synthesize detailText;
 
@@ -42,23 +42,22 @@ iplbProjectDetail *projectDetail;
 	projectDetail = [resp getProjectDetailInfo:self.detailURL];
     self.detailText.text = projectDetail.detailInfo;
     self.nameLabel.text = projectDetail.projectName;
-    self.descText.text = projectDetail.projectDesc;
+    self.descLabel.text = projectDetail.projectDesc;
     NSURL *url = [NSURL URLWithString:projectDetail.iconURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     self.iconImage.image = [[UIImage alloc] initWithData:data];
     //显示截图
-    self.scrollView.delegate=self;
-    self.scrollView.contentSize = CGSizeMake(273 * [projectDetail.screenShots count], 137);
+    self.scrollView.contentSize = CGSizeMake(150 * [projectDetail.screenShots count], 200);
     int scrollWidth=0;
     for (NSString *screenshotsURL in projectDetail.screenShots){
-        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 100, 100)];
+        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 150, 200)];
         NSURL *url = [NSURL URLWithString:screenshotsURL];
         NSData *data = [NSData dataWithContentsOfURL:url];
         img.image = [[UIImage alloc] initWithData:data];
         [self.scrollView addSubview:img];
-        scrollWidth = scrollWidth + 273;
+        scrollWidth = scrollWidth + 150;
     }
-    [self.scrollView  setContentSize:CGSizeMake(scrollWidth, 30)];
+    self.pageScrollView.contentSize = CGSizeMake(300, 800);
 }
 
 - (void)didReceiveMemoryWarning

@@ -14,7 +14,7 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *pageScrollView;
 @property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
-@property (nonatomic, strong) IBOutlet UITextView *descText;
+@property (nonatomic, strong) IBOutlet UILabel *descLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *iconImage;
 @property (nonatomic, strong) IBOutlet UITextView *detailText;
 @end
