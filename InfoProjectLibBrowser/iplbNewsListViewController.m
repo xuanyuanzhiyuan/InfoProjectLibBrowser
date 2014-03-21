@@ -7,6 +7,9 @@
 //
 
 #import "iplbNewsListViewController.h"
+#import "iplbNewsDetailViewController.h"
+#import "iplbNews.h"
+#import "iplbNewsRepository.h"
 
 @interface iplbNewsListViewController ()
 
@@ -14,7 +17,7 @@
 
 @implementation iplbNewsListViewController
 
-NSArray *news;
+NSMutableArray *news;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +31,7 @@ NSArray *news;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    news = [NSArray arrayWithObjects:@"基站信息系统发布2.0版本",@"广东电信规划设计院中标XX项目",@"资源系统已升级至V1.5", nil];
+    news = [iplbNewsRepository getAllNews];
 //    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
 }
 
@@ -52,9 +55,19 @@ NSArray *news;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:newListCellIdentifier];
     }
-    
-    cell.textLabel.text = [news objectAtIndex:indexPath.row];
+    iplbNews *newsDetail = [news objectAtIndex:indexPath.row];
+    cell.textLabel.text = newsDetail.title;
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showNewsDetail"]){
+        iplbNewsDetailViewController *detailViewController = [segue destinationViewController];
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        iplbNews *newsDetail = [news objectAtIndex:myIndexPath.row];
+        detailViewController.detailURL = newsDetail.detailURL;
+    }
 }
 
 @end

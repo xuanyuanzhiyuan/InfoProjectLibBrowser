@@ -22,6 +22,9 @@
 		4B30724118D59EFC00A77771 /* InfoProjectLibBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */; };
 		4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */; };
 		4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */; };
+		4B89C2BC18DBC7B7009D4963 /* iplbNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89C2BB18DBC7B7009D4963 /* iplbNewsDetailViewController.m */; };
+		4B89C2BF18DBC952009D4963 /* iplbNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89C2BE18DBC952009D4963 /* iplbNews.m */; };
+		4B89C2C218DBCEDF009D4963 /* iplbNewsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89C2C118DBCEDF009D4963 /* iplbNewsRepository.m */; };
 		4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9667CF18D5A59400C94357 /* iplbProjectListViewController.m */; };
 		4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681618D5A62700C94357 /* iplbNewsListViewController.m */; };
 		4B96681A18D5AB3F00C94357 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B96681818D5AB3F00C94357 /* news.png */; };
@@ -63,6 +66,12 @@
 		4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectDetailViewController.m; path = InfoProjectLibBrowser/iplbProjectDetailViewController.m; sourceTree = "<group>"; };
 		4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectDetail.h; sourceTree = "<group>"; };
 		4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectDetail.m; sourceTree = "<group>"; };
+		4B89C2BA18DBC7B7009D4963 /* iplbNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbNewsDetailViewController.h; path = InfoProjectLibBrowser/iplbNewsDetailViewController.h; sourceTree = "<group>"; };
+		4B89C2BB18DBC7B7009D4963 /* iplbNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbNewsDetailViewController.m; path = InfoProjectLibBrowser/iplbNewsDetailViewController.m; sourceTree = "<group>"; };
+		4B89C2BD18DBC952009D4963 /* iplbNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbNews.h; sourceTree = "<group>"; };
+		4B89C2BE18DBC952009D4963 /* iplbNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbNews.m; sourceTree = "<group>"; };
+		4B89C2C018DBCEDF009D4963 /* iplbNewsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbNewsRepository.h; sourceTree = "<group>"; };
+		4B89C2C118DBCEDF009D4963 /* iplbNewsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbNewsRepository.m; sourceTree = "<group>"; };
 		4B9667CE18D5A59400C94357 /* iplbProjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectListViewController.h; path = InfoProjectLibBrowser/iplbProjectListViewController.h; sourceTree = "<group>"; };
 		4B9667CF18D5A59400C94357 /* iplbProjectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectListViewController.m; path = InfoProjectLibBrowser/iplbProjectListViewController.m; sourceTree = "<group>"; };
 		4B96681518D5A62700C94357 /* iplbNewsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbNewsListViewController.h; path = InfoProjectLibBrowser/iplbNewsListViewController.h; sourceTree = "<group>"; };
@@ -184,6 +193,8 @@
 				4B96681618D5A62700C94357 /* iplbNewsListViewController.m */,
 				4B3752EB18D749B500290BC5 /* iplbProjectDetailViewController.h */,
 				4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */,
+				4B89C2BA18DBC7B7009D4963 /* iplbNewsDetailViewController.h */,
+				4B89C2BB18DBC7B7009D4963 /* iplbNewsDetailViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -206,6 +217,10 @@
 				4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */,
 				4B96682618D5E3F000C94357 /* iplbConfiguration.h */,
 				4B96682718D5E3F000C94357 /* iplbConfiguration.m */,
+				4B89C2BD18DBC952009D4963 /* iplbNews.h */,
+				4B89C2BE18DBC952009D4963 /* iplbNews.m */,
+				4B89C2C018DBCEDF009D4963 /* iplbNewsRepository.h */,
+				4B89C2C118DBCEDF009D4963 /* iplbNewsRepository.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -312,11 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */,
+				4B89C2C218DBCEDF009D4963 /* iplbNewsRepository.m in Sources */,
 				4B30722218D59EFC00A77771 /* main.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
+				4B89C2BC18DBC7B7009D4963 /* iplbNewsDetailViewController.m in Sources */,
 				4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */,
 				4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */,
+				4B89C2BF18DBC952009D4963 /* iplbNews.m in Sources */,
 				4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */,
 				4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */,
 			);
