@@ -12,4 +12,5 @@
 @property NSString *detailURL;
 @property (nonatomic, strong) IBOutlet UIImageView *newsPictureImgView;
 @property (nonatomic, strong) IBOutlet UITextView *contentTextView;
+@property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @end

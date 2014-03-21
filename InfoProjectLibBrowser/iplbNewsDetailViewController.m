@@ -38,6 +38,7 @@ iplbNews *newsDetail;
         [self.contentTextView setFrame:CGRectMake(6, 67, 308, 300)];
     }
     self.contentTextView.text = newsDetail.content;
+    self.titleLabel.text = newsDetail.title;
     
 }
 
