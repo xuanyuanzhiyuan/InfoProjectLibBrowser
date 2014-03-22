@@ -116,11 +116,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectCategoryCell" id="ch7-XG-bfW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectCategoryCell" id="ch7-XG-bfW">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ch7-XG-bfW" id="bjf-BQ-NXH">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -180,11 +180,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="产品列表" id="Uoa-Sv-DT7">
-                        <barButtonItem key="leftBarButtonItem" title="类别" id="NGU-RT-AcY">
-                            <connections>
-                                <segue destination="p4W-A8-5Ku" kind="modal" identifier="showCatagroySegue" modalTransitionStyle="coverVertical" id="gw9-ZB-BZG"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="类别" id="NGU-RT-AcY"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="tdR-zA-0oJ">
                             <connections>
                                 <action selector="showActionSheet:" destination="VdE-c6-H33" id="H7C-04-DkJ"/>
