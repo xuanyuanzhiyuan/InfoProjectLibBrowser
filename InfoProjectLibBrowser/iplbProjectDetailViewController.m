@@ -38,7 +38,7 @@ iplbProjectDetail *projectDetail;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.pageScrollView.contentSize = CGSizeMake(300, 800);
+    self.pageScrollView.contentSize = CGSizeMake(300, 3000);
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
 	projectDetail = [resp getProjectDetailInfo:self.detailURL];
     self.detailText.text = projectDetail.detailInfo;
