@@ -38,7 +38,6 @@ iplbProjectDetail *projectDetail;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.pageScrollView.contentSize = CGSizeMake(300, 3000);
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
 	projectDetail = [resp getProjectDetailInfo:self.detailURL];
     self.detailText.text = projectDetail.detailInfo;
@@ -58,6 +57,12 @@ iplbProjectDetail *projectDetail;
         [self.scrollView addSubview:img];
         scrollWidth = scrollWidth + 150;
     }
+    [self.detailText sizeToFit];
+    [self.detailText layoutIfNeeded];
+    CGRect frame = self.detailText.frame;
+    frame.size.height = self.detailText.contentSize.height;
+    self.detailText.frame = frame;
+    self.pageScrollView.contentSize = CGSizeMake(300, 3000);
 }
 
 - (void)didReceiveMemoryWarning
