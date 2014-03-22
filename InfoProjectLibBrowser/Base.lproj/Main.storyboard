@@ -107,6 +107,35 @@
             </objects>
             <point key="canvasLocation" x="1774" y="621"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="xVS-Gw-sUr">
+            <objects>
+                <tableViewController id="p4W-A8-5Ku" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IFN-Vp-TTm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ch7-XG-bfW">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ch7-XG-bfW" id="bjf-BQ-NXH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p4W-A8-5Ku" id="0kc-zp-xMl"/>
+                            <outlet property="delegate" destination="p4W-A8-5Ku" id="eb5-xf-Xj6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="cxH-85-OGj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBk-Ky-1Nz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1320" y="-1078"/>
+        </scene>
         <!--Iplb Project List View Controller - 产品列表-->
         <scene sceneID="vJG-8U-o2S">
             <objects>
@@ -150,7 +179,14 @@
                             <outlet property="delegate" destination="VdE-c6-H33" id="keY-hx-bnh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="产品列表" id="Uoa-Sv-DT7"/>
+                    <navigationItem key="navigationItem" title="产品列表" id="Uoa-Sv-DT7">
+                        <barButtonItem key="leftBarButtonItem" title="类别" id="NGU-RT-AcY">
+                            <connections>
+                                <segue destination="p4W-A8-5Ku" kind="modal" identifier="showCatagroySegue" modalTransitionStyle="coverVertical" id="gw9-ZB-BZG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="tdR-zA-0oJ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTp-tQ-fdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
