@@ -12,6 +12,7 @@
 #import "iplbProjectDetailViewController.h"
 
 @interface iplbProjectListViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
 
 @end
 
@@ -73,6 +74,22 @@ NSArray *products;
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         iplbProjectDetail *detail = [products objectAtIndex:myIndexPath.row];
         detailViewController.detailURL = detail.detailURL;
+    }
+}
+
+- (IBAction)showActionSheet:(id)sender
+{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"修改密码",nil];
+    [actionSheet showFromBarButtonItem:self.actionButtonItem animated:YES];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"index=> %i",buttonIndex);
+    NSLog(@"You have pressed the %@ button", [actionSheet buttonTitleAtIndex:buttonIndex]);
+    if(buttonIndex==0){
+        //显示密码修改界面
     }
 }
 @end

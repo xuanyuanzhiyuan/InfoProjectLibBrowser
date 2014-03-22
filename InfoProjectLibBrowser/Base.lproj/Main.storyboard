@@ -107,20 +107,20 @@
             </objects>
             <point key="canvasLocation" x="1774" y="621"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Iplb Project Categories View Controller-->
         <scene sceneID="xVS-Gw-sUr">
             <objects>
-                <tableViewController id="p4W-A8-5Ku" sceneMemberID="viewController">
+                <tableViewController id="p4W-A8-5Ku" customClass="iplbProjectCategoriesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IFN-Vp-TTm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ch7-XG-bfW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectCategoryCell" id="ch7-XG-bfW">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ch7-XG-bfW" id="bjf-BQ-NXH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -185,12 +185,19 @@
                                 <segue destination="p4W-A8-5Ku" kind="modal" identifier="showCatagroySegue" modalTransitionStyle="coverVertical" id="gw9-ZB-BZG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="tdR-zA-0oJ"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="tdR-zA-0oJ">
+                            <connections>
+                                <action selector="showActionSheet:" destination="VdE-c6-H33" id="H7C-04-DkJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="actionButtonItem" destination="tdR-zA-0oJ" id="vWg-T9-tAf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTp-tQ-fdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="-304"/>
+            <point key="canvasLocation" x="823" y="-1047"/>
         </scene>
         <!--Iplb Project Detail View Controller - 产品详情-->
         <scene sceneID="ecs-tw-OBM">
