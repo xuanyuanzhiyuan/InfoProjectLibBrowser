@@ -13,6 +13,7 @@
 
 @interface iplbProjectListViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
+@property (strong, nonatomic) IBOutlet UITableView *productListTableView;
 
 @end
 
@@ -37,12 +38,24 @@ NSArray *products;
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
     //获取项目列表
     products = [resp getAllProjectInfos];
+    //注册消息监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveCategorySelectedNotification:) name:@"projectCategorySelected" object:nil];
+}
+
+- (void) receiveCategorySelectedNotification:(NSNotification *) notification
+{
+    
+    if ([[notification name] isEqualToString:@"projectCategorySelected"]){
+        NSLog (@"Successfully received the test notification!");
+        NSDictionary *dic = [notification userInfo];
+        NSLog(@"category is %@",[dic valueForKey:@"categoryName"]);
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

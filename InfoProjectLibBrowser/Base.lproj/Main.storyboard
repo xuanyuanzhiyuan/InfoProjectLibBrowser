@@ -136,6 +136,70 @@
             </objects>
             <point key="canvasLocation" x="1320" y="-1078"/>
         </scene>
+        <!--View Controller - 详情-->
+        <scene sceneID="1eD-wt-fSu">
+            <objects>
+                <viewController id="weq-5o-JKm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kWC-nS-pJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="MQR-h0-HKs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZKc-r0-dtQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="kkg-Nm-oIp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <sections>
+                                    <tableViewSection id="wsd-3c-EFQ">
+                                        <cells>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="im3-JQ-osk">
+                                                <rect key="frame" x="0.0" y="99" width="320" height="80"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="im3-JQ-osk" id="YzI-y0-8Rq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </cells>
+                                    </tableViewSection>
+                                    <tableViewSection headerTitle="系统截图" id="e8t-M6-Zte">
+                                        <cells>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="200" id="mq7-3Y-kgu">
+                                                <rect key="frame" x="0.0" y="227" width="320" height="200"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mq7-3Y-kgu" id="Wls-9k-oGj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </cells>
+                                    </tableViewSection>
+                                    <tableViewSection headerTitle="详细介绍" id="OyH-3x-0K2">
+                                        <cells>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="200" id="Vim-dU-JEK">
+                                                <rect key="frame" x="0.0" y="475" width="320" height="200"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vim-dU-JEK" id="fPe-HT-Urz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </cells>
+                                    </tableViewSection>
+                                </sections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="详情" id="XpV-qJ-Vzx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiw-3l-fCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="-1187"/>
+        </scene>
         <!--Iplb Project List View Controller - 产品列表-->
         <scene sceneID="vJG-8U-o2S">
             <objects>
@@ -145,12 +209,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="输入产品名称" id="c2X-KK-s2E">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="VdE-c6-H33" id="edz-ac-q4a"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectListCell" textLabel="vpk-mh-A17" detailTextLabel="q9r-bw-UGS" style="IBUITableViewCellStyleSubtitle" id="2i6-9Y-T4Z">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectListCell" textLabel="vpk-mh-A17" detailTextLabel="q9r-bw-UGS" style="IBUITableViewCellStyleSubtitle" id="2i6-9Y-T4Z">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2i6-9Y-T4Z" id="aUI-Hd-afa">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vpk-mh-A17">
@@ -170,7 +242,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="rIu-CR-7eL" kind="push" identifier="showProdDetails" id="fqf-J3-R8N"/>
+                                    <segue destination="weq-5o-JKm" kind="push" id="COS-Rv-Jwz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -180,7 +252,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="产品列表" id="Uoa-Sv-DT7">
-                        <barButtonItem key="leftBarButtonItem" title="类别" id="NGU-RT-AcY"/>
+                        <barButtonItem key="leftBarButtonItem" title="类别" id="NGU-RT-AcY">
+                            <connections>
+                                <segue destination="p4W-A8-5Ku" kind="modal" id="p37-Mj-Hwt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="tdR-zA-0oJ">
                             <connections>
                                 <action selector="showActionSheet:" destination="VdE-c6-H33" id="H7C-04-DkJ"/>
@@ -189,9 +265,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="actionButtonItem" destination="tdR-zA-0oJ" id="vWg-T9-tAf"/>
+                        <outlet property="productListTableView" destination="l6W-rN-lgo" id="Yyk-Xr-w1P"/>
+                        <outlet property="searchDisplayController" destination="Lrq-8T-b6f" id="WpV-QQ-oG7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTp-tQ-fdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Lrq-8T-b6f">
+                    <connections>
+                        <outlet property="delegate" destination="VdE-c6-H33" id="9LM-5F-zbW"/>
+                        <outlet property="searchBar" destination="c2X-KK-s2E" id="a16-72-PxK"/>
+                        <outlet property="searchContentsController" destination="VdE-c6-H33" id="moe-f0-0xh"/>
+                        <outlet property="searchResultsDataSource" destination="VdE-c6-H33" id="qjz-WJ-6Cu"/>
+                        <outlet property="searchResultsDelegate" destination="VdE-c6-H33" id="yfA-Oy-vUh"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="823" y="-1047"/>
         </scene>
@@ -204,7 +291,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WJh-CX-R0d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DJ2-CQ-a8l">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y88-Y1-5D7">
@@ -212,7 +299,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-Qc-p5e">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="113" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-X0-hpK">

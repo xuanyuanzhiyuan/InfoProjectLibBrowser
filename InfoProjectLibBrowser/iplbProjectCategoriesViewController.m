@@ -26,7 +26,7 @@ NSArray *categories;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	categories = @[@"全部",@"电信资源产品线",@"移动资源产品线"];
+	categories = @[@"全部",@"电信资源产品线",@"移动资源产品线",@"号百产品线",@"其他产品线"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,4 +51,13 @@ NSArray *categories;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *categoryName = [categories objectAtIndex:indexPath.row];
+    NSDictionary *dic = @{@"categoryName":categoryName};
+    //发送消息
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"projectCategorySelected" object:nil userInfo:dic];
+    }];
+}
 @end
