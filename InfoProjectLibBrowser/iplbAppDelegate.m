@@ -7,6 +7,7 @@
 //
 
 #import "iplbAppDelegate.h"
+#import "iplbUserLoginViewController.h"
 
 @implementation iplbAppDelegate
 
@@ -35,12 +36,16 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    BOOL isUserAlreadLogin = NO;
+    if (!isUserAlreadLogin) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
+        [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 @end
