@@ -93,7 +93,7 @@ NSArray *products;
 - (IBAction)showActionSheet:(id)sender
 {
     
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"修改密码",@"我的即时消息",nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"注销" otherButtonTitles:@"修改密码",@"我的即时消息",nil];
     [actionSheet showFromBarButtonItem:self.actionButtonItem animated:YES];
 }
 
