@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbProjectDetailViewController : UIViewController
+@interface iplbProjectDetailViewController : UITableViewController
 @property NSString *detailURL;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UIScrollView *pageScrollView;

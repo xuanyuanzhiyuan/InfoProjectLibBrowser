@@ -27,6 +27,7 @@ NSArray *categories;
 {
     [super viewDidLoad];
 	categories = @[@"全部",@"电信资源产品线",@"移动资源产品线",@"号百产品线",@"其他产品线"];
+    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,5 +60,8 @@ NSArray *categories;
     [self dismissViewControllerAnimated:YES completion:^{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"projectCategorySelected" object:nil userInfo:dic];
     }];
+}
+- (IBAction)cancelProductCategory:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
