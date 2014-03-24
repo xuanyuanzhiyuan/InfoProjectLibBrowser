@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbNewsDetailViewController : UIViewController
+@interface iplbNewsDetailViewController : UITableViewController
 @property NSString *detailURL;
 @property (nonatomic, strong) IBOutlet UIImageView *newsPictureImgView;
 @property (nonatomic, strong) IBOutlet UITextView *contentTextView;
