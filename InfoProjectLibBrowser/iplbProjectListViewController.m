@@ -110,7 +110,8 @@ NSArray *products;
     NSLog(@"You have pressed the %@ button", [actionSheet buttonTitleAtIndex:buttonIndex]);
     if (buttonIndex == 0) {
         [iplbUserService logout];
-        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
     }else if(buttonIndex==1){
         //显示密码修改界面
     }

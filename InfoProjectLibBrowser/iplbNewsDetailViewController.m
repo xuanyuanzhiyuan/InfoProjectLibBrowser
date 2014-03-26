@@ -28,17 +28,6 @@ iplbNews *newsDetail;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    newsDetail = [iplbNewsRepository getNewsDetail:self.detailURL];
-    if(newsDetail.newsPictureURL){
-        NSURL *url = [NSURL URLWithString:newsDetail.newsPictureURL];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        self.newsPictureImgView.image = [[UIImage alloc] initWithData:data];
-    }else{
-        [self.newsPictureImgView setFrame:CGRectMake(0, 0, 0, 0)];
-        [self.contentTextView setFrame:CGRectMake(6, 67, 308, 300)];
-    }
-    self.contentTextView.text = newsDetail.content;
-    self.titleLabel.text = newsDetail.title;
     
 }
 
@@ -47,4 +36,20 @@ iplbNews *newsDetail;
     [super didReceiveMemoryWarning];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    newsDetail = [iplbNewsRepository getNewsDetail:self.detailURL];
+    if(newsDetail.newsPictureURL){
+        NSURL *url = [NSURL URLWithString:newsDetail.newsPictureURL];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        self.newsPictureImgView.image = [[UIImage alloc] initWithData:data];
+    }else{
+        [self.newsPictureImgView setFrame:CGRectMake(0, 0, 0, 0)];
+        //        [self.contentTextView setFrame:CGRectMake(6, 67, 308, 300)];
+    }
+    self.contentTextView.text = newsDetail.content;
+    self.titleLabel.text = newsDetail.title;
+}
 @end

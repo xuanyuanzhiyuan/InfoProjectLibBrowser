@@ -38,6 +38,18 @@ iplbProjectDetail *projectDetail;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
 	projectDetail = [resp getProjectDetailInfo:self.detailURL];
     self.detailText.text = projectDetail.detailInfo;
@@ -64,11 +76,4 @@ iplbProjectDetail *projectDetail;
     self.detailText.frame = frame;
     self.pageScrollView.contentSize = CGSizeMake(300, 3000);
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 @end
