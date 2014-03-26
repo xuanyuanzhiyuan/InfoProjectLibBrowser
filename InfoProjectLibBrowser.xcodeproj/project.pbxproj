@@ -35,6 +35,7 @@
 		4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */; };
 		4B96682218D5E2D100C94357 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B96682118D5E2D100C94357 /* config.plist */; };
 		4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96682718D5E3F000C94357 /* iplbConfiguration.m */; };
+		4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD887218E2AFFC005983BA /* iplbUserService.m */; };
 		4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,8 @@
 		4B96682118D5E2D100C94357 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		4B96682618D5E3F000C94357 /* iplbConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbConfiguration.h; sourceTree = "<group>"; };
 		4B96682718D5E3F000C94357 /* iplbConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbConfiguration.m; sourceTree = "<group>"; };
+		4BAD887118E2AFFC005983BA /* iplbUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbUserService.h; sourceTree = "<group>"; };
+		4BAD887218E2AFFC005983BA /* iplbUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbUserService.m; sourceTree = "<group>"; };
 		4BAF6CF318DD884D0048BB66 /* iplbProjectCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectCategoriesViewController.h; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.h; sourceTree = "<group>"; };
 		4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectCategoriesViewController.m; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +240,8 @@
 				4B89C2BE18DBC952009D4963 /* iplbNews.m */,
 				4B89C2C018DBCEDF009D4963 /* iplbNewsRepository.h */,
 				4B89C2C118DBCEDF009D4963 /* iplbNewsRepository.m */,
+				4BAD887118E2AFFC005983BA /* iplbUserService.h */,
+				4BAD887218E2AFFC005983BA /* iplbUserService.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				4B89C2BF18DBC952009D4963 /* iplbNews.m in Sources */,
 				4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */,
 				4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */,
+				4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbProjectListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@interface iplbProjectListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,UIActionSheetDelegate>
 
 @end

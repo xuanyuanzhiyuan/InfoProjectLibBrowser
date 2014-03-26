@@ -10,6 +10,8 @@
 #import "iplbProjectsRepository.h"
 #import "iplbProjectDetail.h"
 #import "iplbProjectDetailViewController.h"
+#import "iplbUserService.h"
+#import "iplbUserLoginViewController.h"
 
 @interface iplbProjectListViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
@@ -38,6 +40,11 @@ NSArray *products;
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
     //获取项目列表
     products = [resp getAllProjectInfos];
+    if(!products){
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"网络错误,请稍后重试!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        exit(0);
+    }
     //注册消息监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveCategorySelectedNotification:) name:@"projectCategorySelected" object:nil];
 }
@@ -73,7 +80,7 @@ NSArray *products;
     iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
     cell.textLabel.text = pd.projectName;
     cell.detailTextLabel.text = pd.projectDesc;
-    NSURL *url = [NSURL URLWithString:pd.iconURL];
+    NSURL *url = [NSURL URLWithString:pd.detailURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     cell.imageView.image = [[UIImage alloc] initWithData:data];
     return cell;
@@ -101,9 +108,13 @@ NSArray *products;
 {
     NSLog(@"index=> %i",buttonIndex);
     NSLog(@"You have pressed the %@ button", [actionSheet buttonTitleAtIndex:buttonIndex]);
-    if(buttonIndex==0){
+    if (buttonIndex == 0) {
+        [iplbUserService logout];
+        
+    }else if(buttonIndex==1){
         //显示密码修改界面
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -10,4 +10,7 @@
 
 @interface iplbConfiguration : NSObject
 +(NSString *) getConfiguration:(NSString *) key;
++(void) saveConfiguration:(NSString *)key value:(NSString *) aValue;
++(void) saveConfigurationWithDictionary:(NSDictionary *)dic;
++(void) removeConfiguration:(NSString *) key;
 @end

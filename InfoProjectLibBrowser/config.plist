@@ -2,7 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ServerRootURL</key>
-	<string>http://www.weather.com.cn/data/cityinfo/101010100.html</string>
+	<key>ServerRoot</key>
+	<string>http://172.16.88.169:8888/infoProjectLibServer</string>
+	<key>ProjectList</key>
+	<string>/projects</string>
+	<key>NewsList</key>
+	<string>/news</string>
+	<key>UserSearch</key>
+	<string>/userssearch</string>
+	<key>PasswordChange</key>
+	<string>/users/${id}/changepwd</string>
+	<key>ProjectCategories</key>
+	<string>/categories</string>
 </dict>
 </plist>

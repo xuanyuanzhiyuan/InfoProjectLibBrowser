@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YOS-3s-9GN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YOS-3s-9GN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -17,21 +17,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="账号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROJ-K0-dnS">
-                                <rect key="frame" x="55" y="126" width="210" height="30"/>
+                                <rect key="frame" x="55" y="83" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51704456529999998" green="1" blue="0.63309419570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="soy-Z6-Kbg">
-                                <rect key="frame" x="55" y="172" width="210" height="30"/>
+                                <rect key="frame" x="55" y="136" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51704456529999998" green="1" blue="0.63309419570000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cac-wk-aq5">
-                                <rect key="frame" x="55" y="250" width="210" height="29"/>
+                                <rect key="frame" x="55" y="214" width="210" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51704456526578735" green="1" blue="0.6330941956726317" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -42,9 +43,23 @@
                                     <action selector="login:" destination="bH3-bn-KZA" eventType="touchUpInside" id="P31-Me-tyx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pp5-zN-8J1">
+                                <rect key="frame" x="55" y="280" width="210" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="跳过">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipLogin:" destination="bH3-bn-KZA" eventType="touchUpInside" id="itx-0q-v08"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43570737670945053" green="0.67718240489130432" blue="0.62012509744442534" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="soy-Z6-Kbg" id="VPo-io-WG5"/>
+                        <outlet property="userCode" destination="ROJ-K0-dnS" id="Zkt-jk-9it"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMR-Px-GnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -260,7 +275,7 @@
                                 <segue destination="p4W-A8-5Ku" kind="modal" id="p37-Mj-Hwt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="tdR-zA-0oJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="tdR-zA-0oJ">
                             <connections>
                                 <action selector="showActionSheet:" destination="VdE-c6-H33" id="H7C-04-DkJ"/>
                             </connections>

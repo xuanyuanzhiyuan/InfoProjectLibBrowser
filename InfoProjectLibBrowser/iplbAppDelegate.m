@@ -8,6 +8,7 @@
 
 #import "iplbAppDelegate.h"
 #import "iplbUserLoginViewController.h"
+#import "iplbUserService.h"
 
 @implementation iplbAppDelegate
 
@@ -36,8 +37,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    BOOL isUserAlreadLogin = NO;
-    if (!isUserAlreadLogin) {
+    BOOL isNeedLogin = [iplbUserService isUserNeedLogin];
+    if (isNeedLogin) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
         [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbUserLoginViewController : UIViewController
+@interface iplbUserLoginViewController : UIViewController<UITextFieldDelegate>
 
 @end
