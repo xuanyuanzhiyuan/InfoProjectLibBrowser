@@ -31,7 +31,8 @@ NSMutableArray *news;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    news = [iplbNewsRepository getAllNews];
+    iplbNewsRepository *repo = [iplbNewsRepository new];
+    news = [repo getAllNews];
 //    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
 }
 

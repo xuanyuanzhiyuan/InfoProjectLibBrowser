@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "iplbNews.h"
+#import "iplbBaseRepository.h"
 
-@interface iplbNewsRepository : NSObject
-+(NSMutableArray *) getAllNews;
-+(iplbNews *) getNewsDetail:(NSString *)url;
+@interface iplbNewsRepository : iplbBaseRepository
+-(NSMutableArray *) getAllNews;
+-(iplbNews *) getNewsDetail:(NSString *)url;
 @end

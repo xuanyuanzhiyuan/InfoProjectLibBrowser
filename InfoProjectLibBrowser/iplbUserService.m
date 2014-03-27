@@ -9,6 +9,7 @@
 #import "iplbUserService.h"
 #import "iplbConfiguration.h"
 #import "iplbOperationResult.h"
+#import "ASIHTTPRequest.h"
 
 @implementation iplbUserService
 +(iplbOperationResult *) isValidUser:(NSString *)userCode password:(NSString *)aPassword
@@ -18,15 +19,14 @@
                                    [iplbConfiguration getConfiguration:@"ServerRoot"],
                                    [iplbConfiguration getConfiguration:@"UserSearch"]]];
     NSString *userQueryURL = [NSString stringWithFormat:@"%@?userCode=%@&userPwd=%@",userQueryRootURL,userCode,aPassword];
-    NSError *requestError;
-    NSString *userInfoJSON =[NSString stringWithContentsOfURL:[NSURL URLWithString:userQueryURL] encoding:NSUTF8StringEncoding error:&requestError];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:userQueryURL]];
+    [request startSynchronous];
+    NSError *error = [request error];
     iplbOperationResult *result = [iplbOperationResult new];
-    if(!userInfoJSON){
-        result.optResult = NO;
-        result.message = @"服务器未响应,请稍后重试!";
-    }else{
+    if(!error){
+        NSString *json = [request responseString];
         NSDictionary *userInfoDic = [NSJSONSerialization
-                                     JSONObjectWithData:[userInfoJSON dataUsingEncoding:NSUTF8StringEncoding]
+                                     JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding]
                                      options:0
                                      error:nil];
         if(!userInfoDic){
@@ -41,6 +41,9 @@
                 result.message = [userInfoDic valueForKey:@"message"];
             }
         }
+    }else{
+        result.optResult = NO;
+        result.message = @"服务器响应异常，请稍后重试!";
     }
     return result;
 }

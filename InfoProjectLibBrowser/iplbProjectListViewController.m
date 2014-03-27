@@ -12,6 +12,7 @@
 #import "iplbProjectDetailViewController.h"
 #import "iplbUserService.h"
 #import "iplbUserLoginViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbProjectListViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
@@ -59,8 +60,8 @@ NSArray *products;
     if ([[notification name] isEqualToString:@"projectCategorySelected"]){
         NSLog (@"Successfully received the test notification!");
         NSDictionary *dic = [notification userInfo];
-        NSLog(@"category is %@",[dic valueForKey:@"categoryName"]);
-        self.categoryCode = [dic valueForKey:@"categoryName"];
+        NSLog(@"category is %@",[dic valueForKey:@"categoryCode"]);
+        self.categoryCode = [dic valueForKey:@"categoryCode"];
         [self.tableView reloadData];
     }
 }
@@ -85,9 +86,8 @@ NSArray *products;
     iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
     cell.textLabel.text = pd.projectName;
     cell.detailTextLabel.text = pd.projectDesc;
-    NSURL *url = [NSURL URLWithString:pd.detailURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    cell.imageView.image = [[UIImage alloc] initWithData:data];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:pd.iconURL]
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     return cell;
 }
 

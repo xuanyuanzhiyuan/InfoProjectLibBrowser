@@ -7,6 +7,8 @@
 //
 
 #import "iplbProjectCategoriesViewController.h"
+#import "iplbProjectCategoryRepository.h"
+#import "iplbProjectCategory.h"
 
 @interface iplbProjectCategoriesViewController ()
 
@@ -26,8 +28,14 @@ NSArray *categories;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	categories = @[@"全部",@"电信资源产品线",@"移动资源产品线",@"号百产品线",@"其他产品线"];
+    iplbProjectCategoryRepository *repo = [iplbProjectCategoryRepository new];
+    categories = [repo getAllProjectCategories];
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,14 +56,15 @@ NSArray *categories;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
-    cell.textLabel.text = [categories objectAtIndex:indexPath.row];
+    iplbProjectCategory *category = [categories objectAtIndex:indexPath.row];
+    cell.textLabel.text = category.name;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *categoryName = [categories objectAtIndex:indexPath.row];
-    NSDictionary *dic = @{@"categoryName":categoryName};
+    iplbProjectCategory *category = [categories objectAtIndex:indexPath.row];
+    NSDictionary *dic = @{@"categoryCode":category.code};
     //发送消息
     [self dismissViewControllerAnimated:YES completion:^{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"projectCategorySelected" object:nil userInfo:dic];

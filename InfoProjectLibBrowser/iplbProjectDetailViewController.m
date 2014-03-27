@@ -9,6 +9,7 @@
 #import "iplbProjectDetailViewController.h"
 #import "iplbProjectDetail.h"
 #import "iplbProjectsRepository.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbProjectDetailViewController ()
 
@@ -55,17 +56,15 @@ iplbProjectDetail *projectDetail;
     self.detailText.text = projectDetail.detailInfo;
     self.nameLabel.text = projectDetail.projectName;
     self.descLabel.text = projectDetail.projectDesc;
-    NSURL *url = [NSURL URLWithString:projectDetail.iconURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    self.iconImage.image = [[UIImage alloc] initWithData:data];
+    [self.iconImage setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     //显示截图
     self.scrollView.contentSize = CGSizeMake(150 * [projectDetail.screenShots count], 200);
     int scrollWidth=0;
     for (NSString *screenshotsURL in projectDetail.screenShots){
         UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 150, 200)];
-        NSURL *url = [NSURL URLWithString:screenshotsURL];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        img.image = [[UIImage alloc] initWithData:data];
+        [img setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
+            placeholderImage:[UIImage imageNamed:@"screen_placeholder.png"]];
         [self.scrollView addSubview:img];
         scrollWidth = scrollWidth + 150;
     }

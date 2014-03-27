@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B16F0A218E4683F0050AB6F /* iplbBaseRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B16F0A118E4683F0050AB6F /* iplbBaseRepository.m */; };
+		4B16F0A518E475AC0050AB6F /* iplbProjectCategoryRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B16F0A418E475AC0050AB6F /* iplbProjectCategoryRepository.m */; };
+		4B16F0A818E4770E0050AB6F /* iplbProjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B16F0A718E4770E0050AB6F /* iplbProjectCategory.m */; };
+		4B16F0AA18E47EEE0050AB6F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16F0A918E47EEE0050AB6F /* SDWebImage.framework */; };
+		4B16F0AC18E47F840050AB6F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16F0AB18E47F840050AB6F /* ImageIO.framework */; };
 		4B256AF818E3C907003081E6 /* iplbOperationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B256AF718E3C907003081E6 /* iplbOperationResult.m */; };
 		4B30721618D59EFC00A77771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721518D59EFC00A77771 /* Foundation.framework */; };
 		4B30721818D59EFC00A77771 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721718D59EFC00A77771 /* CoreGraphics.framework */; };
@@ -64,6 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B16F0A018E4683F0050AB6F /* iplbBaseRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbBaseRepository.h; sourceTree = "<group>"; };
+		4B16F0A118E4683F0050AB6F /* iplbBaseRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbBaseRepository.m; sourceTree = "<group>"; };
+		4B16F0A318E475AC0050AB6F /* iplbProjectCategoryRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectCategoryRepository.h; sourceTree = "<group>"; };
+		4B16F0A418E475AC0050AB6F /* iplbProjectCategoryRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectCategoryRepository.m; sourceTree = "<group>"; };
+		4B16F0A618E4770E0050AB6F /* iplbProjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectCategory.h; sourceTree = "<group>"; };
+		4B16F0A718E4770E0050AB6F /* iplbProjectCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectCategory.m; sourceTree = "<group>"; };
+		4B16F0A918E47EEE0050AB6F /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		4B16F0AB18E47F840050AB6F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4B256AF618E3C907003081E6 /* iplbOperationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbOperationResult.h; sourceTree = "<group>"; };
 		4B256AF718E3C907003081E6 /* iplbOperationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbOperationResult.m; sourceTree = "<group>"; };
 		4B30721218D59EFC00A77771 /* InfoProjectLibBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoProjectLibBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B16F0AC18E47F840050AB6F /* ImageIO.framework in Frameworks */,
+				4B16F0AA18E47EEE0050AB6F /* SDWebImage.framework in Frameworks */,
 				4BD5CE2C18E410B200CD75D8 /* libz.1.2.5.dylib in Frameworks */,
 				4B30721818D59EFC00A77771 /* CoreGraphics.framework in Frameworks */,
 				4BD5CE2A18E4108500CD75D8 /* MobileCoreServices.framework in Frameworks */,
@@ -171,10 +186,10 @@
 		4B30720918D59EFC00A77771 = {
 			isa = PBXGroup;
 			children = (
+				4B16F0A918E47EEE0050AB6F /* SDWebImage.framework */,
 				4BD5CE0218E40E2C00CD75D8 /* asi-http-request */,
 				4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */,
 				4B9667CD18D5A54E00C94357 /* Resources */,
-				4B9667CC18D5A53700C94357 /* ViewControllers */,
 				4B30723A18D59EFC00A77771 /* InfoProjectLibBrowserTests */,
 				4B30721418D59EFC00A77771 /* Frameworks */,
 				4B30721318D59EFC00A77771 /* Products */,
@@ -193,6 +208,7 @@
 		4B30721418D59EFC00A77771 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B16F0AB18E47F840050AB6F /* ImageIO.framework */,
 				4BD5CE2B18E410B200CD75D8 /* libz.1.2.5.dylib */,
 				4BD5CE2918E4108500CD75D8 /* MobileCoreServices.framework */,
 				4BD5CE2718E4102100CD75D8 /* SystemConfiguration.framework */,
@@ -208,6 +224,7 @@
 		4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				4B9667CC18D5A53700C94357 /* ViewControllers */,
 				4B30722418D59EFC00A77771 /* iplbAppDelegate.h */,
 				4B30722518D59EFC00A77771 /* iplbAppDelegate.m */,
 				4B30722718D59EFC00A77771 /* Main.storyboard */,
@@ -265,6 +282,7 @@
 				4B8AD21318DEC748008707BF /* iplbUserLoginViewController.m */,
 			);
 			name = ViewControllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4B9667CD18D5A54E00C94357 /* Resources */ = {
@@ -295,6 +313,12 @@
 				4BAD887218E2AFFC005983BA /* iplbUserService.m */,
 				4B256AF618E3C907003081E6 /* iplbOperationResult.h */,
 				4B256AF718E3C907003081E6 /* iplbOperationResult.m */,
+				4B16F0A018E4683F0050AB6F /* iplbBaseRepository.h */,
+				4B16F0A118E4683F0050AB6F /* iplbBaseRepository.m */,
+				4B16F0A318E475AC0050AB6F /* iplbProjectCategoryRepository.h */,
+				4B16F0A418E475AC0050AB6F /* iplbProjectCategoryRepository.m */,
+				4B16F0A618E4770E0050AB6F /* iplbProjectCategory.h */,
+				4B16F0A718E4770E0050AB6F /* iplbProjectCategory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -457,6 +481,7 @@
 			files = (
 				4B8AD21418DEC748008707BF /* iplbUserLoginViewController.m in Sources */,
 				4BD5CE1C18E40E2C00CD75D8 /* ASIAuthenticationDialog.m in Sources */,
+				4B16F0A218E4683F0050AB6F /* iplbBaseRepository.m in Sources */,
 				4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */,
 				4B89C2C218DBCEDF009D4963 /* iplbNewsRepository.m in Sources */,
 				4B256AF818E3C907003081E6 /* iplbOperationResult.m in Sources */,
@@ -470,12 +495,14 @@
 				4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */,
 				4BD5CE2118E40E2C00CD75D8 /* ASIHTTPRequest.m in Sources */,
 				4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */,
+				4B16F0A518E475AC0050AB6F /* iplbProjectCategoryRepository.m in Sources */,
 				4BD5CE1F18E40E2C00CD75D8 /* ASIDownloadCache.m in Sources */,
 				4BD5CE1D18E40E2C00CD75D8 /* ASIDataCompressor.m in Sources */,
 				4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */,
 				4BD5CE2018E40E2C00CD75D8 /* ASIFormDataRequest.m in Sources */,
 				4B89C2BF18DBC952009D4963 /* iplbNews.m in Sources */,
 				4BD5CE2218E40E2C00CD75D8 /* ASIInputStream.m in Sources */,
+				4B16F0A818E4770E0050AB6F /* iplbProjectCategory.m in Sources */,
 				4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */,
 				4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */,
 				4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */,
@@ -605,9 +632,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jinyanhua/Develop/workspaces/iOS_workspace/InfoProjectLibBrowser,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -618,9 +650,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jinyanhua/Develop/workspaces/iOS_workspace/InfoProjectLibBrowser,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

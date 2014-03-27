@@ -40,7 +40,8 @@ iplbNews *newsDetail;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    newsDetail = [iplbNewsRepository getNewsDetail:self.detailURL];
+    iplbNewsRepository *repo = [iplbNewsRepository new];
+    newsDetail = [repo getNewsDetail:self.detailURL];
     if(newsDetail.newsPictureURL){
         NSURL *url = [NSURL URLWithString:newsDetail.newsPictureURL];
         NSData *data = [NSData dataWithContentsOfURL:url];
