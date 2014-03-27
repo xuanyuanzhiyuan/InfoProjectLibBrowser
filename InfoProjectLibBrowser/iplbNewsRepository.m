@@ -13,16 +13,8 @@
 @implementation iplbNewsRepository
 +(NSMutableArray *) getAllNews
 {
-    /**
-    NSDictionary *aProd = @{@"title":@"广东电信资源配置系统发布V1.2.5版本",@"desc":@"2014年3月15日发布V1.2.4版本",@"newsPicURL":@"http://img3.douban.com/view/photo/raw/public/p1346756970.jpg",@"detailURL":@"http://xxxx.xxx.xxxx/news/3432"};
-    NSDictionary *bProd = @{@"title":@"基站信息系统发布2.0版本",@"desc":@"2014年3月15日发布V1.2.4版本",@"newsPicURL":@"http://img3.douban.com/view/photo/raw/public/p1346756970.jpg",@"detailURL":@"http://xxxx.xxx.xxxx/news/3432"};
-    NSDictionary *cProd = @{@"title":@"广东电信规划设计院获得广东省企业技术中心称号",@"desc":@"2014年3月15日发布V1.2.4版本",@"newsPicURL":@"http://img3.douban.com/view/photo/raw/public/p1346756970.jpg",@"detailURL":@"http://xxxx.xxx.xxxx/news/3432"};;
-    NSDictionary *dProd = @{@"title":@"广东电信规划设计院中标XX项目",@"desc":@"2014年3月15日发布V1.2.4版本",@"newsPicURL":@"http://img3.douban.com/view/photo/raw/public/p1346756970.jpg",@"detailURL":@"http://xxxx.xxx.xxxx/news/3432"};
-    NSArray *data = [NSArray arrayWithObjects:aProd,bProd,cProd,dProd, nil];
-     **/
     NSString *newsListUrl = [NSString stringWithFormat:@"%@%@",[iplbConfiguration getConfiguration:@"ServerRoot"],[iplbConfiguration getConfiguration:@"NewsList"]];
     NSString *newsJSON =[NSString stringWithContentsOfURL:[NSURL URLWithString:newsListUrl] encoding:NSUTF8StringEncoding error:nil];
-    
     NSArray *newsDicArray = [NSJSONSerialization
                         JSONObjectWithData:[newsJSON dataUsingEncoding:NSUTF8StringEncoding]
                         options:0

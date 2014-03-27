@@ -11,5 +11,6 @@
 
 @interface iplbProjectsRepository : NSObject
 -(NSMutableArray *) getAllProjectInfos;
+-(NSMutableArray *) getProjectInfosWithCategory:(NSString *)categoryCode;
 -(iplbProjectDetail *) getProjectDetailInfo:(NSString *)url;
 @end

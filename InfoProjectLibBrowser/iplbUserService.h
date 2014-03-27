@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "iplbOperationResult.h"
 
 @interface iplbUserService : NSObject
-+(BOOL) isValidUser:(NSString *)userCode password:(NSString *) aPassword;
++(iplbOperationResult *) isValidUser:(NSString *)userCode password:(NSString *) aPassword;
 +(BOOL) isUserNeedLogin;
 +(void) writeUserLoginInfo:(NSString *)userCode userName:(NSString *) aUsername;
 +(void) logout;

@@ -8,25 +8,41 @@
 
 #import "iplbUserService.h"
 #import "iplbConfiguration.h"
+#import "iplbOperationResult.h"
 
 @implementation iplbUserService
-+(BOOL) isValidUser:(NSString *)userCode password:(NSString *)aPassword
++(iplbOperationResult *) isValidUser:(NSString *)userCode password:(NSString *)aPassword
 {
     NSString *userQueryRootURL = [NSURL URLWithString:
                                   [NSString stringWithFormat:@"%@%@",
                                    [iplbConfiguration getConfiguration:@"ServerRoot"],
                                    [iplbConfiguration getConfiguration:@"UserSearch"]]];
     NSString *userQueryURL = [NSString stringWithFormat:@"%@?userCode=%@&userPwd=%@",userQueryRootURL,userCode,aPassword];
-    NSString *userInfoJSON =[NSString stringWithContentsOfURL:[NSURL URLWithString:userQueryURL] encoding:NSUTF8StringEncoding error:nil];
-    NSDictionary *userInfoDic = [NSJSONSerialization
-                                      JSONObjectWithData:[userInfoJSON dataUsingEncoding:NSUTF8StringEncoding]
-                                      options:0
-                                      error:nil];
-    NSString *result = [userInfoDic valueForKey:@"result"];
-    if([result isEqualToString:@"true"]){
-        return YES;
+    NSError *requestError;
+    NSString *userInfoJSON =[NSString stringWithContentsOfURL:[NSURL URLWithString:userQueryURL] encoding:NSUTF8StringEncoding error:&requestError];
+    iplbOperationResult *result = [iplbOperationResult new];
+    if(!userInfoJSON){
+        result.optResult = NO;
+        result.message = @"服务器未响应,请稍后重试!";
+    }else{
+        NSDictionary *userInfoDic = [NSJSONSerialization
+                                     JSONObjectWithData:[userInfoJSON dataUsingEncoding:NSUTF8StringEncoding]
+                                     options:0
+                                     error:nil];
+        if(!userInfoDic){
+            result.optResult = NO;
+            result.message =@"服务端返回JSON格式异常";
+        }else{
+            NSNumber *jsonResult = [userInfoDic valueForKey:@"result"];
+            if([jsonResult boolValue]){
+                result.optResult = YES;
+            }else{
+                result.optResult = NO;
+                result.message = [userInfoDic valueForKey:@"message"];
+            }
+        }
     }
-    return NO;
+    return result;
 }
 
 +(BOOL) isUserNeedLogin

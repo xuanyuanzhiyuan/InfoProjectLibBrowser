@@ -8,6 +8,7 @@
 
 #import "iplbUserLoginViewController.h"
 #import "iplbUserService.h"
+#import "iplbOperationResult.h"
 
 @interface iplbUserLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userCode;
@@ -54,14 +55,14 @@
         hasInputAll = NO;
     }
     if(hasInputAll){
-        BOOL isValidUser = [iplbUserService isValidUser:self.userCode.text password:self.password.text];
-        if (isValidUser) {
+        iplbOperationResult *isValidUser = [iplbUserService isValidUser:self.userCode.text password:self.password.text];
+        if (isValidUser.optResult) {
             //登录结果写入plist
             [iplbUserService writeUserLoginInfo:self.userCode.text userName:self.userCode.text ];
             self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{
-            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"无效的用户名或密码!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:isValidUser.message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
         }
     }else{

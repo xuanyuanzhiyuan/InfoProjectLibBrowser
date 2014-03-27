@@ -39,7 +39,11 @@ NSArray *products;
 //    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
     //获取项目列表
-    products = [resp getAllProjectInfos];
+    if(self.categoryCode){
+        products = [resp getProjectInfosWithCategory:self.categoryCode];    
+    }else{
+        products = [resp getAllProjectInfos];
+    }
     if(!products){
         UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"网络错误,请稍后重试!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
@@ -56,6 +60,7 @@ NSArray *products;
         NSLog (@"Successfully received the test notification!");
         NSDictionary *dic = [notification userInfo];
         NSLog(@"category is %@",[dic valueForKey:@"categoryName"]);
+        self.categoryCode = [dic valueForKey:@"categoryName"];
         [self.tableView reloadData];
     }
 }
