@@ -29,7 +29,7 @@
                 [responseDict setObject:resultObj forKey:@"returnArray"];
             }
         }else{
-           [responseDict setObject:NO forKey:@"isCorrectJSONFormat"];
+           [responseDict setObject:@0 forKey:@"isCorrectJSONFormat"];
         }
     }else{
         [responseDict setObject:@0 forKey:@"didHTTPResponseCorrectly"];

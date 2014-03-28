@@ -27,7 +27,7 @@
     detail.projectDesc = [dic valueForKey:@"desc"];
     detail.iconURL = [dic valueForKey:@"iconURL"];
     detail.detailInfo = [dic valueForKey:@"detailInfo"];
-    detail.screenShots = [dic valueForKey:@"screenShots"];
+    detail.screenShots = [dic valueForKey:@"screenShotURLs"];
     return detail;
 }
 
