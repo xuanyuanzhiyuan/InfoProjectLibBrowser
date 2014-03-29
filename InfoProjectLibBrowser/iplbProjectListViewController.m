@@ -12,11 +12,12 @@
 #import "iplbProjectDetailViewController.h"
 #import "iplbUserService.h"
 #import "iplbUserLoginViewController.h"
+#import "iplbUserPasswordModifyViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbProjectListViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
-@property (strong, nonatomic) IBOutlet UITableView *productListTableView;
+@property (weak, nonatomic) IBOutlet UITableView *productListTableView;
 
 @end
 
@@ -115,10 +116,12 @@ NSArray *products;
     NSLog(@"You have pressed the %@ button", [actionSheet buttonTitleAtIndex:buttonIndex]);
     if (buttonIndex == 0) {
         [iplbUserService logout];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
+        //iplbUserLoginViewController *userLoginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
+        //[self.navigationController pushViewController:userLoginViewController animated:YES];
+        [self performSegueWithIdentifier:@"toLoginSegue" sender:self];
     }else if(buttonIndex==1){
         //显示密码修改界面
+        [self performSegueWithIdentifier:@"showPasswordModifySegue" sender:self];
     }
     
 }

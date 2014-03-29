@@ -27,6 +27,7 @@
 		4B30723F18D59EFC00A77771 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B30723D18D59EFC00A77771 /* InfoPlist.strings */; };
 		4B30724118D59EFC00A77771 /* InfoProjectLibBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */; };
 		4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */; };
+		4B5FD3C618E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */; };
 		4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */; };
 		4B8208EF18E1CBE3009E4E0D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8208ED18E1CBE3009E4E0D /* Default@2x.png */; };
 		4B8208F018E1CBE3009E4E0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8208EE18E1CBE3009E4E0D /* Default-568h@2x.png */; };
@@ -98,6 +99,8 @@
 		4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoProjectLibBrowserTests.m; sourceTree = "<group>"; };
 		4B3752EB18D749B500290BC5 /* iplbProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectDetailViewController.h; path = InfoProjectLibBrowser/iplbProjectDetailViewController.h; sourceTree = "<group>"; };
 		4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectDetailViewController.m; path = InfoProjectLibBrowser/iplbProjectDetailViewController.m; sourceTree = "<group>"; };
+		4B5FD3C418E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbUserPasswordModifyViewController.h; path = InfoProjectLibBrowser/iplbUserPasswordModifyViewController.h; sourceTree = "<group>"; };
+		4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbUserPasswordModifyViewController.m; path = InfoProjectLibBrowser/iplbUserPasswordModifyViewController.m; sourceTree = "<group>"; };
 		4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectDetail.h; sourceTree = "<group>"; };
 		4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectDetail.m; sourceTree = "<group>"; };
 		4B8208ED18E1CBE3009E4E0D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */,
 				4B8AD21218DEC748008707BF /* iplbUserLoginViewController.h */,
 				4B8AD21318DEC748008707BF /* iplbUserLoginViewController.m */,
+				4B5FD3C418E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.h */,
+				4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -424,6 +429,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = com.xysoft;
 				TargetAttributes = {
+					4B30721118D59EFC00A77771 = {
+						DevelopmentTeam = 62675UJ3XM;
+					};
 					4B30723218D59EFC00A77771 = {
 						TestTargetID = 4B30721118D59EFC00A77771;
 					};
@@ -496,6 +504,7 @@
 				4BD5CE2118E40E2C00CD75D8 /* ASIHTTPRequest.m in Sources */,
 				4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */,
 				4B16F0A518E475AC0050AB6F /* iplbProjectCategoryRepository.m in Sources */,
+				4B5FD3C618E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m in Sources */,
 				4BD5CE1F18E40E2C00CD75D8 /* ASIDownloadCache.m in Sources */,
 				4BD5CE1D18E40E2C00CD75D8 /* ASIDataCompressor.m in Sources */,
 				4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */,
@@ -632,6 +641,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jinyanhua/Develop/workspaces/iOS_workspace/InfoProjectLibBrowser,
@@ -642,6 +653,7 @@
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -651,6 +663,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jinyanhua/Develop/workspaces/iOS_workspace/InfoProjectLibBrowser,
@@ -661,6 +675,7 @@
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

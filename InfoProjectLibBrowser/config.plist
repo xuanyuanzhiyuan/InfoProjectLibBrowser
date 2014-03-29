@@ -10,8 +10,8 @@
 	<string>/news</string>
 	<key>UserSearch</key>
 	<string>/userssearch</string>
-	<key>PasswordChange</key>
-	<string>/users/${id}/changepwd</string>
+	<key>UserInfo</key>
+	<string>/users</string>
 	<key>ProjectCategories</key>
 	<string>/categories</string>
 </dict>

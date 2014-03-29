@@ -65,4 +65,49 @@
     [iplbConfiguration removeConfiguration:@"LoginUserCode"];
     [iplbConfiguration removeConfiguration:@"LoginUserName"];
 }
+
++(iplbOperationResult *) modifyUserPassword:(NSString *) aNewPasswd
+{
+    iplbOperationResult *result = [iplbOperationResult new];
+    NSString *userCode = [iplbConfiguration getConfiguration:@"LoginUserCode"];
+    if(!userCode){
+        result.optResult = YES;
+        result.message = @"用户并未登录!";
+        return result;
+    }
+    NSString *userQueryRootURL = [NSURL URLWithString:
+                                  [NSString stringWithFormat:@"%@%@",
+                                   [iplbConfiguration getConfiguration:@"ServerRoot"],
+                                   [iplbConfiguration getConfiguration:@"UserInfo"]]];
+    NSString *userInfoURL = [NSString stringWithFormat:@"%@/%@",userQueryRootURL,userCode];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:userInfoURL]];
+    [request setRequestMethod:@"PUT"];
+    [request setValue:userCode forKey:@"userCode"];
+    [request setValue:aNewPasswd forKey:@"newPassword"];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if(!error){
+        NSString *json = [request responseString];
+        NSDictionary *userInfoDic = [NSJSONSerialization
+                                     JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding]
+                                     options:0
+                                     error:nil];
+        if(!userInfoDic){
+            result.optResult = NO;
+            result.message =@"服务端返回JSON格式异常";
+        }else{
+            NSNumber *jsonResult = [userInfoDic valueForKey:@"result"];
+            if([jsonResult boolValue]){
+                result.optResult = YES;
+            }else{
+                result.optResult = NO;
+                result.message = [userInfoDic valueForKey:@"message"];
+            }
+        }
+    }else{
+        result.optResult = NO;
+        result.message = @"服务器响应异常，请稍后重试!";
+    }
+    return result;
+}
 @end

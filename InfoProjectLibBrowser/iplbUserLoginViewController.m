@@ -31,6 +31,8 @@
 {
     [super viewDidLoad];
     self.password.delegate = self;
+    self.userCode.delegate = self;
+    [self.userCode becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,6 +74,9 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.userCode){
+        [self.password becomeFirstResponder];
+    }
     if (textField == self.password) {
         [textField resignFirstResponder];
         [self login:nil];
@@ -79,6 +84,7 @@
     }
     return YES;
 }
+
 - (IBAction)skipLogin:(id)sender {
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self dismissViewControllerAnimated:YES completion:nil];
