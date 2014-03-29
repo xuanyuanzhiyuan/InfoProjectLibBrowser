@@ -31,9 +31,12 @@ NSMutableArray *news;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    iplbNewsRepository *repo = [iplbNewsRepository new];
-    news = [repo getAllNews];
-//    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新消息列表"];
+    [refresh addTarget:self
+                action:@selector(asyncRequestNewsAndUpdateUI)
+      forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +72,33 @@ NSMutableArray *news;
         iplbNews *newsDetail = [news objectAtIndex:myIndexPath.row];
         detailViewController.detailURL = newsDetail.detailURL;
     }
+}
+
+-(void) asyncRequestNewsAndUpdateUI
+{
+    //异步请求数据
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        dispatch_sync(queue,^{
+            iplbNewsRepository *repo = [iplbNewsRepository new];
+            news = [repo getAllNews];
+        });
+        dispatch_sync(dispatch_get_main_queue(),^{
+            if([news count] == 0){
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"网络连接异常,无法获取消息列表!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+                [self.refreshControl endRefreshing];
+            }else{
+                [self.tableView reloadData];
+                [self.refreshControl endRefreshing];
+            }
+        });
+    });
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self asyncRequestNewsAndUpdateUI];
 }
 
 @end

@@ -71,7 +71,7 @@
     iplbOperationResult *result = [iplbOperationResult new];
     NSString *userCode = [iplbConfiguration getConfiguration:@"LoginUserCode"];
     if(!userCode){
-        result.optResult = YES;
+        result.optResult = NO;
         result.message = @"用户并未登录!";
         return result;
     }

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface iplbUserLoginViewController : UIViewController<UITextFieldDelegate>
-
+extern BOOL isPassLoginView;
 @end

@@ -67,18 +67,7 @@
             UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"提示" message:@"两次输入的新密码不一致,请检查您的输入!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
         }else{
-            iplbOperationResult *result = [iplbUserService modifyUserPassword:self.theNewPasswdTextField.text];
-            if(result.optResult){
-                [iplbUserService logout];
-                self.shouldDismiss = YES;
-                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"提示" message:@"密码修改成功!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
-            }else{
-                NSString *msg = [NSString stringWithFormat:@"%@%@",@"密码修改失败,原因:",result.message];
-                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:msg
-                                                                 delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
-            }
+            [self asyncModifyPasswdAndUpdateUI];
         }
     }
 }
@@ -104,5 +93,29 @@
 {
     if(self.shouldDismiss)
         [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+-(void) asyncModifyPasswdAndUpdateUI
+{
+    static iplbOperationResult *result;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        dispatch_sync(queue,^{
+            result = [iplbUserService modifyUserPassword:self.theNewPasswdTextField.text];
+        });
+        dispatch_sync(dispatch_get_main_queue(),^{
+            if(result.optResult){
+                [iplbUserService logout];
+                self.shouldDismiss = YES;
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"提示" message:@"密码修改成功!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+            }else{
+                NSString *msg = [NSString stringWithFormat:@"%@%@",@"密码修改失败,原因:",result.message];
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:msg
+                                                                 delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+            }
+        });
+    });
 }
 @end

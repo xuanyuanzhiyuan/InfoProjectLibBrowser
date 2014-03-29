@@ -58,6 +58,7 @@
                         <color key="backgroundColor" red="0.14509804546833038" green="0.61176472902297974" blue="0.93725496530532837" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="cac-wk-aq5" id="482-xx-y1g"/>
                         <outlet property="password" destination="soy-Z6-Kbg" id="VPo-io-WG5"/>
                         <outlet property="userCode" destination="ROJ-K0-dnS" id="Zkt-jk-9it"/>
                     </connections>

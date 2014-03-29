@@ -42,6 +42,8 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
         [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+    }else{
+        isPassLoginView = YES;
     }
 }
 

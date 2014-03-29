@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "iplbAppDelegate.h"
-
+BOOL isPassLoginView = NO;
 int main(int argc, char * argv[])
 {
     @autoreleasepool {

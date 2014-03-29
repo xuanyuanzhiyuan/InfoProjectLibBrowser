@@ -10,4 +10,5 @@
 
 @interface iplbProjectListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,UIActionSheetDelegate>
 @property NSString *categoryCode;
+extern BOOL isPassLoginView;
 @end

@@ -37,22 +37,36 @@ NSArray *products;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //下移20px，避免和status bar挤在一起
-//    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
-    iplbProjectsRepository * resp = [iplbProjectsRepository new];
-    //获取项目列表
-    if(self.categoryCode){
-        products = [resp getProjectInfosWithCategory:self.categoryCode];    
-    }else{
-        products = [resp getAllProjectInfos];
-    }
-    if(!products){
-        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"网络错误,请稍后重试!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
-        exit(0);
-    }
     //注册消息监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveCategorySelectedNotification:) name:@"projectCategorySelected" object:nil];
+    //下拉刷新
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新产品列表"];
+    [refresh addTarget:self
+                action:@selector(asyncRequestProjectsDataAndUpdateUI)
+      forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+}
+
+-(void) asyncRequestProjectsDataAndUpdateUI
+{
+    //异步请求数据
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        dispatch_sync(queue,^{
+            [self loadProjectsList];
+        });
+        dispatch_sync(dispatch_get_main_queue(),^{
+            if([products count] == 0){
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"网络连接异常,无法获取产品列表!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+                [self.refreshControl endRefreshing];
+            }else{
+                [self.tableView reloadData];
+                [self.refreshControl endRefreshing];
+            }
+        });
+    });
 }
 
 - (void) receiveCategorySelectedNotification:(NSNotification *) notification
@@ -63,7 +77,7 @@ NSArray *products;
         NSDictionary *dic = [notification userInfo];
         NSLog(@"category is %@",[dic valueForKey:@"categoryCode"]);
         self.categoryCode = [dic valueForKey:@"categoryCode"];
-        [self.tableView reloadData];
+        [self asyncRequestProjectsDataAndUpdateUI];
     }
 }
 
@@ -128,6 +142,19 @@ NSArray *products;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if(isPassLoginView)
+        [self asyncRequestProjectsDataAndUpdateUI];
 
+}
+
+- (void) loadProjectsList
+{
+    iplbProjectsRepository * resp = [iplbProjectsRepository new];
+    //获取项目列表
+    if(self.categoryCode){
+        products = [resp getProjectInfosWithCategory:self.categoryCode];
+    }else{
+        products = [resp getAllProjectInfos];
+    }
 }
 @end

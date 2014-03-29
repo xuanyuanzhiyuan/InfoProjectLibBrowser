@@ -13,6 +13,7 @@
 @interface iplbUserLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userCode;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
@@ -57,16 +58,9 @@
         hasInputAll = NO;
     }
     if(hasInputAll){
-        iplbOperationResult *isValidUser = [iplbUserService isValidUser:self.userCode.text password:self.password.text];
-        if (isValidUser.optResult) {
-            //登录结果写入plist
-            [iplbUserService writeUserLoginInfo:self.userCode.text userName:self.userCode.text ];
-            self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }else{
-            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:isValidUser.message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-        }
+        //异步操作
+        [self.loginButton setUserInteractionEnabled:NO];
+        [self asyncRequestProjectCategoriesAndUpdateUI];
     }else{
         UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入用户名和密码后再提交" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
@@ -90,4 +84,29 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+-(void) asyncRequestProjectCategoriesAndUpdateUI
+{
+    static iplbOperationResult *isValidUser;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        dispatch_sync(queue,^{
+            isValidUser = [iplbUserService isValidUser:self.userCode.text password:self.password.text];
+        });
+        dispatch_sync(dispatch_get_main_queue(),^{
+            if (isValidUser.optResult) {
+                //登录结果写入plist
+                [iplbUserService writeUserLoginInfo:self.userCode.text userName:self.userCode.text ];
+                self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                [self dismissViewControllerAnimated:YES completion:nil];
+                //修改登录全局变量
+                isPassLoginView = YES;
+            }else{
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:isValidUser.message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+                [self.loginButton setUserInteractionEnabled:YES];
+            }
+        });
+    });
+}
 @end
