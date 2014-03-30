@@ -11,6 +11,7 @@
 #import "iplbProjectCategory.h"
 
 @interface iplbProjectCategoriesViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelSelectCategoryBI;
 
 @end
 
@@ -89,6 +90,7 @@ NSArray *categories;
             categories = [repo getAllProjectCategories];
         });
         dispatch_sync(dispatch_get_main_queue(),^{
+            [self.cancelSelectCategoryBI setEnabled:YES];
             if([categories count] == 0){
                 UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"网络连接异常,无法获取产品分类!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
