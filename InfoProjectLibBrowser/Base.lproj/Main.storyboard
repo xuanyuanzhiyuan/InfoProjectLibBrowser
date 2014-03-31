@@ -201,10 +201,10 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectCategoryCell" id="ch7-XG-bfW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projectCategoryCell" id="1Gt-wQ-KS3">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ch7-XG-bfW" id="bjf-BQ-NXH">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Gt-wQ-KS3" id="Zpv-Qz-aNl">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -401,15 +401,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="运行截图" id="uPd-lE-q9F">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="180" id="Y37-9o-1to">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="180"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="250" id="Y37-9o-1to">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y37-9o-1to" id="yIo-6b-7ai">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huZ-B3-GYC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </scrollView>
                                             </subviews>
@@ -420,7 +420,7 @@
                             <tableViewSection headerTitle="详细信息" id="jnX-My-iSH">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="210" id="8d3-Lq-gjs">
-                                        <rect key="frame" x="0.0" y="378" width="320" height="210"/>
+                                        <rect key="frame" x="0.0" y="448" width="320" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8d3-Lq-gjs" id="fxQ-3t-Xnb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>

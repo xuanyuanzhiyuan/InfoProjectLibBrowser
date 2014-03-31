@@ -50,14 +50,13 @@
 
 +(BOOL) isUserNeedLogin
 {
-    NSString *loginInfo = [iplbConfiguration getConfiguration:@"LoginUserCode"];
+    NSString *loginInfo = [iplbConfiguration getUserLoginInfo:@"LoginUserCode"];
     return loginInfo == nil;
 }
 
-+(void) writeUserLoginInfo:(NSString *)userCode userName:(NSString *)aUsername
++(void) writeUserLoginInfo:(NSString *)userCode;
 {
-    NSDictionary *dic = @{@"LoginUserCode":userCode,@"LoginUserName":aUsername};
-    [iplbConfiguration saveConfigurationWithDictionary:dic];
+    [iplbConfiguration saveUserLongInfo:@"LoginUserCode" value:userCode fileName:[iplbConfiguration getConfiguration:@"UserLoginFileName"]];
 }
 
 +(void) logout

@@ -59,14 +59,14 @@ iplbProjectDetail *projectDetail;
     [self.iconImage setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     //显示截图
-    self.scrollView.contentSize = CGSizeMake(200 * [projectDetail.screenShots count], 250);
+    self.scrollView.contentSize = CGSizeMake(160 * [projectDetail.screenShots count], 250);
     int scrollWidth=0;
     for (NSString *screenshotsURL in projectDetail.screenShots){
-        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 200, 250)];
-        [img setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
+        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 150, 250)];
+        [img setImageWithURL:[NSURL URLWithString:screenshotsURL]
             placeholderImage:[UIImage imageNamed:@"screen_placeholder.png"]];
         [self.scrollView addSubview:img];
-        scrollWidth = scrollWidth + 200;
+        scrollWidth = scrollWidth + 160;
     }
     [self.detailText sizeToFit];
     [self.detailText layoutIfNeeded];

@@ -92,7 +92,7 @@ NSArray *categories;
         dispatch_sync(dispatch_get_main_queue(),^{
             [self.cancelSelectCategoryBI setEnabled:YES];
             if([categories count] == 0){
-                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"网络连接异常,无法获取产品分类!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"服务端响应异常,无法获取产品分类!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
                 [self.refreshControl endRefreshing];
             }else{

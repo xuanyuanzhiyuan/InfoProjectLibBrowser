@@ -13,16 +13,38 @@
 {
     NSString *file = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
     NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:file];
-    return [plistDict objectForKey: key];
+    if(plistDict)
+        return [plistDict objectForKey: key];
+    return nil;
 
 }
 
-+(void) saveConfiguration:(NSString *)akey value:(NSString *)aValue
++(NSString *) getUserLoginInfo:(NSString *)key
 {
-    NSString *file = [[NSBundle mainBundle] pathForResource:@"config" ofType:@"plist"];
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *plistPath1 = [paths objectAtIndex:0];
+    NSString *file=[plistPath1 stringByAppendingPathComponent:[self getConfiguration:@"UserLoginFileName"]];
     NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:file];
+    if(!plistDict)
+        return [plistDict objectForKey: key];
+    return nil;
+    
+}
+
++(void) saveUserLongInfo:(NSString *)akey value:(NSString *)aValue fileName:(NSString *)aFileName
+{
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *plistPath1 = [paths objectAtIndex:0];
+    NSString *file=[plistPath1 stringByAppendingPathComponent:aFileName];
+    NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:file];
+    if(!plistDict){
+        plistDict = [NSMutableDictionary new];
+    }
     [plistDict setValue:akey forKey:akey];
     [plistDict writeToFile:file atomically:YES];
+    //检查是否写入
+    NSMutableDictionary *newDic = [[NSMutableDictionary alloc] initWithContentsOfFile:file];
+    NSLog(@"config is %@",newDic);
 }
 
 +(void) saveConfigurationWithDictionary:(NSDictionary *)dic
@@ -31,6 +53,9 @@
     NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:file];
     [plistDict setValuesForKeysWithDictionary:dic];
     [plistDict writeToFile:file atomically:YES];
+    //检查是否写入
+    NSMutableDictionary *newDic = [[NSMutableDictionary alloc] initWithContentsOfFile:file];
+    NSLog(@"config is %@",newDic);
 }
 
 +(void) removeConfiguration:(NSString *)key

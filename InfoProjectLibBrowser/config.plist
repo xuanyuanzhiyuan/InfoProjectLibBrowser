@@ -14,5 +14,7 @@
 	<string>/users</string>
 	<key>ProjectCategories</key>
 	<string>/categories</string>
+	<key>UserLoginFileName</key>
+	<string>UserInfo.plist</string>
 </dict>
 </plist>

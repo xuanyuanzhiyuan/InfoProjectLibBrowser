@@ -12,7 +12,7 @@
 @interface iplbUserService : NSObject
 +(iplbOperationResult *) isValidUser:(NSString *)userCode password:(NSString *) aPassword;
 +(BOOL) isUserNeedLogin;
-+(void) writeUserLoginInfo:(NSString *)userCode userName:(NSString *) aUsername;
++(void) writeUserLoginInfo:(NSString *)userCode;
 +(void) logout;
 +(iplbOperationResult *) modifyUserPassword:(NSString *) aNewPasswd;
 @end

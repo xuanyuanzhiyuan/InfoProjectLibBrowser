@@ -13,6 +13,7 @@
 #import "iplbUserService.h"
 #import "iplbUserLoginViewController.h"
 #import "iplbUserPasswordModifyViewController.h"
+#import "iplbConfiguration.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbProjectListViewController ()
@@ -76,7 +77,12 @@ NSArray *products;
         NSLog (@"Successfully received the test notification!");
         NSDictionary *dic = [notification userInfo];
         NSLog(@"category is %@",[dic valueForKey:@"categoryCode"]);
-        self.categoryCode = [dic valueForKey:@"categoryCode"];
+        NSString *code = [dic valueForKey:@"categoryCode"];
+        if([code isEqualToString:@"All"]){
+            self.categoryCode = nil;
+        }else{
+            self.categoryCode = [dic valueForKey:@"categoryCode"];
+        }
         [self asyncRequestProjectsDataAndUpdateUI];
     }
 }

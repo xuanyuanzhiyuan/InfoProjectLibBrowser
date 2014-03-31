@@ -95,12 +95,12 @@
         });
         dispatch_sync(dispatch_get_main_queue(),^{
             if (isValidUser.optResult) {
-                //登录结果写入plist
-                [iplbUserService writeUserLoginInfo:self.userCode.text userName:self.userCode.text ];
-                self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-                [self dismissViewControllerAnimated:YES completion:nil];
                 //修改登录全局变量
                 isPassLoginView = YES;
+                //登录结果写入plist
+                [iplbUserService writeUserLoginInfo:self.userCode.text];
+                self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                [self dismissViewControllerAnimated:YES completion:nil];
             }else{
                 UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:isValidUser.message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
