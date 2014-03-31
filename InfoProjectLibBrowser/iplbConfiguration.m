@@ -25,7 +25,7 @@
     NSString *plistPath1 = [paths objectAtIndex:0];
     NSString *file=[plistPath1 stringByAppendingPathComponent:[self getConfiguration:@"UserLoginFileName"]];
     NSMutableDictionary *plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:file];
-    if(!plistDict)
+    if(plistDict)
         return [plistDict objectForKey: key];
     return nil;
     
@@ -40,7 +40,7 @@
     if(!plistDict){
         plistDict = [NSMutableDictionary new];
     }
-    [plistDict setValue:akey forKey:akey];
+    [plistDict setValue:aValue forKey:akey];
     [plistDict writeToFile:file atomically:YES];
     //检查是否写入
     NSMutableDictionary *newDic = [[NSMutableDictionary alloc] initWithContentsOfFile:file];

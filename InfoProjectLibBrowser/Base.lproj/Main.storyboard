@@ -103,7 +103,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="puz-Gb-EvK" kind="push" id="KYP-mb-3YT"/>
+                                    <segue destination="puz-Gb-EvK" kind="push" identifier="showNewsDetail" id="KYP-mb-3YT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

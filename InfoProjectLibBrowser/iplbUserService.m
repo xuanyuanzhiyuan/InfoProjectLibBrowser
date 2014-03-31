@@ -10,6 +10,7 @@
 #import "iplbConfiguration.h"
 #import "iplbOperationResult.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 @implementation iplbUserService
 +(iplbOperationResult *) isValidUser:(NSString *)userCode password:(NSString *)aPassword
@@ -68,7 +69,7 @@
 +(iplbOperationResult *) modifyUserPassword:(NSString *) aNewPasswd
 {
     iplbOperationResult *result = [iplbOperationResult new];
-    NSString *userCode = [iplbConfiguration getConfiguration:@"LoginUserCode"];
+    NSString *userCode = [iplbConfiguration getUserLoginInfo:@"LoginUserCode"];
     if(!userCode){
         result.optResult = NO;
         result.message = @"用户并未登录!";
@@ -79,10 +80,11 @@
                                    [iplbConfiguration getConfiguration:@"ServerRoot"],
                                    [iplbConfiguration getConfiguration:@"UserInfo"]]];
     NSString *userInfoURL = [NSString stringWithFormat:@"%@/%@",userQueryRootURL,userCode];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:userInfoURL]];
+    //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:userInfoURL]];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:userInfoURL]];
     [request setRequestMethod:@"PUT"];
-    [request setValue:userCode forKey:@"userCode"];
-    [request setValue:aNewPasswd forKey:@"newPassword"];
+    [request addPostValue:userCode forKey:@"userCode"];
+    [request addPostValue:aNewPasswd forKey:@"newPassword"];
     [request startSynchronous];
     NSError *error = [request error];
     if(!error){
