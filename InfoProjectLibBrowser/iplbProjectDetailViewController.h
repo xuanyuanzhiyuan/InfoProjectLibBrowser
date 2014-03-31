@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface iplbProjectDetailViewController : UITableViewController
+{
+BOOL isFullScreen;
+CGRect prevFrame;
+}
 @property NSString *detailURL;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) IBOutlet UIScrollView *pageScrollView;

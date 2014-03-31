@@ -3,12 +3,13 @@
 //  InfoProjectLibBrowser
 //
 //  Created by  Jinyanhua on 14-3-17.
-//  Copyright (c) 2014年 com.xysoft. All rights reserved.
+//  Copyright (c) 2014年 com.gpdi. All rights reserved.
 //
 
 #import "iplbProjectDetailViewController.h"
 #import "iplbProjectDetail.h"
 #import "iplbProjectsRepository.h"
+#import "iplbAppDelegate.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbProjectDetailViewController ()
@@ -39,6 +40,7 @@ iplbProjectDetail *projectDetail;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    isFullScreen = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +67,12 @@ iplbProjectDetail *projectDetail;
         UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 150, 250)];
         [img setImageWithURL:[NSURL URLWithString:screenshotsURL]
             placeholderImage:[UIImage imageNamed:@"screen_placeholder.png"]];
+        //手势识别,增加点击全屏显示功能
+        UITapGestureRecognizer *guestRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickScreenShot:)];
+        guestRecognizer.numberOfTapsRequired = 1;
+        guestRecognizer.numberOfTouchesRequired = 1;
+        [img addGestureRecognizer:guestRecognizer];
+        [img setUserInteractionEnabled:YES];
         [self.scrollView addSubview:img];
         scrollWidth = scrollWidth + 160;
     }
@@ -74,5 +82,36 @@ iplbProjectDetail *projectDetail;
     frame.size.height = self.detailText.contentSize.height;
     self.detailText.frame = frame;
     self.pageScrollView.contentSize = CGSizeMake(300, 3000);
+}
+
+-(void) clickScreenShot:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"%@", [gestureRecognizer view]);
+    UIImageView *imgView = (UIImageView *)[gestureRecognizer view];
+    iplbAppDelegate *appDelegate = (iplbAppDelegate *)[[UIApplication sharedApplication] delegate];
+    UIImageView *copyImgView = imgView;
+    [appDelegate.window addSubview:copyImgView];
+    //进入全屏
+    if (!isFullScreen) {
+        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+            //save previous frame
+            prevFrame = imgView.frame;
+            [copyImgView setFrame:[[UIScreen mainScreen] bounds]];
+            //[copyImgView setFrame:CGRectMake(0, 0, imgView.image.size.width, imgView.image.size.height)];
+        }completion:^(BOOL finished){
+            isFullScreen = YES;
+        }];
+        return;
+    }else{
+        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+            [self.scrollView addSubview:imgView];
+            [imgView setFrame:prevFrame];
+      
+        }completion:^(BOOL finished){
+            isFullScreen = NO;
+            
+        }];
+        return;
+    }
 }
 @end

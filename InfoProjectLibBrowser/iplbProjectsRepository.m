@@ -25,6 +25,11 @@
         return [iplbProjectDetail projectDetailWithDictionary:[responseDict objectForKey:@"returnDictionary"]];
     }
     return nil;
+    /**
+    NSArray *screenShotURLs = @[@"http://img3.douban.com/view/movie_poster_cover/spst/public/p2174990264.jpg",@"http://img3.douban.com/view/photo/photo/public/p2168015570.jpg",@"http://img5.douban.com/view/photo/photo/public/p2168015558.jpg"];
+    NSDictionary *responseDict = @{@"name":@"轩辕软件测试系统",@"desc":@"LWILY",@"iconURL":@"http://img5.douban.com/view/photo/photo/public/p2168015558.jpg",@"screenShotURLs":screenShotURLs};
+    return [iplbProjectDetail projectDetailWithDictionary:responseDict];
+      **/
 }
 
 -(NSMutableArray *) getProjectInfosWithCategory:(NSString *)categoryCode
@@ -46,5 +51,11 @@
         }
     }
     return products;
+    /**
+    NSDictionary *responseDict = @{@"name":@"软件测试系统",@"desc":@"testlw",@"iconURL":@"http://img3.douban.com/view/movie_poster_cover/spst/public/p2174990264.jpg"};
+    NSMutableArray *products = [NSMutableArray new];
+    [products addObject:[iplbProjectDetail projectSummaryWithDictionary:responseDict]];
+    return products;
+     **/
 }
 @end
