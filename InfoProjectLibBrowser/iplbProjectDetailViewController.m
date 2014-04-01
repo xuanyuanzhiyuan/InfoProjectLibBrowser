@@ -20,6 +20,8 @@
 
 iplbProjectDetail *projectDetail;
 
+BOOL hasTapEventResponsing = NO;
+
 @synthesize scrollView;
 @synthesize pageScrollView;
 @synthesize pageControl;
@@ -91,6 +93,8 @@ iplbProjectDetail *projectDetail;
 -(void) clickScreenShot:(UIGestureRecognizer *)gestureRecognizer
 {
     NSLog(@"%@", [gestureRecognizer view]);
+    if(hasTapEventResponsing)
+        return;
     UIImageView *imgView = (UIImageView *)[gestureRecognizer view];
     iplbAppDelegate *appDelegate = (iplbAppDelegate *)[[UIApplication sharedApplication] delegate];
     UIImageView *copyImgView = imgView;
@@ -102,17 +106,21 @@ iplbProjectDetail *projectDetail;
             prevFrame = imgView.frame;
             [copyImgView setFrame:[[UIScreen mainScreen] bounds]];
             //[copyImgView setFrame:CGRectMake(0, 0, imgView.image.size.width, imgView.image.size.height)];
+            hasTapEventResponsing = YES;
         }completion:^(BOOL finished){
             isFullScreen = YES;
+            hasTapEventResponsing = NO;
+
         }];
         return;
     }else{
         [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
             [self.scrollView addSubview:imgView];
             [imgView setFrame:prevFrame];
-      
+            hasTapEventResponsing = YES;
         }completion:^(BOOL finished){
             isFullScreen = NO;
+            hasTapEventResponsing = NO;
             
         }];
         return;
