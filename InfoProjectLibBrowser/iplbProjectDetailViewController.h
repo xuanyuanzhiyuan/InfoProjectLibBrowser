@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbProjectDetailViewController : UITableViewController
+@interface iplbProjectDetailViewController : UITableViewController<UITableViewDelegate,UIWebViewDelegate>
 {
 BOOL isFullScreen;
 CGRect prevFrame;
@@ -21,4 +21,5 @@ CGRect prevFrame;
 @property (nonatomic, strong) IBOutlet UILabel *descLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *iconImage;
 @property (nonatomic, strong) IBOutlet UITextView *detailText;
+@property (weak, nonatomic) IBOutlet UIWebView *detailTextWebView;
 @end

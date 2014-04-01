@@ -27,6 +27,7 @@ iplbProjectDetail *projectDetail;
 @synthesize descLabel;
 @synthesize iconImage;
 @synthesize detailText;
+@synthesize detailTextWebView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,9 +54,12 @@ iplbProjectDetail *projectDetail;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
 	projectDetail = [resp getProjectDetailInfo:self.detailURL];
-    self.detailText.text = projectDetail.detailInfo;
+    [self.detailTextWebView loadHTMLString:projectDetail.detailInfo baseURL:nil];
+    //调整WebView高度(delegate方式)
+    self.detailTextWebView.delegate = self;
     self.nameLabel.text = projectDetail.projectName;
     self.descLabel.text = projectDetail.projectDesc;
     [self.iconImage setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
@@ -113,5 +117,9 @@ iplbProjectDetail *projectDetail;
         }];
         return;
     }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)aWebView {
+
 }
 @end

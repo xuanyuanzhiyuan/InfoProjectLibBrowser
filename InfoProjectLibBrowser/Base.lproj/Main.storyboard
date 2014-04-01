@@ -419,21 +419,19 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="详细信息" id="jnX-My-iSH">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="210" id="8d3-Lq-gjs">
-                                        <rect key="frame" x="0.0" y="448" width="320" height="210"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="600" id="8d3-Lq-gjs">
+                                        <rect key="frame" x="0.0" y="448" width="320" height="600"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8d3-Lq-gjs" id="fxQ-3t-Xnb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="599"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgO-hF-Hh2">
-                                                    <rect key="frame" x="5" y="0.0" width="320" height="209"/>
+                                                <webView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIh-JH-cDy">
+                                                    <rect key="frame" x="0.0" y="5" width="320" height="600"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </webView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -447,7 +445,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="产品详情" id="bqi-gB-jd2"/>
                     <connections>
-                        <outlet property="detailText" destination="YgO-hF-Hh2" id="kT8-G7-Mjp"/>
+                        <outlet property="detailTextWebView" destination="qIh-JH-cDy" id="jz0-Iv-sKe"/>
                         <outlet property="iconImage" destination="lIF-T5-wdH" id="lwD-Cr-der"/>
                         <outlet property="nameLabel" destination="ktI-Sp-RVO" id="fhD-h2-e7h"/>
                         <outlet property="scrollView" destination="huZ-B3-GYC" id="XqE-5K-miy"/>

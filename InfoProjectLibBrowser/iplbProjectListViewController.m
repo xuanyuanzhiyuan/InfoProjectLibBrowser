@@ -47,6 +47,8 @@ NSArray *products;
                 action:@selector(asyncRequestProjectsDataAndUpdateUI)
       forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
+    //登录判断
+    isPassLoginView = ![iplbUserService isUserNeedLogin];
 }
 
 -(void) asyncRequestProjectsDataAndUpdateUI
