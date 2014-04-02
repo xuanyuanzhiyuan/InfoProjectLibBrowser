@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B30721118D59EFC00A77771"
-               BuildableName = "InfoProjectLibBrowser.app"
+               BuildableName = "&#x8425;&#x9500;&#x5c0f;&#x52a9;&#x624b;.app"
                BlueprintName = "InfoProjectLibBrowser"
                ReferencedContainer = "container:InfoProjectLibBrowser.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B30721118D59EFC00A77771"
-            BuildableName = "InfoProjectLibBrowser.app"
+            BuildableName = "&#x8425;&#x9500;&#x5c0f;&#x52a9;&#x624b;.app"
             BlueprintName = "InfoProjectLibBrowser"
             ReferencedContainer = "container:InfoProjectLibBrowser.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B30721118D59EFC00A77771"
-            BuildableName = "InfoProjectLibBrowser.app"
+            BuildableName = "&#x8425;&#x9500;&#x5c0f;&#x52a9;&#x624b;.app"
             BlueprintName = "InfoProjectLibBrowser"
             ReferencedContainer = "container:InfoProjectLibBrowser.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B30721118D59EFC00A77771"
-            BuildableName = "InfoProjectLibBrowser.app"
+            BuildableName = "&#x8425;&#x9500;&#x5c0f;&#x52a9;&#x624b;.app"
             BlueprintName = "InfoProjectLibBrowser"
             ReferencedContainer = "container:InfoProjectLibBrowser.xcodeproj">
          </BuildableReference>

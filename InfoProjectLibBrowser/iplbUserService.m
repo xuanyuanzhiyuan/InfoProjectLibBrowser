@@ -3,7 +3,7 @@
 //  InfoProjectLibBrowser
 //
 //  Created by jinyanhua on 14-3-26.
-//  Copyright (c) 2014年 com.xysoft. All rights reserved.
+//  Copyright (c) 2014年 com.gpdi. All rights reserved.
 //
 
 #import "iplbUserService.h"
@@ -66,7 +66,7 @@
     [iplbConfiguration removeConfiguration:@"LoginUserName"];
 }
 
-+(iplbOperationResult *) modifyUserPassword:(NSString *) aNewPasswd
++(iplbOperationResult *) modifyUserPassword:(NSString *)aNewPasswd oldPasswd:(NSString *)aOldPassword
 {
     iplbOperationResult *result = [iplbOperationResult new];
     NSString *userCode = [iplbConfiguration getUserLoginInfo:@"LoginUserCode"];
@@ -79,12 +79,13 @@
                                   [NSString stringWithFormat:@"%@%@",
                                    [iplbConfiguration getConfiguration:@"ServerRoot"],
                                    [iplbConfiguration getConfiguration:@"UserInfo"]]];
-    NSString *userInfoURL = [NSString stringWithFormat:@"%@/%@",userQueryRootURL,userCode];
+    NSString *userInfoURL = [NSString stringWithFormat:@"%@/%@/changepwd",userQueryRootURL,userCode];
     //ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:userInfoURL]];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:userInfoURL]];
-    [request setRequestMethod:@"PUT"];
-    [request addPostValue:userCode forKey:@"userCode"];
-    [request addPostValue:aNewPasswd forKey:@"newPassword"];
+    [request setRequestMethod:@"POST"];
+    [request setPostValue:userCode forKey:@"userCode"];
+    [request setPostValue:aNewPasswd forKey:@"newPassword"];
+    [request setPostValue:aOldPassword forKey:@"userPwd"];
     [request startSynchronous];
     NSError *error = [request error];
     if(!error){

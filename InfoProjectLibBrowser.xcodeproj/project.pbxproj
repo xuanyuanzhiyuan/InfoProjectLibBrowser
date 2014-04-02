@@ -80,7 +80,7 @@
 		4B16F0AB18E47F840050AB6F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4B256AF618E3C907003081E6 /* iplbOperationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbOperationResult.h; sourceTree = "<group>"; };
 		4B256AF718E3C907003081E6 /* iplbOperationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbOperationResult.m; sourceTree = "<group>"; };
-		4B30721218D59EFC00A77771 /* InfoProjectLibBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoProjectLibBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B30721218D59EFC00A77771 /* 营销小助手.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "营销小助手.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B30721518D59EFC00A77771 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B30721718D59EFC00A77771 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4B30721918D59EFC00A77771 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -202,7 +202,7 @@
 		4B30721318D59EFC00A77771 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B30721218D59EFC00A77771 /* InfoProjectLibBrowser.app */,
+				4B30721218D59EFC00A77771 /* 营销小助手.app */,
 				4B30723318D59EFC00A77771 /* InfoProjectLibBrowserTests.xctest */,
 			);
 			name = Products;
@@ -398,7 +398,7 @@
 			);
 			name = InfoProjectLibBrowser;
 			productName = InfoProjectLibBrowser;
-			productReference = 4B30721218D59EFC00A77771 /* InfoProjectLibBrowser.app */;
+			productReference = 4B30721218D59EFC00A77771 /* 营销小助手.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4B30723218D59EFC00A77771 /* InfoProjectLibBrowserTests */ = {
@@ -652,7 +652,7 @@
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "营销小助手";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -674,7 +674,7 @@
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "营销小助手";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};

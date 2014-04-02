@@ -14,5 +14,5 @@
 +(BOOL) isUserNeedLogin;
 +(void) writeUserLoginInfo:(NSString *)userCode;
 +(void) logout;
-+(iplbOperationResult *) modifyUserPassword:(NSString *) aNewPasswd;
++(iplbOperationResult *) modifyUserPassword:(NSString *)aNewPasswd oldPasswd:(NSString *) aOldPassword;
 @end
