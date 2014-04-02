@@ -44,6 +44,8 @@
 		4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96682718D5E3F000C94357 /* iplbConfiguration.m */; };
 		4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD887218E2AFFC005983BA /* iplbUserService.m */; };
 		4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */; };
+		4BB566D818EC580B00DA2439 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D718EC580B00DA2439 /* placeholder.png */; };
+		4BB566DA18EC5A7400DA2439 /* screen_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D918EC5A7400DA2439 /* screen_placeholder.png */; };
 		4BD5CE1C18E40E2C00CD75D8 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5CE0518E40E2C00CD75D8 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BD5CE1D18E40E2C00CD75D8 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5CE0818E40E2C00CD75D8 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BD5CE1E18E40E2C00CD75D8 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5CE0A18E40E2C00CD75D8 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -128,6 +130,8 @@
 		4BAD887218E2AFFC005983BA /* iplbUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbUserService.m; sourceTree = "<group>"; };
 		4BAF6CF318DD884D0048BB66 /* iplbProjectCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectCategoriesViewController.h; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.h; sourceTree = "<group>"; };
 		4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectCategoriesViewController.m; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.m; sourceTree = "<group>"; };
+		4BB566D718EC580B00DA2439 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		4BB566D918EC5A7400DA2439 /* screen_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_placeholder.png; sourceTree = "<group>"; };
 		4BD5CE0418E40E2C00CD75D8 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		4BD5CE0518E40E2C00CD75D8 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		4BD5CE0618E40E2C00CD75D8 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 		4B9667CD18D5A54E00C94357 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BB566D918EC5A7400DA2439 /* screen_placeholder.png */,
+				4BB566D718EC580B00DA2439 /* placeholder.png */,
 				4B8208ED18E1CBE3009E4E0D /* Default@2x.png */,
 				4B8208EE18E1CBE3009E4E0D /* Default-568h@2x.png */,
 				4B96681818D5AB3F00C94357 /* news.png */,
@@ -464,7 +470,9 @@
 				4B96681B18D5AB3F00C94357 /* projects.png in Resources */,
 				4B96681A18D5AB3F00C94357 /* news.png in Resources */,
 				4B96682218D5E2D100C94357 /* config.plist in Resources */,
+				4BB566D818EC580B00DA2439 /* placeholder.png in Resources */,
 				4B8208F018E1CBE3009E4E0D /* Default-568h@2x.png in Resources */,
+				4BB566DA18EC5A7400DA2439 /* screen_placeholder.png in Resources */,
 				4B30722E18D59EFC00A77771 /* Images.xcassets in Resources */,
 				4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */,
 				4B30722918D59EFC00A77771 /* Main.storyboard in Resources */,

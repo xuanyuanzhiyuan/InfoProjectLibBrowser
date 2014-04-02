@@ -110,7 +110,9 @@ NSArray *products;
     cell.textLabel.text = pd.projectName;
     cell.detailTextLabel.text = pd.projectDesc;
     [cell.imageView setImageWithURL:[NSURL URLWithString:pd.iconURL]
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                      
+                   }];
     return cell;
 }
 
@@ -125,6 +127,11 @@ NSArray *products;
     }
 }
 
+- (void) tableView: (UITableView *) tableView accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
+{
+    [self performSegueWithIdentifier:@"showProdDetails" sender:self];
+}
+
 - (IBAction)showActionSheet:(id)sender
 {
     
@@ -134,7 +141,7 @@ NSArray *products;
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"index=> %i",buttonIndex);
+    NSLog(@"index=> %li",(long)buttonIndex);
     NSLog(@"You have pressed the %@ button", [actionSheet buttonTitleAtIndex:buttonIndex]);
     if (buttonIndex == 0) {
         [iplbUserService logout];
