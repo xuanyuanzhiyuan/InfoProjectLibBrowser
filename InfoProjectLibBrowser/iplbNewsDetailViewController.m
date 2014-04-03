@@ -56,7 +56,7 @@ iplbNews *newsDetail;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(!newsDetail.newsPictureURL&&[newsDetail.newsPictureURL isKindOfClass:[NSString class]]){
+    if(newsDetail.newsPictureURL&&[newsDetail.newsPictureURL isKindOfClass:[NSString class]]){
         if (indexPath.section==0&&indexPath.row==0) {
             return 150;
         }
