@@ -129,35 +129,32 @@
                         <sections>
                             <tableViewSection id="ucW-w8-MPj">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="166" id="07I-6L-pz0">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="166"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="07I-6L-pz0">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="07I-6L-pz0" id="CXB-MR-uGt">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J89-95-ljC">
-                                                    <rect key="frame" x="65" y="14" width="190" height="137"/>
+                                                    <rect key="frame" x="65" y="14" width="190" height="121"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="304" id="rae-rd-hbB">
-                                        <rect key="frame" x="0.0" y="230" width="320" height="304"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="300" id="rae-rd-hbB">
+                                        <rect key="frame" x="0.0" y="214" width="320" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rae-rd-hbB" id="y9W-pZ-Dpa">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="303"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXO-L6-nfP">
-                                                    <rect key="frame" x="7" y="10" width="313" height="273"/>
+                                                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6b-Rl-urE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                </webView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -171,7 +168,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="消息详情" id="5Di-nA-WHR"/>
                     <connections>
-                        <outlet property="contentTextView" destination="YXO-L6-nfP" id="B7K-tQ-wDZ"/>
+                        <outlet property="contentWebView" destination="Q6b-Rl-urE" id="nL1-za-6vB"/>
                         <outlet property="newsPictureImgView" destination="J89-95-ljC" id="rtk-gs-zmO"/>
                     </connections>
                 </tableViewController>

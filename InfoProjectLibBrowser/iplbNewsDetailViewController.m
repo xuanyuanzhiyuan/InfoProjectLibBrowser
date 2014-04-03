@@ -8,6 +8,7 @@
 
 #import "iplbNewsDetailViewController.h"
 #import "iplbNewsRepository.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbNewsDetailViewController ()
 
@@ -42,15 +43,34 @@ iplbNews *newsDetail;
     [super viewWillAppear:animated];
     iplbNewsRepository *repo = [iplbNewsRepository new];
     newsDetail = [repo getNewsDetail:self.detailURL];
-    if(newsDetail.newsPictureURL){
-        NSURL *url = [NSURL URLWithString:newsDetail.newsPictureURL];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        self.newsPictureImgView.image = [[UIImage alloc] initWithData:data];
+    if(newsDetail.newsPictureURL&&[newsDetail.newsPictureURL isKindOfClass:[NSString class]]){
+        [self.newsPictureImgView setImageWithURL:[NSURL URLWithString:newsDetail.newsPictureURL]
+                       placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     }else{
         [self.newsPictureImgView setFrame:CGRectMake(0, 0, 0, 0)];
         //        [self.contentTextView setFrame:CGRectMake(6, 67, 308, 300)];
     }
-    self.contentTextView.text = newsDetail.content;
+        [self.contentWebView loadHTMLString:newsDetail.content baseURL:nil];
     self.titleLabel.text = newsDetail.title;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(!newsDetail.newsPictureURL&&[newsDetail.newsPictureURL isKindOfClass:[NSString class]]){
+        if (indexPath.section==0&&indexPath.row==0) {
+            return 150;
+        }
+        if (indexPath.section==0&&indexPath.row==1) {
+            return 300;
+        }
+    }else{
+        if (indexPath.section==0&&indexPath.row==0) {
+            return 0;
+        }
+        if (indexPath.section==0&&indexPath.row==1) {
+            return 450;
+        }
+    }
+    return 0;
 }
 @end
