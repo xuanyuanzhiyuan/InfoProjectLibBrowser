@@ -44,6 +44,7 @@
 		4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96682718D5E3F000C94357 /* iplbConfiguration.m */; };
 		4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD887218E2AFFC005983BA /* iplbUserService.m */; };
 		4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */; };
+		4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */; };
 		4BB566D818EC580B00DA2439 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D718EC580B00DA2439 /* placeholder.png */; };
 		4BB566DA18EC5A7400DA2439 /* screen_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D918EC5A7400DA2439 /* screen_placeholder.png */; };
 		4BD5CE1C18E40E2C00CD75D8 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5CE0518E40E2C00CD75D8 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -130,6 +131,8 @@
 		4BAD887218E2AFFC005983BA /* iplbUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbUserService.m; sourceTree = "<group>"; };
 		4BAF6CF318DD884D0048BB66 /* iplbProjectCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectCategoriesViewController.h; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.h; sourceTree = "<group>"; };
 		4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectCategoriesViewController.m; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.m; sourceTree = "<group>"; };
+		4BB1618F18EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageScaleAndRoundConner.h"; path = "InfoProjectLibBrowser/UIImage+ImageScaleAndRoundConner.h"; sourceTree = "<group>"; };
+		4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageScaleAndRoundConner.m"; path = "InfoProjectLibBrowser/UIImage+ImageScaleAndRoundConner.m"; sourceTree = "<group>"; };
 		4BB566D718EC580B00DA2439 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		4BB566D918EC5A7400DA2439 /* screen_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_placeholder.png; sourceTree = "<group>"; };
 		4BD5CE0418E40E2C00CD75D8 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 				4B8AD21318DEC748008707BF /* iplbUserLoginViewController.m */,
 				4B5FD3C418E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.h */,
 				4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */,
+				4BB1618F18EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.h */,
+				4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -514,6 +519,7 @@
 				4B16F0A518E475AC0050AB6F /* iplbProjectCategoryRepository.m in Sources */,
 				4B5FD3C618E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m in Sources */,
 				4BD5CE1F18E40E2C00CD75D8 /* ASIDownloadCache.m in Sources */,
+				4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */,
 				4BD5CE1D18E40E2C00CD75D8 /* ASIDataCompressor.m in Sources */,
 				4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */,
 				4BD5CE2018E40E2C00CD75D8 /* ASIFormDataRequest.m in Sources */,

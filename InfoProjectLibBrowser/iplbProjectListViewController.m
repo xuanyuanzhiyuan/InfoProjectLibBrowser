@@ -14,7 +14,10 @@
 #import "iplbUserLoginViewController.h"
 #import "iplbUserPasswordModifyViewController.h"
 #import "iplbConfiguration.h"
+#import "UIImage+ImageScaleAndRoundConner.h"
+
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface iplbProjectListViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
@@ -109,10 +112,13 @@ NSArray *products;
     iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
     cell.textLabel.text = pd.projectName;
     cell.detailTextLabel.text = pd.projectDesc;
+    UIImage *holder = [[UIImage imageNamed:@"placeholder.png"] imageScaledToRoundConnerSize:CGSizeMake(30, 30)];
     [cell.imageView setImageWithURL:[NSURL URLWithString:pd.iconURL]
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                      
+                   placeholderImage:holder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                       image = [image imageScaledToRoundConnerSize:CGSizeMake(30, 30)];
                    }];
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.cornerRadius = 4;
     return cell;
 }
 
@@ -171,5 +177,11 @@ NSArray *products;
     }else{
         products = [resp getAllProjectInfos];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    return 60;
 }
 @end
