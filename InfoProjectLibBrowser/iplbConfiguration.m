@@ -65,4 +65,13 @@
     [plistDict removeObjectForKey:key];
     [plistDict writeToFile:file atomically:YES];
 }
+
++(void) removeUserLoginInfo:(NSString *)fileName
+{
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *plistPath1 = [paths objectAtIndex:0];
+    NSString *file=[plistPath1 stringByAppendingPathComponent:fileName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:file error:nil];
+}
 @end

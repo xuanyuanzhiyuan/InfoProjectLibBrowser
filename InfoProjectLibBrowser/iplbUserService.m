@@ -62,8 +62,7 @@
 
 +(void) logout
 {
-    [iplbConfiguration removeConfiguration:@"LoginUserCode"];
-    [iplbConfiguration removeConfiguration:@"LoginUserName"];
+    [iplbConfiguration removeUserLoginInfo:[iplbConfiguration getConfiguration:@"UserLoginFileName"]];
 }
 
 +(iplbOperationResult *) modifyUserPassword:(NSString *)aNewPasswd oldPasswd:(NSString *)aOldPassword

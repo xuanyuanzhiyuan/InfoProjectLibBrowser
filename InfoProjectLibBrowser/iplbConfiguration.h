@@ -13,5 +13,6 @@
 +(NSString *) getUserLoginInfo:(NSString *) key;
 +(void) saveUserLongInfo:(NSString *)key value:(NSString *) aValue fileName:(NSString *)aFileName;
 +(void) saveConfigurationWithDictionary:(NSDictionary *)dic;
++(void) removeUserLoginInfo:(NSString *)fileName;
 +(void) removeConfiguration:(NSString *) key;
 @end
