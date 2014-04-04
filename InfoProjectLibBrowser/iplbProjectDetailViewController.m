@@ -64,6 +64,8 @@ BOOL hasTapEventResponsing = NO;
     self.detailTextWebView.delegate = self;
     self.nameLabel.text = projectDetail.projectName;
     self.descLabel.text = projectDetail.projectDesc;
+    self.iconImage.layer.masksToBounds = YES;
+    self.iconImage.layer.cornerRadius = 10;
     [self.iconImage setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     //显示截图

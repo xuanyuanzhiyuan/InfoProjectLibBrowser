@@ -15,6 +15,7 @@
 #import "iplbUserPasswordModifyViewController.h"
 #import "iplbConfiguration.h"
 #import "UIImage+ImageScaleAndRoundConner.h"
+#import "iplbProjectListTableCellTableViewCell.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
@@ -105,9 +106,9 @@ NSArray *products;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *tableIdentifier = @"projectListCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    iplbProjectListTableCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        cell = [[iplbProjectListTableCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
     cell.textLabel.text = pd.projectName;
@@ -115,10 +116,11 @@ NSArray *products;
     UIImage *holder = [[UIImage imageNamed:@"placeholder.png"] imageScaledToRoundConnerSize:CGSizeMake(30, 30)];
     [cell.imageView setImageWithURL:[NSURL URLWithString:pd.iconURL]
                    placeholderImage:holder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                       image = [image imageScaledToRoundConnerSize:CGSizeMake(30, 30)];
+                       //image = [image imageScaledToRoundConnerSize:CGSizeMake(30, 30)];
                    }];
+    //图标圆角
     cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = 4;
+    cell.imageView.layer.cornerRadius = 10;
     return cell;
 }
 

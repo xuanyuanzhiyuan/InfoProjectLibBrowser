@@ -12,7 +12,7 @@
 - (UIImage*)imageScaledToRoundConnerSize:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:5] addClip];
+    [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:10] addClip];
     [self drawInRect:rect];
     UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

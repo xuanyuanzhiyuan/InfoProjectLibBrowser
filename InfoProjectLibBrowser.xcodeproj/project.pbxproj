@@ -29,6 +29,7 @@
 		4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */; };
 		4B5FD3C618E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */; };
 		4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */; };
+		4B7F29BC18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F29BB18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m */; };
 		4B8208EF18E1CBE3009E4E0D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8208ED18E1CBE3009E4E0D /* Default@2x.png */; };
 		4B8208F018E1CBE3009E4E0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8208EE18E1CBE3009E4E0D /* Default-568h@2x.png */; };
 		4B89C2BC18DBC7B7009D4963 /* iplbNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89C2BB18DBC7B7009D4963 /* iplbNewsDetailViewController.m */; };
@@ -106,6 +107,8 @@
 		4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbUserPasswordModifyViewController.m; path = InfoProjectLibBrowser/iplbUserPasswordModifyViewController.m; sourceTree = "<group>"; };
 		4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectDetail.h; sourceTree = "<group>"; };
 		4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectDetail.m; sourceTree = "<group>"; };
+		4B7F29BA18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectListTableCellTableViewCell.h; path = InfoProjectLibBrowser/iplbProjectListTableCellTableViewCell.h; sourceTree = "<group>"; };
+		4B7F29BB18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectListTableCellTableViewCell.m; path = InfoProjectLibBrowser/iplbProjectListTableCellTableViewCell.m; sourceTree = "<group>"; };
 		4B8208ED18E1CBE3009E4E0D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4B8208EE18E1CBE3009E4E0D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4B89C2BA18DBC7B7009D4963 /* iplbNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbNewsDetailViewController.h; path = InfoProjectLibBrowser/iplbNewsDetailViewController.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */,
 				4BB1618F18EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.h */,
 				4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */,
+				4B7F29BA18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.h */,
+				4B7F29BB18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -521,6 +526,7 @@
 				4BD5CE1F18E40E2C00CD75D8 /* ASIDownloadCache.m in Sources */,
 				4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */,
 				4BD5CE1D18E40E2C00CD75D8 /* ASIDataCompressor.m in Sources */,
+				4B7F29BC18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m in Sources */,
 				4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */,
 				4BD5CE2018E40E2C00CD75D8 /* ASIFormDataRequest.m in Sources */,
 				4B89C2BF18DBC952009D4963 /* iplbNews.m in Sources */,
