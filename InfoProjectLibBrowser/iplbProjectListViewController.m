@@ -111,6 +111,10 @@ NSArray *products;
         cell = [[iplbProjectListTableCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:13.0];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:11.0];
+    cell.detailTextLabel.textColor = [UIColor grayColor];
     cell.textLabel.text = pd.projectName;
     cell.detailTextLabel.text = pd.projectDesc;
     UIImage *holder = [[UIImage imageNamed:@"placeholder.png"] imageScaledToRoundConnerSize:CGSizeMake(30, 30)];

@@ -59,6 +59,8 @@ NSMutableArray *news;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:newListCellIdentifier];
     }
+    cell.textLabel.font = [UIFont systemFontOfSize:13.0];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
     iplbNews *newsDetail = [news objectAtIndex:indexPath.row];
     cell.textLabel.text = newsDetail.title;
     return cell;
