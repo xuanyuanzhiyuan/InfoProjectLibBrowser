@@ -62,6 +62,8 @@ NSArray *categories;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
+    cell.textLabel.font = [UIFont systemFontOfSize:13.0];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
     iplbProjectCategory *category = [categories objectAtIndex:indexPath.row];
     cell.textLabel.text = category.name;
     return cell;

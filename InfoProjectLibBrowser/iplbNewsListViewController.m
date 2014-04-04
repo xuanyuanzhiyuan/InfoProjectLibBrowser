@@ -100,7 +100,17 @@ NSMutableArray *news;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //导航栏背景色
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:2.0/255.0 green:123.0/255.0 blue:254.0/255.0 alpha:1]];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [self asyncRequestNewsAndUpdateUI];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 60;
 }
 
 @end
