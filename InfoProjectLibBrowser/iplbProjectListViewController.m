@@ -125,6 +125,15 @@ NSArray *products;
     //图标圆角
     cell.imageView.layer.masksToBounds = YES;
     cell.imageView.layer.cornerRadius = 10;
+    //边框和阴影
+    // A thin border.
+    cell.imageView.layer.borderColor = [UIColor grayColor].CGColor;
+    cell.imageView.layer.borderWidth = 0.3;
+    // Drop shadow.
+    cell.imageView.layer.shadowColor = [UIColor grayColor].CGColor;
+    cell.imageView.layer.shadowOpacity = 1.0;
+    cell.imageView.layer.shadowRadius = 7.0;
+    cell.imageView.layer.shadowOffset = CGSizeMake(0, 4);
     return cell;
 }
 
@@ -191,7 +200,6 @@ NSArray *products;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     return 60;
 }
 @end

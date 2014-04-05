@@ -12,6 +12,7 @@
 
 @interface iplbProjectCategoriesViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelSelectCategoryBI;
+@property (weak, nonatomic) IBOutlet UINavigationBar *naviBar;
 
 @end
 
@@ -62,7 +63,7 @@ NSArray *categories;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
-    cell.textLabel.font = [UIFont systemFontOfSize:13.0];
+    cell.textLabel.font = [UIFont systemFontOfSize:15.0];
     cell.textLabel.textColor = [UIColor darkGrayColor];
     iplbProjectCategory *category = [categories objectAtIndex:indexPath.row];
     cell.textLabel.text = category.name;
@@ -107,6 +108,15 @@ NSArray *categories;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //导航栏背景色
+    [self.naviBar setBarTintColor:[UIColor colorWithRed:2.0/255.0 green:123.0/255.0 blue:254.0/255.0 alpha:1]];
+    [self.naviBar setTintColor:[UIColor whiteColor]];
+    [self.naviBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [self asyncRequestProjectCategoriesAndUpdateUI];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
 }
 @end
