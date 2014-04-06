@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *productListTableView;
 @property (strong, nonatomic) AVAudioPlayer *startRefreshAudioPlayer;
 @property (strong, nonatomic) AVAudioPlayer *stopRefreshAudioPlayer;
+@property BOOL refreshAciton;
 @end
 
 @implementation iplbProjectListViewController
@@ -62,22 +63,27 @@ NSArray *products;
         NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
         self.startRefreshAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
     }
-    NSString *stopSoundPath = [[NSBundle mainBundle] pathForResource:@"refresh_pull" ofType:@"caf"];
+    NSString *stopSoundPath = [[NSBundle mainBundle] pathForResource:@"refresh_release" ofType:@"caf"];
     if (stopSoundPath) {
         NSURL *stopSoundURL = [NSURL fileURLWithPath:stopSoundPath];
         self.stopRefreshAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:stopSoundURL error:nil];
     }
+    self.refreshAciton = NO;
 }
 
 -(void) playStartSoundAndRefresh
 {
+    self.refreshAciton = YES;
     [self.startRefreshAudioPlayer play];
     [self asyncRequestProjectsDataAndUpdateUI];
 }
 
 -(void) playStopSound
 {
-    [self.stopRefreshAudioPlayer play];
+    if(self.refreshAciton){
+        self.refreshAciton = NO;
+        [self.stopRefreshAudioPlayer play];
+    }
 }
 
 -(void) asyncRequestProjectsDataAndUpdateUI
@@ -94,9 +100,9 @@ NSArray *products;
                 [alertView show];
                 [self.refreshControl endRefreshing];
             }else{
-                [self.tableView reloadData];
                 [self.refreshControl endRefreshing];
                 [self playStopSound];
+                [self.tableView reloadData];
             }
         });
     });
