@@ -13,6 +13,9 @@
 @interface iplbProjectCategoriesViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelSelectCategoryBI;
 @property (weak, nonatomic) IBOutlet UINavigationBar *naviBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIView *uiVew;
 
 @end
 
@@ -31,13 +34,13 @@ NSArray *categories;
 {
     [super viewDidLoad];
     //下拉刷新
-    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新产品分类"];
-    [refresh addTarget:self
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新产品分类"];
+    [self.refreshControl addTarget:self
                 action:@selector(asyncRequestProjectCategoriesAndUpdateUI)
       forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refresh;
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    [self.tableView addSubview:self.refreshControl];
+    //self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -112,6 +115,8 @@ NSArray *categories;
     [self.naviBar setBarTintColor:[UIColor colorWithRed:2.0/255.0 green:123.0/255.0 blue:254.0/255.0 alpha:1]];
     [self.naviBar setTintColor:[UIColor whiteColor]];
     [self.naviBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self.uiVew setTintColor:[UIColor colorWithRed:2.0/255.0 green:123.0/255.0 blue:254.0/255.0 alpha:1]];
+    [self.uiVew setBackgroundColor:[UIColor colorWithRed:2.0/255.0 green:123.0/255.0 blue:254.0/255.0 alpha:1]];
     [self asyncRequestProjectCategoriesAndUpdateUI];
 }
 

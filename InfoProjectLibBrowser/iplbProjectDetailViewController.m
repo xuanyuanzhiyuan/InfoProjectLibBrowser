@@ -130,6 +130,8 @@ BOOL hasTapEventResponsing = NO;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
-
+    int fontSize = 80;
+    NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'", fontSize];
+    [aWebView stringByEvaluatingJavaScriptFromString:jsString];
 }
 @end

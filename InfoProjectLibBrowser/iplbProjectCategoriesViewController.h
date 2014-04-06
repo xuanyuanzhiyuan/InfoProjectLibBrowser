@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbProjectCategoriesViewController : UITableViewController
+@interface iplbProjectCategoriesViewController : UIViewController
 
 @end
