@@ -19,11 +19,14 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface iplbProjectListViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *productListTableView;
-
+@property (strong, nonatomic) AVAudioPlayer *startRefreshAudioPlayer;
+@property (strong, nonatomic) AVAudioPlayer *stopRefreshAudioPlayer;
 @end
 
 @implementation iplbProjectListViewController
@@ -48,11 +51,33 @@ NSArray *products;
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新产品列表"];
     [refresh addTarget:self
-                action:@selector(asyncRequestProjectsDataAndUpdateUI)
+                action:@selector(playStartSoundAndRefresh)
       forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     //登录判断
     isPassLoginView = ![iplbUserService isUserNeedLogin];
+    //audio player
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"refresh_pull" ofType:@"caf"];
+    if (soundPath) {
+        NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+        self.startRefreshAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    }
+    NSString *stopSoundPath = [[NSBundle mainBundle] pathForResource:@"refresh_pull" ofType:@"caf"];
+    if (stopSoundPath) {
+        NSURL *stopSoundURL = [NSURL fileURLWithPath:stopSoundPath];
+        self.stopRefreshAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:stopSoundURL error:nil];
+    }
+}
+
+-(void) playStartSoundAndRefresh
+{
+    [self.startRefreshAudioPlayer play];
+    [self asyncRequestProjectsDataAndUpdateUI];
+}
+
+-(void) playStopSound
+{
+    [self.stopRefreshAudioPlayer play];
 }
 
 -(void) asyncRequestProjectsDataAndUpdateUI
@@ -71,6 +96,7 @@ NSArray *products;
             }else{
                 [self.tableView reloadData];
                 [self.refreshControl endRefreshing];
+                [self playStopSound];
             }
         });
     });

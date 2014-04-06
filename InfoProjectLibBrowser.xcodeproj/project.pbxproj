@@ -48,6 +48,9 @@
 		4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */; };
 		4BB566D818EC580B00DA2439 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D718EC580B00DA2439 /* placeholder.png */; };
 		4BB566DA18EC5A7400DA2439 /* screen_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D918EC5A7400DA2439 /* screen_placeholder.png */; };
+		4BBA286718F1A78300453DD5 /* refresh_pull.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4BBA286518F1A78300453DD5 /* refresh_pull.caf */; };
+		4BBA286818F1A78300453DD5 /* refresh_release.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4BBA286618F1A78300453DD5 /* refresh_release.caf */; };
+		4BBA286A18F1AAE400453DD5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBA286918F1AAE400453DD5 /* AVFoundation.framework */; };
 		4BD5CE1C18E40E2C00CD75D8 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5CE0518E40E2C00CD75D8 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BD5CE1D18E40E2C00CD75D8 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5CE0818E40E2C00CD75D8 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BD5CE1E18E40E2C00CD75D8 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD5CE0A18E40E2C00CD75D8 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -138,6 +141,9 @@
 		4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageScaleAndRoundConner.m"; path = "InfoProjectLibBrowser/UIImage+ImageScaleAndRoundConner.m"; sourceTree = "<group>"; };
 		4BB566D718EC580B00DA2439 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		4BB566D918EC5A7400DA2439 /* screen_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_placeholder.png; sourceTree = "<group>"; };
+		4BBA286518F1A78300453DD5 /* refresh_pull.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = refresh_pull.caf; sourceTree = "<group>"; };
+		4BBA286618F1A78300453DD5 /* refresh_release.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = refresh_release.caf; sourceTree = "<group>"; };
+		4BBA286918F1AAE400453DD5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4BD5CE0418E40E2C00CD75D8 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		4BD5CE0518E40E2C00CD75D8 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		4BD5CE0618E40E2C00CD75D8 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BBA286A18F1AAE400453DD5 /* AVFoundation.framework in Frameworks */,
 				4B16F0AC18E47F840050AB6F /* ImageIO.framework in Frameworks */,
 				4B16F0AA18E47EEE0050AB6F /* SDWebImage.framework in Frameworks */,
 				4BD5CE2C18E410B200CD75D8 /* libz.1.2.5.dylib in Frameworks */,
@@ -221,6 +228,7 @@
 		4B30721418D59EFC00A77771 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BBA286918F1AAE400453DD5 /* AVFoundation.framework */,
 				4B16F0AB18E47F840050AB6F /* ImageIO.framework */,
 				4BD5CE2B18E410B200CD75D8 /* libz.1.2.5.dylib */,
 				4BD5CE2918E4108500CD75D8 /* MobileCoreServices.framework */,
@@ -307,6 +315,8 @@
 		4B9667CD18D5A54E00C94357 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BBA286518F1A78300453DD5 /* refresh_pull.caf */,
+				4BBA286618F1A78300453DD5 /* refresh_release.caf */,
 				4BB566D918EC5A7400DA2439 /* screen_placeholder.png */,
 				4BB566D718EC580B00DA2439 /* placeholder.png */,
 				4B8208ED18E1CBE3009E4E0D /* Default@2x.png */,
@@ -483,9 +493,11 @@
 				4BB566D818EC580B00DA2439 /* placeholder.png in Resources */,
 				4B8208F018E1CBE3009E4E0D /* Default-568h@2x.png in Resources */,
 				4BB566DA18EC5A7400DA2439 /* screen_placeholder.png in Resources */,
+				4BBA286718F1A78300453DD5 /* refresh_pull.caf in Resources */,
 				4B30722E18D59EFC00A77771 /* Images.xcassets in Resources */,
 				4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */,
 				4B30722918D59EFC00A77771 /* Main.storyboard in Resources */,
+				4BBA286818F1A78300453DD5 /* refresh_release.caf in Resources */,
 				4B8208EF18E1CBE3009E4E0D /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
