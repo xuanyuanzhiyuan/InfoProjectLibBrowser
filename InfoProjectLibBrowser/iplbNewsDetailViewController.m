@@ -41,6 +41,8 @@ iplbNews *newsDetail;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    //调整WebView高度(delegate方式)
+    self.contentWebView.delegate = self;
     iplbNewsRepository *repo = [iplbNewsRepository new];
     newsDetail = [repo getNewsDetail:self.detailURL];
     if(newsDetail.newsPictureURL&&[newsDetail.newsPictureURL isKindOfClass:[NSString class]]){
@@ -72,5 +74,11 @@ iplbNews *newsDetail;
         }
     }
     return 0;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)aWebView {
+    int fontSize = 80;
+    NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'", fontSize];
+    [aWebView stringByEvaluatingJavaScriptFromString:jsString];
 }
 @end
