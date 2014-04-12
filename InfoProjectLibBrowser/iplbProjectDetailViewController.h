@@ -20,6 +20,5 @@ CGRect prevFrame;
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *descLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *iconImage;
-@property (nonatomic, strong) IBOutlet UITextView *detailText;
 @property (weak, nonatomic) IBOutlet UIWebView *detailTextWebView;
 @end

@@ -28,7 +28,6 @@ BOOL hasTapEventResponsing = NO;
 @synthesize nameLabel;
 @synthesize descLabel;
 @synthesize iconImage;
-@synthesize detailText;
 @synthesize detailTextWebView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,6 +43,8 @@ BOOL hasTapEventResponsing = NO;
 {
     [super viewDidLoad];
     isFullScreen = NO;
+    //调整WebView高度(delegate方式)
+    self.detailTextWebView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,8 +61,6 @@ BOOL hasTapEventResponsing = NO;
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
 	projectDetail = [resp getProjectDetailInfo:self.detailURL];
     [self.detailTextWebView loadHTMLString:projectDetail.detailInfo baseURL:nil];
-    //调整WebView高度(delegate方式)
-    self.detailTextWebView.delegate = self;
     self.nameLabel.text = projectDetail.projectName;
     self.descLabel.text = projectDetail.projectDesc;
     self.iconImage.layer.masksToBounds = YES;
@@ -84,12 +83,6 @@ BOOL hasTapEventResponsing = NO;
         [self.scrollView addSubview:img];
         scrollWidth = scrollWidth + 160;
     }
-    [self.detailText sizeToFit];
-    [self.detailText layoutIfNeeded];
-    CGRect frame = self.detailText.frame;
-    frame.size.height = self.detailText.contentSize.height;
-    self.detailText.frame = frame;
-    self.pageScrollView.contentSize = CGSizeMake(300, 3000);
 }
 
 -(void) clickScreenShot:(UIGestureRecognizer *)gestureRecognizer
@@ -130,14 +123,25 @@ BOOL hasTapEventResponsing = NO;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
+    //设置字体
     int fontSize = 80;
     NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'", fontSize];
     [aWebView stringByEvaluatingJavaScriptFromString:jsString];
-    long content_height = [[aWebView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"] integerValue];
-    CGRect rect = aWebView.frame;
-    rect.size.height = content_height;
-    aWebView.frame = rect;
-    [self.tableView reloadData];
+    //设置WebView高度
+//    CGRect frame = aWebView.frame;
+//    frame.size.height = 1;
+//    aWebView.frame = frame;
+//    CGSize fittingSize = [aWebView sizeThatFits:CGSizeZero];
+//    frame.size = fittingSize;
+//    aWebView.frame = frame;
+    NSString *contentHeight = [aWebView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"];
+    CGRect frame = aWebView.frame;
+    frame.size.height = 1;
+    aWebView.frame = frame;
+    frame.size.height = [contentHeight floatValue];
+    aWebView.frame = frame;
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -150,10 +154,9 @@ BOOL hasTapEventResponsing = NO;
         height = 250;
     }
     if (indexPath.section == 2) {
-//        height = 5000;
-            height = [[self.detailTextWebView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"] integerValue];
+        height = self.detailTextWebView.frame.size.height;
     }
-    NSLog(@"the %li sec height is %f",indexPath.section,height);
+    NSLog(@"table row %li height %f",indexPath.section,height);
     return height;
 }
 @end
