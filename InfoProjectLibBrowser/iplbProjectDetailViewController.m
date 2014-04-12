@@ -133,5 +133,27 @@ BOOL hasTapEventResponsing = NO;
     int fontSize = 80;
     NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'", fontSize];
     [aWebView stringByEvaluatingJavaScriptFromString:jsString];
+    long content_height = [[aWebView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"] integerValue];
+    CGRect rect = aWebView.frame;
+    rect.size.height = content_height;
+    aWebView.frame = rect;
+    [self.tableView reloadData];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = 90;
+    if (indexPath.section == 0) {
+        height = 105;
+    }
+    if (indexPath.section == 1) {
+        height = 250;
+    }
+    if (indexPath.section == 2) {
+//        height = 5000;
+            height = [[self.detailTextWebView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"] integerValue];
+    }
+    NSLog(@"the %li sec height is %f",indexPath.section,height);
+    return height;
 }
 @end
