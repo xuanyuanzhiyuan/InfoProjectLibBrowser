@@ -453,7 +453,7 @@
 			attributes = {
 				CLASSPREFIX = iplb;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = com.xysoft;
+				ORGANIZATIONNAME = com.gpdi;
 				TargetAttributes = {
 					4B30721118D59EFC00A77771 = {
 						DevelopmentTeam = 62675UJ3XM;
