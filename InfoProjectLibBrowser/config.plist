@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ServerRoot</key>
-	<string>http://61.144.66.8/infoProjectLibServer</string>
+	<string>http://115.28.77.140/infoProjectLibServer</string>
 	<key>ProjectList</key>
 	<string>/projects</string>
 	<key>NewsList</key>

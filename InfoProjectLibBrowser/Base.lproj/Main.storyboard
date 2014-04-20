@@ -350,7 +350,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="jvA-Tc-FUc" kind="push" identifier="showProdDetails" id="Dgu-aa-dpH"/>
+                                    <segue destination="Ceb-Uu-Z0y" kind="push" identifier="showProdDetails" id="dnd-H2-uEI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -392,18 +392,63 @@
             <point key="canvasLocation" x="1402" y="-921"/>
         </scene>
         <!--Iplb Project Detail View Controller - 产品详情-->
+        <scene sceneID="5b4-MF-FPQ">
+            <objects>
+                <tableViewController id="Ceb-Uu-Z0y" customClass="iplbProjectDetailViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tob-u8-aUo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailIconCell" rowHeight="106" id="hij-AI-arA">
+                                <rect key="frame" x="0.0" y="86" width="320" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hij-AI-arA" id="2gL-z6-0qn">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailScreenshotsCell" rowHeight="250" id="4er-k0-x08">
+                                <rect key="frame" x="0.0" y="192" width="320" height="250"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4er-k0-x08" id="BPa-v1-aOy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailInfoCell" rowHeight="200" id="jbI-5A-J6V">
+                                <rect key="frame" x="0.0" y="442" width="320" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jbI-5A-J6V" id="0PM-HD-Y8Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ceb-Uu-Z0y" id="2jg-4G-65L"/>
+                            <outlet property="delegate" destination="Ceb-Uu-Z0y" id="qGW-F2-prJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="产品详情" id="lQK-H9-5gK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9LZ-Do-Dx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2112" y="-299"/>
+        </scene>
+        <!--Iplb Project Detail View Controller - 产品详情-->
         <scene sceneID="xkU-ns-gSG">
             <objects>
                 <tableViewController id="jvA-Tc-FUc" customClass="iplbProjectDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="I96-QT-Fpe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="gXx-3y-Mf7">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="106" id="igl-Vh-IUB">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="106"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailIconCell" rowHeight="106" id="igl-Vh-IUB">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igl-Vh-IUB" id="bX5-3B-uI3">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
@@ -427,8 +472,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="运行截图" id="uPd-lE-q9F">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="250" id="Y37-9o-1to">
-                                        <rect key="frame" x="0.0" y="192" width="320" height="250"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailScreenshotsCell" rowHeight="250" id="Y37-9o-1to">
+                                        <rect key="frame" x="0.0" y="128" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y37-9o-1to" id="yIo-6b-7ai">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
@@ -445,8 +490,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="详细信息" id="jnX-My-iSH">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="350" id="8d3-Lq-gjs">
-                                        <rect key="frame" x="0.0" y="464" width="320" height="350"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailInfoCell" rowHeight="350" id="8d3-Lq-gjs">
+                                        <rect key="frame" x="0.0" y="400" width="320" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8d3-Lq-gjs" id="fxQ-3t-Xnb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="349"/>

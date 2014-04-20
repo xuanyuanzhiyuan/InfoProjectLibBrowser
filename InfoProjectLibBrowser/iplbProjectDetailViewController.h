@@ -14,11 +14,7 @@ BOOL isFullScreen;
 CGRect prevFrame;
 }
 @property NSString *detailURL;
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) IBOutlet UIScrollView *pageScrollView;
-@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
-@property (nonatomic, strong) IBOutlet UILabel *nameLabel;
-@property (nonatomic, strong) IBOutlet UILabel *descLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *iconImage;
-@property (weak, nonatomic) IBOutlet UIWebView *detailTextWebView;
+@property UIScrollView *screenShotsScrollView;
+@property UIWebView *detailInfoWebView;
+@property CGFloat webViewHeight;
 @end
