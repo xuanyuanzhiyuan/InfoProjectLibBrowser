@@ -112,7 +112,7 @@ BOOL hasTapEventResponsing = NO;
     CGRect frame = self.detailInfoWebView.frame;
     frame.size.height = 1;
     self.detailInfoWebView.frame = frame;
-    frame.size.height = [contentHeight floatValue];
+    frame.size.height = [contentHeight floatValue]+20;
     self.detailInfoWebView.frame = frame;
     self.webViewHeight = [contentHeight intValue];
     [self.tableView beginUpdates];
@@ -132,7 +132,7 @@ BOOL hasTapEventResponsing = NO;
         if (!self.webViewHeight) {
             height = 300;
         }else{
-            height = self.webViewHeight;
+            height = self.webViewHeight+20;
         }
     }
     NSLog(@"table row %li height %f",indexPath.section,height);
@@ -156,12 +156,16 @@ BOOL hasTapEventResponsing = NO;
     }
     if (indexPath.section == 0) {
         //create header row
-        cell.imageView.frame = CGRectMake(8,8,90,90);
-        cell.imageView.layer.masksToBounds = YES;
-        cell.imageView.layer.cornerRadius = 10;
-        [cell.imageView setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 90, 90)];
+        imageView.layer.masksToBounds = YES;
+        imageView.layer.cornerRadius = 10;
+        [imageView setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
                        placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-        cell.textLabel.text = projectDetail.projectName;
+        [cell.contentView addSubview:imageView];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(110, 8, 208, 28)];
+        [label setFont:[UIFont systemFontOfSize:14]];
+        label.text = projectDetail.projectName;
+        [cell.contentView addSubview:label];
     }
     if (indexPath.section == 1) {
         self.screenShotsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(8, 0, 304, 320)];
@@ -184,6 +188,8 @@ BOOL hasTapEventResponsing = NO;
     }
     if (indexPath.section == 2) {
         self.detailInfoWebView = [[UIWebView alloc] initWithFrame:CGRectMake(8, 0, 304, 300)];
+        self.detailInfoWebView.scrollView.scrollEnabled = NO;
+        self.detailInfoWebView.scrollView.bounces = NO;
         [self.detailInfoWebView loadHTMLString:projectDetail.detailInfo baseURL:nil];
         [self.detailInfoWebView setDelegate:self];
         [cell addSubview:self.detailInfoWebView];
