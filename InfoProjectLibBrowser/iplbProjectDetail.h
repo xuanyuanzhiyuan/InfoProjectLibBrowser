@@ -15,6 +15,7 @@
 @property NSString *detailURL;
 @property NSString *detailInfo;
 @property NSArray *screenShots;
+@property NSString *platformType;
 +(iplbProjectDetail *) projectSummaryWithDictionary:(NSDictionary *) dic;
 +(iplbProjectDetail *) projectDetailWithDictionary:(NSDictionary *) dic;
 @end

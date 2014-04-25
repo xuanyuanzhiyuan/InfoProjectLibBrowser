@@ -35,6 +35,7 @@ BOOL hasTapEventResponsing = NO;
 {
     [super viewDidLoad];
     isFullScreen = NO;
+    hasFinishCreateTable = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,12 +168,19 @@ BOOL hasTapEventResponsing = NO;
         label.text = projectDetail.projectName;
         [cell.contentView addSubview:label];
     }
-    if (indexPath.section == 1) {
-        self.screenShotsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(8, 0, 304, 320)];
-        self.screenShotsScrollView.contentSize = CGSizeMake(160 * [projectDetail.screenShots count], 250);
+    if (indexPath.section == 1 && !hasFinishCreateTable) {
+        int screenShotWidth = 90;
+        int screentShotHeight = 160;
+        if([projectDetail.platformType isEqualToString:@"desktop"]){
+            screenShotWidth = 280;
+            screentShotHeight = 210;
+        }
+        int imageViewY = (250-screentShotHeight)/2;
+        self.screenShotsScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(8, 0, 304, 250)];
+        self.screenShotsScrollView.contentSize = CGSizeMake((screenShotWidth+10) * [projectDetail.screenShots count], screentShotHeight);
         int scrollWidth=0;
         for (NSString *screenshotsURL in projectDetail.screenShots){
-            UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, 0, 150, 250)];
+            UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(scrollWidth, imageViewY, screenShotWidth, screentShotHeight)];
             [img setImageWithURL:[NSURL URLWithString:screenshotsURL]
                 placeholderImage:[UIImage imageNamed:@"screen_placeholder.png"]];
             //手势识别,增加点击全屏显示功能
@@ -182,9 +190,10 @@ BOOL hasTapEventResponsing = NO;
             [img addGestureRecognizer:guestRecognizer];
             [img setUserInteractionEnabled:YES];
             [self.screenShotsScrollView addSubview:img];
-            scrollWidth = scrollWidth + 160;
+            scrollWidth = scrollWidth + (screenShotWidth+10);
         }
         [cell addSubview:self.screenShotsScrollView];
+        hasFinishCreateTable = YES;
     }
     if (indexPath.section == 2) {
         self.detailInfoWebView = [[UIWebView alloc] initWithFrame:CGRectMake(8, 0, 304, 300)];

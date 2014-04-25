@@ -11,6 +11,7 @@
 @interface iplbProjectDetailViewController : UITableViewController<UITableViewDelegate,UIWebViewDelegate>
 {
 BOOL isFullScreen;
+BOOL hasFinishCreateTable;
 CGRect prevFrame;
 }
 @property NSString *detailURL;
