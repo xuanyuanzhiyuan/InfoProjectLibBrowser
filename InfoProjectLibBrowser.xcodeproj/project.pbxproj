@@ -46,6 +46,10 @@
 		4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD887218E2AFFC005983BA /* iplbUserService.m */; };
 		4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */; };
 		4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */; };
+		4BB36950190B5C8700D41FD3 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3694F190B5C8700D41FD3 /* iCarousel.m */; };
+		4BB36953190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB36952190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.m */; };
+		4BB36955190B66E400D41FD3 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB36954190B66E400D41FD3 /* background.png */; };
+		4BB36958190B846600D41FD3 /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB36957190B846600D41FD3 /* ReflectionView.m */; };
 		4BB566D818EC580B00DA2439 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D718EC580B00DA2439 /* placeholder.png */; };
 		4BB566DA18EC5A7400DA2439 /* screen_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB566D918EC5A7400DA2439 /* screen_placeholder.png */; };
 		4BBA286718F1A78300453DD5 /* refresh_pull.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4BBA286518F1A78300453DD5 /* refresh_pull.caf */; };
@@ -139,6 +143,13 @@
 		4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectCategoriesViewController.m; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.m; sourceTree = "<group>"; };
 		4BB1618F18EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageScaleAndRoundConner.h"; path = "InfoProjectLibBrowser/UIImage+ImageScaleAndRoundConner.h"; sourceTree = "<group>"; };
 		4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageScaleAndRoundConner.m"; path = "InfoProjectLibBrowser/UIImage+ImageScaleAndRoundConner.m"; sourceTree = "<group>"; };
+		4BB3694E190B5C8700D41FD3 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		4BB3694F190B5C8700D41FD3 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		4BB36951190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbScreenshotsGalleryViewController.h; path = InfoProjectLibBrowser/iplbScreenshotsGalleryViewController.h; sourceTree = "<group>"; };
+		4BB36952190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbScreenshotsGalleryViewController.m; path = InfoProjectLibBrowser/iplbScreenshotsGalleryViewController.m; sourceTree = "<group>"; };
+		4BB36954190B66E400D41FD3 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		4BB36956190B846600D41FD3 /* ReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
+		4BB36957190B846600D41FD3 /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
 		4BB566D718EC580B00DA2439 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		4BB566D918EC5A7400DA2439 /* screen_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_placeholder.png; sourceTree = "<group>"; };
 		4BBA286518F1A78300453DD5 /* refresh_pull.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = refresh_pull.caf; sourceTree = "<group>"; };
@@ -206,6 +217,7 @@
 		4B30720918D59EFC00A77771 = {
 			isa = PBXGroup;
 			children = (
+				4BB3694D190B5C8700D41FD3 /* iCarousel */,
 				4B16F0A918E47EEE0050AB6F /* SDWebImage.framework */,
 				4BD5CE0218E40E2C00CD75D8 /* asi-http-request */,
 				4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */,
@@ -307,6 +319,8 @@
 				4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */,
 				4B7F29BA18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.h */,
 				4B7F29BB18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m */,
+				4BB36951190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.h */,
+				4BB36952190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -315,6 +329,7 @@
 		4B9667CD18D5A54E00C94357 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BB36954190B66E400D41FD3 /* background.png */,
 				4BBA286518F1A78300453DD5 /* refresh_pull.caf */,
 				4BBA286618F1A78300453DD5 /* refresh_release.caf */,
 				4BB566D918EC5A7400DA2439 /* screen_placeholder.png */,
@@ -352,6 +367,17 @@
 				4B16F0A718E4770E0050AB6F /* iplbProjectCategory.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		4BB3694D190B5C8700D41FD3 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				4BB36956190B846600D41FD3 /* ReflectionView.h */,
+				4BB36957190B846600D41FD3 /* ReflectionView.m */,
+				4BB3694E190B5C8700D41FD3 /* iCarousel.h */,
+				4BB3694F190B5C8700D41FD3 /* iCarousel.m */,
+			);
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 		4BD5CE0218E40E2C00CD75D8 /* asi-http-request */ = {
@@ -489,6 +515,7 @@
 			files = (
 				4B96681B18D5AB3F00C94357 /* projects.png in Resources */,
 				4B96681A18D5AB3F00C94357 /* news.png in Resources */,
+				4BB36955190B66E400D41FD3 /* background.png in Resources */,
 				4B96682218D5E2D100C94357 /* config.plist in Resources */,
 				4BB566D818EC580B00DA2439 /* placeholder.png in Resources */,
 				4B8208F018E1CBE3009E4E0D /* Default-568h@2x.png in Resources */,
@@ -519,12 +546,15 @@
 			files = (
 				4B8AD21418DEC748008707BF /* iplbUserLoginViewController.m in Sources */,
 				4BD5CE1C18E40E2C00CD75D8 /* ASIAuthenticationDialog.m in Sources */,
+				4BB36958190B846600D41FD3 /* ReflectionView.m in Sources */,
 				4B16F0A218E4683F0050AB6F /* iplbBaseRepository.m in Sources */,
 				4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */,
 				4B89C2C218DBCEDF009D4963 /* iplbNewsRepository.m in Sources */,
 				4B256AF818E3C907003081E6 /* iplbOperationResult.m in Sources */,
 				4BD5CE1E18E40E2C00CD75D8 /* ASIDataDecompressor.m in Sources */,
 				4B30722218D59EFC00A77771 /* main.m in Sources */,
+				4BB36953190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.m in Sources */,
+				4BB36950190B5C8700D41FD3 /* iCarousel.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
 				4B89C2BC18DBC7B7009D4963 /* iplbNewsDetailViewController.m in Sources */,

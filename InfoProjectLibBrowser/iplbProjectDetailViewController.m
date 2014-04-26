@@ -10,9 +10,11 @@
 #import "iplbProjectDetail.h"
 #import "iplbProjectsRepository.h"
 #import "iplbAppDelegate.h"
+#import "iplbScreenshotsGalleryViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbProjectDetailViewController ()
+@property(strong,nonatomic)iplbScreenshotsGalleryViewController *screenshotsGalleryViewController;
 
 @end
 
@@ -55,38 +57,10 @@ BOOL hasTapEventResponsing = NO;
 -(void) clickScreenShot:(UIGestureRecognizer *)gestureRecognizer
 {
     NSLog(@"%@", [gestureRecognizer view]);
-    if(hasTapEventResponsing)
-        return;
-    UIImageView *imgView = (UIImageView *)[gestureRecognizer view];
-    iplbAppDelegate *appDelegate = (iplbAppDelegate *)[[UIApplication sharedApplication] delegate];
-    UIImageView *copyImgView = imgView;
-    [appDelegate.window addSubview:copyImgView];
-    //进入全屏
-    if (!isFullScreen) {
-        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
-            //save previous frame
-            prevFrame = imgView.frame;
-            [copyImgView setFrame:[[UIScreen mainScreen] bounds]];
-            //[copyImgView setFrame:CGRectMake(0, 0, imgView.image.size.width, imgView.image.size.height)];
-            hasTapEventResponsing = YES;
-        }completion:^(BOOL finished){
-            isFullScreen = YES;
-            hasTapEventResponsing = NO;
-
-        }];
-        return;
-    }else{
-        [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
-            [self.screenShotsScrollView addSubview:imgView];
-            [imgView setFrame:prevFrame];
-            hasTapEventResponsing = YES;
-        }completion:^(BOOL finished){
-            isFullScreen = NO;
-            hasTapEventResponsing = NO;
-            
-        }];
-        return;
-    }
+    self.screenshotsGalleryViewController = [[iplbScreenshotsGalleryViewController alloc] init];
+    self.screenshotsGalleryViewController.screenShots = projectDetail.screenShots;
+    self.screenshotsGalleryViewController.isDesktop = [projectDetail.platformType isEqualToString:@"desktop"];
+    [self presentViewController:self.screenshotsGalleryViewController animated:YES completion:nil];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView {
