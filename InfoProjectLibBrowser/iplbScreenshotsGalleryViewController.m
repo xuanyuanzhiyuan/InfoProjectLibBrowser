@@ -36,7 +36,7 @@
     
     _carousel = [[iCarousel alloc] initWithFrame:self.view.bounds];
 	_carousel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _carousel.type = iCarouselTypeInvertedWheel;
+    _carousel.type = self.isDesktop?iCarouselTypeInvertedWheel:iCarouselTypeCoverFlow2;
 	_carousel.delegate = self;
 	_carousel.dataSource = self;
     
@@ -85,8 +85,8 @@
 {
     if (view == nil)
     {
-        int screenShotWidth = 90;
-        int screentShotHeight = 160;
+        int screenShotWidth = 180;
+        int screentShotHeight = 320;
         if(self.isDesktop){
             screenShotWidth = 280;
             screentShotHeight = 210;
