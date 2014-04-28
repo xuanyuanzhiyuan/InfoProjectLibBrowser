@@ -85,8 +85,8 @@
 {
     if (view == nil)
     {
-        int screenShotWidth = 180;
-        int screentShotHeight = 320;
+        int screenShotWidth = 200;
+        int screentShotHeight = 300;
         if(self.isDesktop){
             screenShotWidth = 280;
             screentShotHeight = 210;

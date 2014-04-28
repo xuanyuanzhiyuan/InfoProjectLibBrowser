@@ -143,8 +143,8 @@ BOOL hasTapEventResponsing = NO;
         [cell.contentView addSubview:label];
     }
     if (indexPath.section == 1 && !hasFinishCreateTable) {
-        int screenShotWidth = 90;
-        int screentShotHeight = 160;
+        int screenShotWidth = 140;
+        int screentShotHeight = 210;
         if([projectDetail.platformType isEqualToString:@"desktop"]){
             screenShotWidth = 280;
             screentShotHeight = 210;
