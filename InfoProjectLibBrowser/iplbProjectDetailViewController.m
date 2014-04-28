@@ -137,10 +137,17 @@ BOOL hasTapEventResponsing = NO;
         [imageView setImageWithURL:[NSURL URLWithString:projectDetail.iconURL]
                        placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
         [cell.contentView addSubview:imageView];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(110, 8, 208, 28)];
-        [label setFont:[UIFont systemFontOfSize:14]];
-        label.text = projectDetail.projectName;
-        [cell.contentView addSubview:label];
+        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 8, 208, 28)];
+        [nameLabel setFont:[UIFont systemFontOfSize:14]];
+        nameLabel.text = projectDetail.projectName;
+        [cell.contentView addSubview:nameLabel];
+        UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 25, 208, 70)];
+        [descLabel setFont:[UIFont systemFontOfSize:12]];
+        descLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        descLabel.numberOfLines = 0;
+        descLabel.textColor = [UIColor darkGrayColor];
+        descLabel.text = projectDetail.projectDesc;
+        [cell.contentView addSubview:descLabel];
     }
     if (indexPath.section == 1 && !hasFinishCreateTable) {
         int screenShotWidth = 140;
