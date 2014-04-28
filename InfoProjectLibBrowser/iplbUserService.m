@@ -37,6 +37,8 @@
             NSNumber *jsonResult = [userInfoDic valueForKey:@"result"];
             if([jsonResult boolValue]){
                 result.optResult = YES;
+                result.userCode = [userInfoDic valueForKey:@"userCode"];
+                result.userName = [userInfoDic valueForKey:@"userName"];
             }else{
                 result.optResult = NO;
                 result.message = [userInfoDic valueForKey:@"message"];
@@ -55,9 +57,10 @@
     return loginInfo == nil;
 }
 
-+(void) writeUserLoginInfo:(NSString *)userCode;
++(void) writeUserLoginInfo:(NSString *)userCode userName:(NSString *) aUserName
 {
     [iplbConfiguration saveUserLongInfo:@"LoginUserCode" value:userCode fileName:[iplbConfiguration getConfiguration:@"UserLoginFileName"]];
+    [iplbConfiguration saveUserLongInfo:@"LoginUserName" value:aUserName fileName:[iplbConfiguration getConfiguration:@"UserLoginFileName"]];
 }
 
 +(void) logout
@@ -100,6 +103,8 @@
             NSNumber *jsonResult = [userInfoDic valueForKey:@"result"];
             if([jsonResult boolValue]){
                 result.optResult = YES;
+                result.userCode = [userInfoDic valueForKey:@"userCode"];
+                result.userName = [userInfoDic valueForKey:@"userName"];
             }else{
                 result.optResult = NO;
                 result.message = [userInfoDic valueForKey:@"message"];

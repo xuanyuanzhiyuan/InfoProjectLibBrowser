@@ -11,4 +11,6 @@
 @interface iplbOperationResult : NSObject
 @property NSString *message;
 @property BOOL optResult;
+@property NSString *userCode;
+@property NSString *userName;
 @end

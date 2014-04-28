@@ -28,7 +28,7 @@
     detail.iconURL = [dic valueForKey:@"iconURL"];
     detail.detailInfo = [dic valueForKey:@"detailInfo"];
     detail.screenShots = [dic valueForKey:@"screenShotURLs"];
-    detail.platformType = @"desktop";
+    detail.platformType = [dic valueForKey:@"platformType"];
     return detail;
 }
 

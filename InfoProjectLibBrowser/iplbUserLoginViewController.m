@@ -98,7 +98,7 @@
                 //修改登录全局变量
                 isPassLoginView = YES;
                 //登录结果写入plist
-                [iplbUserService writeUserLoginInfo:self.userCode.text];
+                [iplbUserService writeUserLoginInfo:isValidUser.userCode userName:isValidUser.userName];
                 self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
                 [self dismissViewControllerAnimated:YES completion:nil];
             }else{
