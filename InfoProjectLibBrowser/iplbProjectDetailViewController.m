@@ -37,7 +37,9 @@ BOOL hasTapEventResponsing = NO;
 {
     [super viewDidLoad];
     isFullScreen = NO;
-    hasFinishCreateTable = NO;
+    titleRowCreated = NO;
+    screenShotsRowCreated = NO;
+    descInfoRowCreated = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,7 +131,7 @@ BOOL hasTapEventResponsing = NO;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] init];
     }
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 && !titleRowCreated) {
         //create header row
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 90, 90)];
         imageView.layer.masksToBounds = YES;
@@ -148,8 +150,9 @@ BOOL hasTapEventResponsing = NO;
         descLabel.textColor = [UIColor darkGrayColor];
         descLabel.text = projectDetail.projectDesc;
         [cell.contentView addSubview:descLabel];
+        titleRowCreated = YES;
     }
-    if (indexPath.section == 1 && !hasFinishCreateTable) {
+    if (indexPath.section == 1 && !screenShotsRowCreated) {
         int screenShotWidth = 140;
         int screentShotHeight = 210;
         if([projectDetail.platformType isEqualToString:@"desktop"]){
@@ -174,15 +177,16 @@ BOOL hasTapEventResponsing = NO;
             scrollWidth = scrollWidth + (screenShotWidth+10);
         }
         [cell addSubview:self.screenShotsScrollView];
-        hasFinishCreateTable = YES;
+        screenShotsRowCreated = YES;
     }
-    if (indexPath.section == 2) {
+    if (indexPath.section == 2 && !descInfoRowCreated) {
         self.detailInfoWebView = [[UIWebView alloc] initWithFrame:CGRectMake(8, 0, 304, 300)];
         self.detailInfoWebView.scrollView.scrollEnabled = NO;
         self.detailInfoWebView.scrollView.bounces = NO;
         [self.detailInfoWebView loadHTMLString:projectDetail.detailInfo baseURL:nil];
         [self.detailInfoWebView setDelegate:self];
         [cell addSubview:self.detailInfoWebView];
+        descInfoRowCreated = YES;
     }
     return cell;
 }

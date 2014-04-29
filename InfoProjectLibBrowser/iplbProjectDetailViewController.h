@@ -10,9 +10,11 @@
 
 @interface iplbProjectDetailViewController : UITableViewController<UITableViewDelegate,UIWebViewDelegate>
 {
-BOOL isFullScreen;
-BOOL hasFinishCreateTable;
-CGRect prevFrame;
+    BOOL isFullScreen;
+    BOOL titleRowCreated;
+    BOOL screenShotsRowCreated;
+    BOOL descInfoRowCreated;
+    CGRect prevFrame;
 }
 @property NSString *detailURL;
 @property UIScrollView *screenShotsScrollView;
