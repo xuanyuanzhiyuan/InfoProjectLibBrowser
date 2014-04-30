@@ -101,6 +101,9 @@
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
+    NSLog(@"picture is click...");
+    //UIView *view = [carousel itemViewAtIndex:index];
+    
 
 }
 @end

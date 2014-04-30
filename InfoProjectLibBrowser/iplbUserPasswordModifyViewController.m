@@ -105,9 +105,9 @@
         });
         dispatch_sync(dispatch_get_main_queue(),^{
             if(result.optResult){
-                [iplbUserService logout];
+//                [iplbUserService logout];
                 self.shouldDismiss = YES;
-                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"提示" message:@"密码修改成功!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"提示" message:@"密码修改成功，建议注销后重新登录!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
             }else{
                 NSString *msg = [NSString stringWithFormat:@"%@%@",@"密码修改失败,原因:",result.message];
