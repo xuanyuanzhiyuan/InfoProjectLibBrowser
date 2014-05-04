@@ -13,6 +13,7 @@
 		4B16F0AA18E47EEE0050AB6F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16F0A918E47EEE0050AB6F /* SDWebImage.framework */; };
 		4B16F0AC18E47F840050AB6F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16F0AB18E47F840050AB6F /* ImageIO.framework */; };
 		4B256AF818E3C907003081E6 /* iplbOperationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B256AF718E3C907003081E6 /* iplbOperationResult.m */; };
+		4B2F84B81915DF0800815F32 /* iplbScreenshotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F84B71915DF0800815F32 /* iplbScreenshotDetailViewController.m */; };
 		4B30721618D59EFC00A77771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721518D59EFC00A77771 /* Foundation.framework */; };
 		4B30721818D59EFC00A77771 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721718D59EFC00A77771 /* CoreGraphics.framework */; };
 		4B30721A18D59EFC00A77771 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721918D59EFC00A77771 /* UIKit.framework */; };
@@ -91,6 +92,8 @@
 		4B16F0AB18E47F840050AB6F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4B256AF618E3C907003081E6 /* iplbOperationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbOperationResult.h; sourceTree = "<group>"; };
 		4B256AF718E3C907003081E6 /* iplbOperationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbOperationResult.m; sourceTree = "<group>"; };
+		4B2F84B61915DF0800815F32 /* iplbScreenshotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbScreenshotDetailViewController.h; path = InfoProjectLibBrowser/iplbScreenshotDetailViewController.h; sourceTree = "<group>"; };
+		4B2F84B71915DF0800815F32 /* iplbScreenshotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbScreenshotDetailViewController.m; path = InfoProjectLibBrowser/iplbScreenshotDetailViewController.m; sourceTree = "<group>"; };
 		4B30721218D59EFC00A77771 /* 营销小助手.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "营销小助手.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B30721518D59EFC00A77771 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B30721718D59EFC00A77771 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -321,6 +324,8 @@
 				4B7F29BB18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m */,
 				4BB36951190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.h */,
 				4BB36952190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.m */,
+				4B2F84B61915DF0800815F32 /* iplbScreenshotDetailViewController.h */,
+				4B2F84B71915DF0800815F32 /* iplbScreenshotDetailViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -556,6 +561,7 @@
 				4BB36953190B651F00D41FD3 /* iplbScreenshotsGalleryViewController.m in Sources */,
 				4BB36950190B5C8700D41FD3 /* iCarousel.m in Sources */,
 				4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */,
+				4B2F84B81915DF0800815F32 /* iplbScreenshotDetailViewController.m in Sources */,
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
 				4B89C2BC18DBC7B7009D4963 /* iplbNewsDetailViewController.m in Sources */,
 				4BD5CE2418E40E2C00CD75D8 /* Reachability.m in Sources */,

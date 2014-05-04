@@ -8,6 +8,7 @@
 
 #import "iplbScreenshotsGalleryViewController.h"
 #import "iCarousel.h"
+#import "iplbScreenshotDetailViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface iplbScreenshotsGalleryViewController () <iCarouselDataSource, iCarouselDelegate>
@@ -102,8 +103,10 @@
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
     NSLog(@"picture is click...");
-    //UIView *view = [carousel itemViewAtIndex:index];
-    
+    UIImageView *view = (UIImageView *)[carousel itemViewAtIndex:index];
+    iplbScreenshotDetailViewController *detailViewController = [[iplbScreenshotDetailViewController alloc] init];
+    detailViewController.screenshot = view.image;
+    [self presentViewController:detailViewController animated:YES completion:nil];
 
 }
 @end
