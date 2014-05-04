@@ -28,13 +28,13 @@ BOOL isMax;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    CGRect screenRect = [[UIScreen mainScreen] bounds];
-//    CGFloat screenWidth = screenRect.size.width;
-//    CGFloat screenHeight = screenRect.size.height;
-//    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, (screenHeight-240)/2,screenWidth, 240)];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, (screenHeight-240)/2,screenWidth, 240)];
 //    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,screenWidth, screenHeight)];
 //    self.imageView.bounds = CGRectMake(0, 0, self.screenshot.size.width, self.screenshot.size.height);
-    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,self.screenshot.size.width, self.screenshot.size.height)];
+//    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,self.screenshot.size.width, self.screenshot.size.height)];
     self.imageView.image = self.screenshot;
     self.scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.scrollView.contentSize = self.screenshot.size;
@@ -44,15 +44,15 @@ BOOL isMax;
     [self.scrollView setDelegate:self];
     self.scrollView.minimumZoomScale=0.2;
     self.scrollView.maximumZoomScale=8.0;
-    UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewDoubleTapped:)];
-    doubleTapRecognizer.numberOfTapsRequired = 2;
-    doubleTapRecognizer.numberOfTouchesRequired = 1;
-    [self.scrollView addGestureRecognizer:doubleTapRecognizer];
+//    UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewDoubleTapped:)];
+//    doubleTapRecognizer.numberOfTapsRequired = 2;
+//    doubleTapRecognizer.numberOfTouchesRequired = 1;
+//    [self.scrollView addGestureRecognizer:doubleTapRecognizer];
     
     UITapGestureRecognizer *tapToExit = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissScreenshot)];
     tapToExit.numberOfTapsRequired = 1;
     tapToExit.numberOfTouchesRequired = 1;
-    [tapToExit requireGestureRecognizerToFail:doubleTapRecognizer];
+//    [tapToExit requireGestureRecognizerToFail:doubleTapRecognizer];
     [self.scrollView addGestureRecognizer:tapToExit];
     
     [self.view addSubview:self.scrollView];
