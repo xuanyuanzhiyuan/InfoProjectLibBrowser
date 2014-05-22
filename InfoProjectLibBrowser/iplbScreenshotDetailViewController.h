@@ -12,4 +12,5 @@
 @property UIImage *screenshot;
 @property UIScrollView *scrollView;
 @property UIImageView *imageView;
+@property BOOL isDesktop;
 @end

@@ -106,6 +106,7 @@
     UIImageView *view = (UIImageView *)[carousel itemViewAtIndex:index];
     iplbScreenshotDetailViewController *detailViewController = [[iplbScreenshotDetailViewController alloc] init];
     detailViewController.screenshot = view.image;
+    detailViewController.isDesktop = self.isDesktop;
     [self presentViewController:detailViewController animated:YES completion:nil];
 
 }
