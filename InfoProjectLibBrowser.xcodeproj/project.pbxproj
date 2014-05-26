@@ -20,7 +20,7 @@
 		4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B30721E18D59EFC00A77771 /* InfoPlist.strings */; };
 		4B30722218D59EFC00A77771 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30722118D59EFC00A77771 /* main.m */; };
 		4B30722618D59EFC00A77771 /* iplbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30722518D59EFC00A77771 /* iplbAppDelegate.m */; };
-		4B30722918D59EFC00A77771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B30722718D59EFC00A77771 /* Main.storyboard */; };
+		4B30722918D59EFC00A77771 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B30722718D59EFC00A77771 /* Main_iPhone.storyboard */; };
 		4B30722E18D59EFC00A77771 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B30722D18D59EFC00A77771 /* Images.xcassets */; };
 		4B30723518D59EFC00A77771 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30723418D59EFC00A77771 /* XCTest.framework */; };
 		4B30723618D59EFC00A77771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721518D59EFC00A77771 /* Foundation.framework */; };
@@ -44,6 +44,7 @@
 		4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */; };
 		4B96682218D5E2D100C94357 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B96682118D5E2D100C94357 /* config.plist */; };
 		4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96682718D5E3F000C94357 /* iplbConfiguration.m */; };
+		4B9A26B71932E53600319748 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A26B61932E53600319748 /* Main_iPad.storyboard */; };
 		4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD887218E2AFFC005983BA /* iplbUserService.m */; };
 		4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */; };
 		4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */; };
@@ -104,7 +105,7 @@
 		4B30722318D59EFC00A77771 /* InfoProjectLibBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoProjectLibBrowser-Prefix.pch"; sourceTree = "<group>"; };
 		4B30722418D59EFC00A77771 /* iplbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iplbAppDelegate.h; sourceTree = "<group>"; };
 		4B30722518D59EFC00A77771 /* iplbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iplbAppDelegate.m; sourceTree = "<group>"; };
-		4B30722818D59EFC00A77771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B30722818D59EFC00A77771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		4B30722D18D59EFC00A77771 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4B30723318D59EFC00A77771 /* InfoProjectLibBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfoProjectLibBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B30723418D59EFC00A77771 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -140,6 +141,7 @@
 		4B96682118D5E2D100C94357 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		4B96682618D5E3F000C94357 /* iplbConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbConfiguration.h; sourceTree = "<group>"; };
 		4B96682718D5E3F000C94357 /* iplbConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbConfiguration.m; sourceTree = "<group>"; };
+		4B9A26B61932E53600319748 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		4BAD887118E2AFFC005983BA /* iplbUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbUserService.h; sourceTree = "<group>"; };
 		4BAD887218E2AFFC005983BA /* iplbUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbUserService.m; sourceTree = "<group>"; };
 		4BAF6CF318DD884D0048BB66 /* iplbProjectCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectCategoriesViewController.h; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.h; sourceTree = "<group>"; };
@@ -220,12 +222,12 @@
 		4B30720918D59EFC00A77771 = {
 			isa = PBXGroup;
 			children = (
+				4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */,
+				4B30723A18D59EFC00A77771 /* InfoProjectLibBrowserTests */,
 				4BB3694D190B5C8700D41FD3 /* iCarousel */,
 				4B16F0A918E47EEE0050AB6F /* SDWebImage.framework */,
 				4BD5CE0218E40E2C00CD75D8 /* asi-http-request */,
-				4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */,
 				4B9667CD18D5A54E00C94357 /* Resources */,
-				4B30723A18D59EFC00A77771 /* InfoProjectLibBrowserTests */,
 				4B30721418D59EFC00A77771 /* Frameworks */,
 				4B30721318D59EFC00A77771 /* Products */,
 			);
@@ -263,7 +265,8 @@
 				4B9667CC18D5A53700C94357 /* ViewControllers */,
 				4B30722418D59EFC00A77771 /* iplbAppDelegate.h */,
 				4B30722518D59EFC00A77771 /* iplbAppDelegate.m */,
-				4B30722718D59EFC00A77771 /* Main.storyboard */,
+				4B30722718D59EFC00A77771 /* Main_iPhone.storyboard */,
+				4B9A26B61932E53600319748 /* Main_iPad.storyboard */,
 				4B30722D18D59EFC00A77771 /* Images.xcassets */,
 				4B30721C18D59EFC00A77771 /* Supporting Files */,
 				4B96681D18D5C80700C94357 /* Models */,
@@ -521,6 +524,7 @@
 				4B96681B18D5AB3F00C94357 /* projects.png in Resources */,
 				4B96681A18D5AB3F00C94357 /* news.png in Resources */,
 				4BB36955190B66E400D41FD3 /* background.png in Resources */,
+				4B9A26B71932E53600319748 /* Main_iPad.storyboard in Resources */,
 				4B96682218D5E2D100C94357 /* config.plist in Resources */,
 				4BB566D818EC580B00DA2439 /* placeholder.png in Resources */,
 				4B8208F018E1CBE3009E4E0D /* Default-568h@2x.png in Resources */,
@@ -528,7 +532,7 @@
 				4BBA286718F1A78300453DD5 /* refresh_pull.caf in Resources */,
 				4B30722E18D59EFC00A77771 /* Images.xcassets in Resources */,
 				4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */,
-				4B30722918D59EFC00A77771 /* Main.storyboard in Resources */,
+				4B30722918D59EFC00A77771 /* Main_iPhone.storyboard in Resources */,
 				4BBA286818F1A78300453DD5 /* refresh_release.caf in Resources */,
 				4B8208EF18E1CBE3009E4E0D /* Default@2x.png in Resources */,
 			);
@@ -613,12 +617,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4B30722718D59EFC00A77771 /* Main.storyboard */ = {
+		4B30722718D59EFC00A77771 /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4B30722818D59EFC00A77771 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		4B30723D18D59EFC00A77771 /* InfoPlist.strings */ = {
@@ -719,9 +723,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "营销小助手";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -741,9 +747,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "营销小助手";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

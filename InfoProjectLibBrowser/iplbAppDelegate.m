@@ -38,9 +38,15 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     if (!isPassLoginView) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
-        [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+            iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
+            [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+        } else {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+            iplbUserLoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPadUserLoginViewController"];
+            [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+        }
     }
 }
 
