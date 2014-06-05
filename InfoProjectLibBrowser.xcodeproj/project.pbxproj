@@ -70,6 +70,9 @@
 		4BD5CE2818E4102100CD75D8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD5CE2718E4102100CD75D8 /* SystemConfiguration.framework */; };
 		4BD5CE2A18E4108500CD75D8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD5CE2918E4108500CD75D8 /* MobileCoreServices.framework */; };
 		4BD5CE2C18E410B200CD75D8 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD5CE2B18E410B200CD75D8 /* libz.1.2.5.dylib */; };
+		4BDD7822193EF9EA0082E68E /* iplbiPadMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDD7821193EF9EA0082E68E /* iplbiPadMenuTableViewController.m */; };
+		4BF07FC6193DAE6500ED747A /* iplbiPadProjectListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF07FC5193DAE6500ED747A /* iplbiPadProjectListTableViewController.m */; };
+		4BF07FC9193DB43E00ED747A /* iplbiPadProjectListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF07FC8193DB43E00ED747A /* iplbiPadProjectListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +189,12 @@
 		4BD5CE2718E4102100CD75D8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4BD5CE2918E4108500CD75D8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4BD5CE2B18E410B200CD75D8 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		4BDD7820193EF9EA0082E68E /* iplbiPadMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbiPadMenuTableViewController.h; sourceTree = "<group>"; };
+		4BDD7821193EF9EA0082E68E /* iplbiPadMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbiPadMenuTableViewController.m; sourceTree = "<group>"; };
+		4BF07FC4193DAE6500ED747A /* iplbiPadProjectListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbiPadProjectListTableViewController.h; sourceTree = "<group>"; };
+		4BF07FC5193DAE6500ED747A /* iplbiPadProjectListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbiPadProjectListTableViewController.m; sourceTree = "<group>"; };
+		4BF07FC7193DB43E00ED747A /* iplbiPadProjectListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbiPadProjectListTableViewCell.h; sourceTree = "<group>"; };
+		4BF07FC8193DB43E00ED747A /* iplbiPadProjectListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbiPadProjectListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +271,8 @@
 		4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				4B9667CC18D5A53700C94357 /* ViewControllers */,
+				4BF07F3E193D778100ED747A /* ViewControllers_iPad */,
+				4B9667CC18D5A53700C94357 /* ViewControllers_iPhone */,
 				4B30722418D59EFC00A77771 /* iplbAppDelegate.h */,
 				4B30722518D59EFC00A77771 /* iplbAppDelegate.m */,
 				4B30722718D59EFC00A77771 /* Main_iPhone.storyboard */,
@@ -304,7 +314,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4B9667CC18D5A53700C94357 /* ViewControllers */ = {
+		4B9667CC18D5A53700C94357 /* ViewControllers_iPhone */ = {
 			isa = PBXGroup;
 			children = (
 				4B9667CE18D5A59400C94357 /* iplbProjectListViewController.h */,
@@ -330,7 +340,7 @@
 				4B2F84B61915DF0800815F32 /* iplbScreenshotDetailViewController.h */,
 				4B2F84B71915DF0800815F32 /* iplbScreenshotDetailViewController.m */,
 			);
-			name = ViewControllers;
+			name = ViewControllers_iPhone;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -439,6 +449,19 @@
 				4BD5CE1B18E40E2C00CD75D8 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		4BF07F3E193D778100ED747A /* ViewControllers_iPad */ = {
+			isa = PBXGroup;
+			children = (
+				4BF07FC4193DAE6500ED747A /* iplbiPadProjectListTableViewController.h */,
+				4BF07FC5193DAE6500ED747A /* iplbiPadProjectListTableViewController.m */,
+				4BF07FC7193DB43E00ED747A /* iplbiPadProjectListTableViewCell.h */,
+				4BF07FC8193DB43E00ED747A /* iplbiPadProjectListTableViewCell.m */,
+				4BDD7820193EF9EA0082E68E /* iplbiPadMenuTableViewController.h */,
+				4BDD7821193EF9EA0082E68E /* iplbiPadMenuTableViewController.m */,
+			);
+			name = ViewControllers_iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,6 +580,7 @@
 				4BD5CE1C18E40E2C00CD75D8 /* ASIAuthenticationDialog.m in Sources */,
 				4BB36958190B846600D41FD3 /* ReflectionView.m in Sources */,
 				4B16F0A218E4683F0050AB6F /* iplbBaseRepository.m in Sources */,
+				4BDD7822193EF9EA0082E68E /* iplbiPadMenuTableViewController.m in Sources */,
 				4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */,
 				4B89C2C218DBCEDF009D4963 /* iplbNewsRepository.m in Sources */,
 				4B256AF818E3C907003081E6 /* iplbOperationResult.m in Sources */,
@@ -569,6 +593,7 @@
 				4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */,
 				4B89C2BC18DBC7B7009D4963 /* iplbNewsDetailViewController.m in Sources */,
 				4BD5CE2418E40E2C00CD75D8 /* Reachability.m in Sources */,
+				4BF07FC6193DAE6500ED747A /* iplbiPadProjectListTableViewController.m in Sources */,
 				4BD5CE2318E40E2C00CD75D8 /* ASINetworkQueue.m in Sources */,
 				4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */,
 				4BD5CE2118E40E2C00CD75D8 /* ASIHTTPRequest.m in Sources */,
@@ -576,6 +601,7 @@
 				4B16F0A518E475AC0050AB6F /* iplbProjectCategoryRepository.m in Sources */,
 				4B5FD3C618E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m in Sources */,
 				4BD5CE1F18E40E2C00CD75D8 /* ASIDownloadCache.m in Sources */,
+				4BF07FC9193DB43E00ED747A /* iplbiPadProjectListTableViewCell.m in Sources */,
 				4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */,
 				4BD5CE1D18E40E2C00CD75D8 /* ASIDataCompressor.m in Sources */,
 				4B7F29BC18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m in Sources */,

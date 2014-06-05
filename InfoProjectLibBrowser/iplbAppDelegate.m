@@ -9,12 +9,18 @@
 #import "iplbAppDelegate.h"
 #import "iplbUserLoginViewController.h"
 #import "iplbUserService.h"
+#import "iplbiPadProjectListTableViewController.h"
 
 @implementation iplbAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        iplbiPadProjectListTableViewController *projectListController = [splitViewController.viewControllers objectAtIndex:1];
+        [splitViewController setDelegate:projectListController];
+    }
     return YES;
 }
 							
