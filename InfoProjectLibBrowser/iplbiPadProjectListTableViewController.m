@@ -25,6 +25,7 @@
 @property (strong, nonatomic) AVAudioPlayer *startRefreshAudioPlayer;
 @property (strong, nonatomic) AVAudioPlayer *stopRefreshAudioPlayer;
 @property BOOL refreshAciton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBtnItem;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @end
 
@@ -185,15 +186,15 @@ NSArray *products;
     return 100;
 }
 
-- (IBAction)showLeftMenu:(id)sender {
-}
-
 -(void)splitViewController:(UISplitViewController *)svc
     willHideViewController:(UIViewController *)aViewController
          withBarButtonItem:(UIBarButtonItem *)barButtonItem
       forPopoverController:(UIPopoverController *)pc
 {
     NSLog(@"Will hide left side");
+    self.masterPopoverController = pc;
+    barButtonItem.title = @"更多操作";
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
 }
 
 -(void)splitViewController:(UISplitViewController *)svc
@@ -201,6 +202,8 @@ NSArray *products;
  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     NSLog(@"Will show left side");
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
 }
 
 @end

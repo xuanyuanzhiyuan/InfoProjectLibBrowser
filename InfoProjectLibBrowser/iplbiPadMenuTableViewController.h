@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface iplbiPadMenuTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
-
+@property NSArray *menu;
 @end

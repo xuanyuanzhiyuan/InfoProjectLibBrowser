@@ -13,6 +13,10 @@
 		4B16F0AA18E47EEE0050AB6F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16F0A918E47EEE0050AB6F /* SDWebImage.framework */; };
 		4B16F0AC18E47F840050AB6F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B16F0AB18E47F840050AB6F /* ImageIO.framework */; };
 		4B256AF818E3C907003081E6 /* iplbOperationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B256AF718E3C907003081E6 /* iplbOperationResult.m */; };
+		4B2A980219527F2C0093ADE4 /* iplbLabelFilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A980119527F2C0093ADE4 /* iplbLabelFilterTableViewController.m */; };
+		4B2A98051952831B0093ADE4 /* iplbiPadNewsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A98041952831B0093ADE4 /* iplbiPadNewsListTableViewController.m */; };
+		4B2A98081952BBA20093ADE4 /* iplbProjectLabelRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A98071952BBA20093ADE4 /* iplbProjectLabelRepository.m */; };
+		4B2A980B1952BBF80093ADE4 /* iplbProjectLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A980A1952BBF80093ADE4 /* iplbProjectLabel.m */; };
 		4B2F84B81915DF0800815F32 /* iplbScreenshotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F84B71915DF0800815F32 /* iplbScreenshotDetailViewController.m */; };
 		4B30721618D59EFC00A77771 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721518D59EFC00A77771 /* Foundation.framework */; };
 		4B30721818D59EFC00A77771 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B30721718D59EFC00A77771 /* CoreGraphics.framework */; };
@@ -29,6 +33,7 @@
 		4B30724118D59EFC00A77771 /* InfoProjectLibBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B30724018D59EFC00A77771 /* InfoProjectLibBrowserTests.m */; };
 		4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */; };
 		4B5FD3C618E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */; };
+		4B7987EE1953DCE600EC5D2C /* iplbiPadProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7987ED1953DCE600EC5D2C /* iplbiPadProjectDetailViewController.m */; };
 		4B7CDC1218D5A07400D6E4B2 /* iplbProjectDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */; };
 		4B7F29BC18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F29BB18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.m */; };
 		4B8208EF18E1CBE3009E4E0D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8208ED18E1CBE3009E4E0D /* Default@2x.png */; };
@@ -96,6 +101,14 @@
 		4B16F0AB18E47F840050AB6F /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4B256AF618E3C907003081E6 /* iplbOperationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbOperationResult.h; sourceTree = "<group>"; };
 		4B256AF718E3C907003081E6 /* iplbOperationResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbOperationResult.m; sourceTree = "<group>"; };
+		4B2A980019527F2C0093ADE4 /* iplbLabelFilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbLabelFilterTableViewController.h; sourceTree = "<group>"; };
+		4B2A980119527F2C0093ADE4 /* iplbLabelFilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbLabelFilterTableViewController.m; sourceTree = "<group>"; };
+		4B2A98031952831B0093ADE4 /* iplbiPadNewsListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbiPadNewsListTableViewController.h; sourceTree = "<group>"; };
+		4B2A98041952831B0093ADE4 /* iplbiPadNewsListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbiPadNewsListTableViewController.m; sourceTree = "<group>"; };
+		4B2A98061952BBA20093ADE4 /* iplbProjectLabelRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectLabelRepository.h; sourceTree = "<group>"; };
+		4B2A98071952BBA20093ADE4 /* iplbProjectLabelRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectLabelRepository.m; sourceTree = "<group>"; };
+		4B2A98091952BBF80093ADE4 /* iplbProjectLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectLabel.h; sourceTree = "<group>"; };
+		4B2A980A1952BBF80093ADE4 /* iplbProjectLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectLabel.m; sourceTree = "<group>"; };
 		4B2F84B61915DF0800815F32 /* iplbScreenshotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbScreenshotDetailViewController.h; path = InfoProjectLibBrowser/iplbScreenshotDetailViewController.h; sourceTree = "<group>"; };
 		4B2F84B71915DF0800815F32 /* iplbScreenshotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbScreenshotDetailViewController.m; path = InfoProjectLibBrowser/iplbScreenshotDetailViewController.m; sourceTree = "<group>"; };
 		4B30721218D59EFC00A77771 /* 营销小助手.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "营销小助手.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +132,8 @@
 		4B3752EC18D749B500290BC5 /* iplbProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbProjectDetailViewController.m; path = InfoProjectLibBrowser/iplbProjectDetailViewController.m; sourceTree = "<group>"; };
 		4B5FD3C418E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbUserPasswordModifyViewController.h; path = InfoProjectLibBrowser/iplbUserPasswordModifyViewController.h; sourceTree = "<group>"; };
 		4B5FD3C518E6AAEE0075CF85 /* iplbUserPasswordModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iplbUserPasswordModifyViewController.m; path = InfoProjectLibBrowser/iplbUserPasswordModifyViewController.m; sourceTree = "<group>"; };
+		4B7987EC1953DCE600EC5D2C /* iplbiPadProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbiPadProjectDetailViewController.h; sourceTree = "<group>"; };
+		4B7987ED1953DCE600EC5D2C /* iplbiPadProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbiPadProjectDetailViewController.m; sourceTree = "<group>"; };
 		4B7CDC1018D5A07400D6E4B2 /* iplbProjectDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbProjectDetail.h; sourceTree = "<group>"; };
 		4B7CDC1118D5A07400D6E4B2 /* iplbProjectDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbProjectDetail.m; sourceTree = "<group>"; };
 		4B7F29BA18EE4B51004C51B0 /* iplbProjectListTableCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectListTableCellTableViewCell.h; path = InfoProjectLibBrowser/iplbProjectListTableCellTableViewCell.h; sourceTree = "<group>"; };
@@ -383,6 +398,10 @@
 				4B16F0A418E475AC0050AB6F /* iplbProjectCategoryRepository.m */,
 				4B16F0A618E4770E0050AB6F /* iplbProjectCategory.h */,
 				4B16F0A718E4770E0050AB6F /* iplbProjectCategory.m */,
+				4B2A98061952BBA20093ADE4 /* iplbProjectLabelRepository.h */,
+				4B2A98071952BBA20093ADE4 /* iplbProjectLabelRepository.m */,
+				4B2A98091952BBF80093ADE4 /* iplbProjectLabel.h */,
+				4B2A980A1952BBF80093ADE4 /* iplbProjectLabel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -460,6 +479,12 @@
 				4BF07FC8193DB43E00ED747A /* iplbiPadProjectListTableViewCell.m */,
 				4BDD7820193EF9EA0082E68E /* iplbiPadMenuTableViewController.h */,
 				4BDD7821193EF9EA0082E68E /* iplbiPadMenuTableViewController.m */,
+				4B2A980019527F2C0093ADE4 /* iplbLabelFilterTableViewController.h */,
+				4B2A980119527F2C0093ADE4 /* iplbLabelFilterTableViewController.m */,
+				4B2A98031952831B0093ADE4 /* iplbiPadNewsListTableViewController.h */,
+				4B2A98041952831B0093ADE4 /* iplbiPadNewsListTableViewController.m */,
+				4B7987EC1953DCE600EC5D2C /* iplbiPadProjectDetailViewController.h */,
+				4B7987ED1953DCE600EC5D2C /* iplbiPadProjectDetailViewController.m */,
 			);
 			name = ViewControllers_iPad;
 			sourceTree = "<group>";
@@ -513,7 +538,7 @@
 				ORGANIZATIONNAME = com.gpdi;
 				TargetAttributes = {
 					4B30721118D59EFC00A77771 = {
-						DevelopmentTeam = 62675UJ3XM;
+						DevelopmentTeam = C8KTXGBPSG;
 					};
 					4B30723218D59EFC00A77771 = {
 						TestTargetID = 4B30721118D59EFC00A77771;
@@ -579,6 +604,8 @@
 				4B8AD21418DEC748008707BF /* iplbUserLoginViewController.m in Sources */,
 				4BD5CE1C18E40E2C00CD75D8 /* ASIAuthenticationDialog.m in Sources */,
 				4BB36958190B846600D41FD3 /* ReflectionView.m in Sources */,
+				4B2A98051952831B0093ADE4 /* iplbiPadNewsListTableViewController.m in Sources */,
+				4B2A980219527F2C0093ADE4 /* iplbLabelFilterTableViewController.m in Sources */,
 				4B16F0A218E4683F0050AB6F /* iplbBaseRepository.m in Sources */,
 				4BDD7822193EF9EA0082E68E /* iplbiPadMenuTableViewController.m in Sources */,
 				4B96681718D5A62700C94357 /* iplbNewsListViewController.m in Sources */,
@@ -596,6 +623,7 @@
 				4BF07FC6193DAE6500ED747A /* iplbiPadProjectListTableViewController.m in Sources */,
 				4BD5CE2318E40E2C00CD75D8 /* ASINetworkQueue.m in Sources */,
 				4B3752ED18D749B500290BC5 /* iplbProjectDetailViewController.m in Sources */,
+				4B7987EE1953DCE600EC5D2C /* iplbiPadProjectDetailViewController.m in Sources */,
 				4BD5CE2118E40E2C00CD75D8 /* ASIHTTPRequest.m in Sources */,
 				4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */,
 				4B16F0A518E475AC0050AB6F /* iplbProjectCategoryRepository.m in Sources */,
@@ -611,7 +639,9 @@
 				4BD5CE2218E40E2C00CD75D8 /* ASIInputStream.m in Sources */,
 				4B16F0A818E4770E0050AB6F /* iplbProjectCategory.m in Sources */,
 				4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */,
+				4B2A98081952BBA20093ADE4 /* iplbProjectLabelRepository.m in Sources */,
 				4B9667D018D5A59400C94357 /* iplbProjectListViewController.m in Sources */,
+				4B2A980B1952BBF80093ADE4 /* iplbProjectLabel.m in Sources */,
 				4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,7 +779,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "营销小助手";
 				PROVISIONING_PROFILE = "";
@@ -773,7 +803,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfoProjectLibBrowser/InfoProjectLibBrowser-Prefix.pch";
 				INFOPLIST_FILE = "InfoProjectLibBrowser/InfoProjectLibBrowser-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "营销小助手";
 				PROVISIONING_PROFILE = "";

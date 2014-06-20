@@ -16,6 +16,7 @@
     newsDetail.summary = [dic valueForKey:@"desc"];
     newsDetail.newsPictureURL = [dic valueForKey:@"newsPicURL"];
     newsDetail.detailURL = [dic valueForKey:@"detailURL"];
+    newsDetail.content = [dic valueForKey:@"content"];
     return newsDetail;
 }
 

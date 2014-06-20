@@ -18,8 +18,9 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        iplbiPadProjectListTableViewController *projectListController = [splitViewController.viewControllers objectAtIndex:1];
-        [splitViewController setDelegate:projectListController];
+        UINavigationController *navController = [splitViewController.viewControllers objectAtIndex:1];
+        iplbiPadProjectListTableViewController *projectListViewController = [navController.childViewControllers objectAtIndex:0];
+        [splitViewController setDelegate:projectListViewController];
     }
     return YES;
 }

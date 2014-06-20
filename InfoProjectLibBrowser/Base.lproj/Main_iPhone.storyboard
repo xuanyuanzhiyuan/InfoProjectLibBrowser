@@ -84,7 +84,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAi-BP-PGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="168"/>
+            <point key="canvasLocation" x="50" y="168"/>
         </scene>
         <!--Iplb News List View Controller - 最新消息-->
         <scene sceneID="NJt-xm-f2h">
