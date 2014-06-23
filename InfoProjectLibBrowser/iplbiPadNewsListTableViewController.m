@@ -64,6 +64,8 @@ NSMutableArray *news;
     cell.textLabel.text = newsDetail.title;
     cell.detailTextLabel.textColor = [UIColor grayColor];
     cell.detailTextLabel.text = newsDetail.content;
+    cell.detailTextLabel.numberOfLines = 0;
+    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     return cell;
 }
 
@@ -100,8 +102,11 @@ NSMutableArray *news;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return 120;
+    iplbNews *newInfo = [news objectAtIndex:indexPath.row];
+    CGSize textSize = [newInfo.content sizeWithFont:[UIFont systemFontOfSize: 14.0] forWidth:[tableView frame].size.width lineBreakMode:NSLineBreakByWordWrapping];
+    CGFloat height = textSize.height < 50.0 ? 50.0 : textSize.height;
+    NSLog(@"row height is %f",height);
+    return height;
 }
 
 @end

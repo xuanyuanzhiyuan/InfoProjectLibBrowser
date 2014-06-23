@@ -116,6 +116,7 @@ NSArray *products;
         }else{
             self.categoryCode = [dic valueForKey:@"categoryCode"];
         }
+        [self.masterPopoverController dismissPopoverAnimated:YES];
         [self asyncRequestProjectsDataAndUpdateUI];
     }
 }
@@ -205,5 +206,4 @@ NSArray *products;
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
-
 @end
