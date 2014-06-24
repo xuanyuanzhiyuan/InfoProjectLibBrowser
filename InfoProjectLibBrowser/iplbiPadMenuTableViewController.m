@@ -74,6 +74,7 @@
             [self performSegueWithIdentifier:@"showNewsListSegue" sender:self];
             break;
         case 2:
+            [self.rootController performSegueWithIdentifier:@"showLoginSegue" sender:self];
             [iplbUserService logout];
             break;
         case 3:

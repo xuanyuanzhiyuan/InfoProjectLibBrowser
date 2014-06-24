@@ -10,6 +10,7 @@
 #import "iplbUserLoginViewController.h"
 #import "iplbUserService.h"
 #import "iplbiPadProjectListTableViewController.h"
+#import "iplbiPadMenuTableViewController.h"
 
 @implementation iplbAppDelegate
 
@@ -21,6 +22,9 @@
         UINavigationController *navController = [splitViewController.viewControllers objectAtIndex:1];
         iplbiPadProjectListTableViewController *projectListViewController = [navController.childViewControllers objectAtIndex:0];
         [splitViewController setDelegate:projectListViewController];
+        UINavigationController *menuNavViewController = [splitViewController.viewControllers objectAtIndex:0];
+        iplbiPadMenuTableViewController *menuViewController = [menuNavViewController.viewControllers objectAtIndex:0];
+        [menuViewController setRootController:splitViewController];
     }
     return YES;
 }

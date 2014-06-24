@@ -9,9 +9,10 @@
 #import "iplbiPadNewsListTableViewController.h"
 #import "iplbNews.h"
 #import "iplbNewsRepository.h"
+#import "iplbiPadNewContentViewController.h"
 
 @interface iplbiPadNewsListTableViewController ()
-
+@property UIPopoverController *popoverViewController;
 @end
 
 @implementation iplbiPadNewsListTableViewController
@@ -62,10 +63,10 @@ NSMutableArray *news;
     cell.textLabel.textColor = [UIColor darkGrayColor];
     iplbNews *newsDetail = [news objectAtIndex:indexPath.row];
     cell.textLabel.text = newsDetail.title;
-    cell.detailTextLabel.textColor = [UIColor grayColor];
-    cell.detailTextLabel.text = newsDetail.content;
-    cell.detailTextLabel.numberOfLines = 0;
-    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//    cell.detailTextLabel.textColor = [UIColor grayColor];
+//    cell.detailTextLabel.text = newsDetail.content;
+//    cell.detailTextLabel.numberOfLines = 1;
+//    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     return cell;
 }
 
@@ -102,11 +103,19 @@ NSMutableArray *news;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    iplbNews *newInfo = [news objectAtIndex:indexPath.row];
-    CGSize textSize = [newInfo.content sizeWithFont:[UIFont systemFontOfSize: 14.0] forWidth:[tableView frame].size.width lineBreakMode:NSLineBreakByWordWrapping];
-    CGFloat height = textSize.height < 50.0 ? 50.0 : textSize.height;
-    NSLog(@"row height is %f",height);
-    return height;
+    return 50;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    CGRect rect=CGRectMake(0,0,25,25);
+    iplbNews *new = [news objectAtIndex:indexPath.row];
+    iplbiPadNewContentViewController *contentViewController = [[iplbiPadNewContentViewController alloc] initWithNewContent:new.content];
+    self.popoverViewController = [[UIPopoverController alloc] initWithContentViewController:contentViewController];
+    self.popoverViewController.popoverContentSize = CGSizeMake(350, 180);
+    [self.popoverViewController presentPopoverFromRect:rect inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
 }
 
 @end

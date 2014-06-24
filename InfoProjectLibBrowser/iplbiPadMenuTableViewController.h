@@ -10,4 +10,5 @@
 
 @interface iplbiPadMenuTableViewController : UITableViewController<UITableViewDataSource,UITableViewDelegate>
 @property NSArray *menu;
+@property(assign,nonatomic) UISplitViewController *rootController;
 @end
