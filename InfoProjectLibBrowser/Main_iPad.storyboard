@@ -185,7 +185,6 @@
                     <connections>
                         <segue destination="eE5-LJ-kWP" kind="relationship" relationship="masterViewController" id="xbh-8U-dCP"/>
                         <segue destination="IbC-hH-RzI" kind="relationship" relationship="detailViewController" id="o3L-jJ-seh"/>
-                        <segue destination="du2-QW-bHu" kind="push" identifier="showLoginSegue" id="XvR-iY-bwP"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tv7-Nw-UUr" userLabel="First Responder" sceneMemberID="firstResponder"/>

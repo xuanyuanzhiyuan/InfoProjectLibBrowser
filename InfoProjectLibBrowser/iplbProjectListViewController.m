@@ -185,6 +185,31 @@ NSArray *products;
     [self performSegueWithIdentifier:@"showProdDetails" sender:self];
 }
 
+- (IBAction)showActionSheet:(id)sender
+{
+    
+    NSString *userName = [iplbConfiguration getUserLoginInfo:@"LoginUserName"];
+    NSString *logoutTitle = [NSString stringWithFormat:@"注销[%@]",userName];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:logoutTitle otherButtonTitles:@"修改密码",@"我的即时消息",nil];
+    [actionSheet showFromBarButtonItem:self.actionButtonItem animated:YES];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"index=> %li",(long)buttonIndex);
+    NSLog(@"You have pressed the %@ button", [actionSheet buttonTitleAtIndex:buttonIndex]);
+    if (buttonIndex == 0) {
+        [iplbUserService logout];
+        //iplbUserLoginViewController *userLoginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"userLoginViewController"];
+        //[self.navigationController pushViewController:userLoginViewController animated:YES];
+        [self performSegueWithIdentifier:@"toLoginSegue" sender:self];
+    }else if(buttonIndex==1){
+        //显示密码修改界面
+        [self performSegueWithIdentifier:@"showPasswordModifySegue" sender:self];
+    }
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //导航栏背景色
@@ -193,7 +218,7 @@ NSArray *products;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     if(isPassLoginView)
         [self asyncRequestProjectsDataAndUpdateUI];
-
+    
 }
 
 - (void) loadProjectsList
