@@ -49,6 +49,7 @@
 		4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */; };
 		4B96682218D5E2D100C94357 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B96682118D5E2D100C94357 /* config.plist */; };
 		4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96682718D5E3F000C94357 /* iplbConfiguration.m */; };
+		4B990A91195AE48F0046DB8C /* install.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B990A90195AE48F0046DB8C /* install.plist */; };
 		4B9A26B71932E53600319748 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A26B61932E53600319748 /* Main_iPad.storyboard */; };
 		4BA943EA195AD25600723FFB /* bc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BA943E9195AD25600723FFB /* bc.plist */; };
 		4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD887218E2AFFC005983BA /* iplbUserService.m */; };
@@ -161,6 +162,7 @@
 		4B96682118D5E2D100C94357 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		4B96682618D5E3F000C94357 /* iplbConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbConfiguration.h; sourceTree = "<group>"; };
 		4B96682718D5E3F000C94357 /* iplbConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbConfiguration.m; sourceTree = "<group>"; };
+		4B990A90195AE48F0046DB8C /* install.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = install.plist; sourceTree = "<group>"; };
 		4B9A26B61932E53600319748 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		4BA943E9195AD25600723FFB /* bc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bc.plist; sourceTree = "<group>"; };
 		4BAD887118E2AFFC005983BA /* iplbUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbUserService.h; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				4B990A90195AE48F0046DB8C /* install.plist */,
 				4BA943E9195AD25600723FFB /* bc.plist */,
 				4BF07F3E193D778100ED747A /* ViewControllers_iPad */,
 				4B9667CC18D5A53700C94357 /* ViewControllers_iPhone */,
@@ -591,6 +594,7 @@
 				4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */,
 				4B30722918D59EFC00A77771 /* Main_iPhone.storyboard in Resources */,
 				4BBA286818F1A78300453DD5 /* refresh_release.caf in Resources */,
+				4B990A91195AE48F0046DB8C /* install.plist in Resources */,
 				4B8208EF18E1CBE3009E4E0D /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
