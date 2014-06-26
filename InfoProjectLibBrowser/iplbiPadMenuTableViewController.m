@@ -74,12 +74,18 @@
             [self performSegueWithIdentifier:@"showNewsListSegue" sender:self];
             break;
         case 2:
-            [self.rootController performSegueWithIdentifier:@"showLoginSegue" sender:self];
+        {
+            iplbUserLoginViewController *pwdChangeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pwdChangeViewController"];
+            [self presentViewController:pwdChangeViewController animated:YES completion:nil];
+            break;
+        }
+        case 3:
+        {
+            iplbUserLoginViewController *userLoginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"iPadUserLoginViewController"];
+            [self presentViewController:userLoginViewController animated:YES completion:nil];
             [iplbUserService logout];
             break;
-        case 3:
-            [self performSegueWithIdentifier:@"showNewsListSegue" sender:self];
-            break;
+        }
         default:
             break;
     }

@@ -208,7 +208,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7bx-qf-s2o" kind="push" id="fxU-fL-xao"/>
+                                    <segue destination="7bx-qf-s2o" kind="push" identifier="showProjectDetailSegue" id="fxU-fL-xao"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="-4598" y="-704"/>
         </scene>
-        <!--Table View Controller - 产品详情-->
+        <!--Iplbi Pad Project Detail View Controller - 产品详情-->
         <scene sceneID="pfc-zx-irq">
             <objects>
-                <tableViewController id="7bx-qf-s2o" sceneMemberID="viewController">
+                <tableViewController id="7bx-qf-s2o" customClass="iplbiPadProjectDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OGL-ej-ga2">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +266,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7o-lD-Bg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5688" y="-704"/>
+        </scene>
+        <!--Iplb User Password Modify View Controller-->
+        <scene sceneID="Lyf-ML-sWr">
+            <objects>
+                <viewController storyboardIdentifier="pwdChangeViewController" id="XDa-ap-PvK" customClass="iplbUserPasswordModifyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7KK-lW-m12"/>
+                        <viewControllerLayoutGuide type="bottom" id="PcZ-5o-AQt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Dc-jz-mSH">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入原密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9j-Fv-erh">
+                                <rect key="frame" x="277" y="103" width="214" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41960787770000002" green="0.87058830259999997" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入新密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EF9-GH-b36">
+                                <rect key="frame" x="277" y="151" width="214" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41960787770000002" green="0.87058830259999997" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再次输入新密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOp-HU-t1j">
+                                <rect key="frame" x="277" y="198" width="214" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41960787770000002" green="0.87058830259999997" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3V-6x-nXF">
+                                <rect key="frame" x="277" y="252" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8078432083" green="0.96862751250000001" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="确认修改">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="modifyUserPassword:" destination="XDa-ap-PvK" eventType="touchUpInside" id="EoH-Lj-t46"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVJ-qM-fxB">
+                                <rect key="frame" x="411" y="252" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8078432083" green="0.96862751250000001" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelUserPasswordModify:" destination="XDa-ap-PvK" eventType="touchUpInside" id="chS-lC-Aqy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14509804549999999" green="0.61176472900000001" blue="0.93725496529999996" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="oldPasswdTextField" destination="I9j-Fv-erh" id="OJg-Fs-mp0"/>
+                        <outlet property="repNewPwdTextfield" destination="vOp-HU-t1j" id="Gms-7R-1Kn"/>
+                        <outlet property="theNewPasswdTextField" destination="EF9-GH-b36" id="Q2K-C0-rxO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJV-1y-lP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6713" y="15"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

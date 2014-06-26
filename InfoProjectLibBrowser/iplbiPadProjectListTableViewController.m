@@ -194,7 +194,7 @@ NSArray *products;
 {
     NSLog(@"Will hide left side");
     self.masterPopoverController = pc;
-    barButtonItem.title = @"更多操作";
+    barButtonItem.title = @"菜单";
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
 }
 
@@ -205,5 +205,15 @@ NSArray *products;
     NSLog(@"Will show left side");
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showProjectDetailSegue"]){
+        iplbProjectDetailViewController *detailViewController = [segue destinationViewController];
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        iplbProjectDetail *detail = [products objectAtIndex:myIndexPath.row];
+        detailViewController.detailURL = detail.detailURL;
+    }
 }
 @end
