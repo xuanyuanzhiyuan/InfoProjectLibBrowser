@@ -107,7 +107,6 @@ iplbProjectDetail *pd;
             height = self.webViewHeight+20;
         }
     }
-    NSLog(@"table row %li height %f",indexPath.section,height);
     return height;
 }
 

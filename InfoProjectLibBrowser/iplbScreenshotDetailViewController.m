@@ -33,7 +33,11 @@ BOOL isMax;
     CGFloat screenHeight = screenRect.size.height;
     CGFloat imgHeight = self.isDesktop?240:480;
     CGFloat imgWidth = self.isDesktop?screenWidth:320;
-    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, (screenHeight-240)/2,imgWidth, imgHeight)];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        imgHeight = self.isDesktop?576:960;
+        imgWidth = self.isDesktop?screenWidth:640;
+    }
+    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake((screenWidth-imgWidth)/2, (screenHeight-imgHeight)/2,imgWidth, imgHeight)];
 //    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,screenWidth, screenHeight)];
 //    self.imageView.bounds = CGRectMake(0, 0, self.screenshot.size.width, self.screenshot.size.height);
 //    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0,self.screenshot.size.width, self.screenshot.size.height)];

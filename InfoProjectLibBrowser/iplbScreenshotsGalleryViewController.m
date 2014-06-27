@@ -37,7 +37,7 @@
     
     _carousel = [[iCarousel alloc] initWithFrame:self.view.bounds];
 	_carousel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _carousel.type = self.isDesktop?iCarouselTypeInvertedWheel:iCarouselTypeCoverFlow2;
+    _carousel.type = self.isDesktop?iCarouselTypeRotary:iCarouselTypeCoverFlow2;
 	_carousel.delegate = self;
 	_carousel.dataSource = self;
     
@@ -50,7 +50,11 @@
                action:@selector(closeGallery)
      forControlEvents:UIControlEventTouchUpInside];
     [closeButton setTitle:@"退出截图浏览" forState:UIControlStateNormal];
-    closeButton.frame = CGRectMake(55, 440, 210, 30);
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        closeButton.frame = CGRectMake(279, 934, 210, 30);
+    }else{
+        closeButton.frame = CGRectMake(55, 440, 210, 30);
+    }
     [self.view addSubview:closeButton];
 }
 
@@ -84,18 +88,26 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    if (view == nil)
-    {
+    if (view == nil){
         int screenShotWidth = 200;
         int screentShotHeight = 300;
-        if(self.isDesktop){
-            screenShotWidth = 280;
-            screentShotHeight = 210;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+            screenShotWidth = 360;
+            screentShotHeight = 540;
+            if(self.isDesktop){
+                screenShotWidth = 504;
+                screentShotHeight = 378;
+            }
+        }else{
+            if(self.isDesktop){
+                screenShotWidth = 280;
+                screentShotHeight = 210;
+            }
         }
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenShotWidth, screentShotHeight)];
         UIImageView *imgView = (UIImageView *)view;
         [imgView setImageWithURL:[NSURL URLWithString:[self.screenShots objectAtIndex:index]]
-            placeholderImage:[UIImage imageNamed:@"screen_placeholder.png"]];
+                placeholderImage:[UIImage imageNamed:@"screen_placeholder.png"]];
     }
     return view;
 }
