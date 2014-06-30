@@ -134,8 +134,8 @@ NSArray *products;
         cell = [[iplbiPadProjectListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     iplbProjectDetail *pd = [products objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont systemFontOfSize:16.0];
-    cell.textLabel.textColor = [UIColor darkGrayColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:18.0];
+    cell.textLabel.textColor = [UIColor blackColor];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:14.0];
     cell.detailTextLabel.textColor = [UIColor grayColor];
     cell.textLabel.text = pd.projectName;
@@ -196,6 +196,12 @@ NSArray *products;
     self.masterPopoverController = pc;
     barButtonItem.title = @"菜单";
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
+//    [view setTag:108];
+//    [view setBackgroundColor:[UIColor blackColor]];
+//    [view setAlpha:0.7];
+//    [self.view addSubview:view];
+    
 }
 
 -(void)splitViewController:(UISplitViewController *)svc

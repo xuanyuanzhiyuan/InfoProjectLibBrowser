@@ -137,7 +137,7 @@ iplbProjectDetail *pd;
         [nameLabel setFont:[UIFont systemFontOfSize:14]];
         nameLabel.text = pd.projectName;
         [cell.contentView addSubview:nameLabel];
-        UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 25, 500, 70)];
+        UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 25, 600, 70)];
         [descLabel setFont:[UIFont systemFontOfSize:12]];
         descLabel.lineBreakMode = NSLineBreakByWordWrapping;
         descLabel.numberOfLines = 0;
