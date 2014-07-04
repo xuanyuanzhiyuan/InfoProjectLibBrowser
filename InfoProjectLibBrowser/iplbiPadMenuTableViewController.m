@@ -29,7 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *logoutTitle = [NSString stringWithFormat:@"注销[%@]",[iplbConfiguration getUserLoginInfo:@"LoginUserName"]];
+    NSString *name = [iplbConfiguration getUserLoginInfo:@"LoginUserName"];
+    NSString *logoutTitle;
+    if (name) {
+        logoutTitle = [NSString stringWithFormat:@"注销[当前登录:%@]",name];
+    }else{
+        logoutTitle = @"注销用户";
+    }
     self.menu = @[@"标签",@"消息",@"修改密码",logoutTitle];
     
     // Uncomment the following line to preserve selection between presentations.
