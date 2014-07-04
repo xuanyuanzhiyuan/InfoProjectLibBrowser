@@ -90,7 +90,7 @@ NSArray *labels;
         });
         dispatch_sync(dispatch_get_main_queue(),^{
             if([labels count] == 0){
-                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"服务端响应异常,无法获取产品分类!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"服务端响应异常,无法获取标签!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
                 [self.refreshControl endRefreshing];
             }else{

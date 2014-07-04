@@ -73,15 +73,6 @@ NSArray *categories;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    iplbProjectCategory *category = [categories objectAtIndex:indexPath.row];
-    NSDictionary *dic = @{@"categoryCode":category.code};
-    //发送消息
-    [self dismissViewControllerAnimated:YES completion:^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"projectCategorySelected" object:nil userInfo:dic];
-    }];
-}
 - (IBAction)cancelProductCategory:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -109,6 +100,12 @@ NSArray *categories;
     });
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //导航栏背景色
@@ -123,5 +120,18 @@ NSArray *categories;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
+}
+
+- (IBAction)filterByLabels:(id)sender {
+    NSMutableArray *selectedLabel = [NSMutableArray new];
+    for (UITableViewCell *cell in [[self tableView] visibleCells]) {
+        if (cell.selected) {
+            NSIndexPath *index = [[self tableView] indexPathForCell:cell];
+            iplbProjectCategory *category = [categories objectAtIndex:index.row];
+            [selectedLabel addObject:category.code];
+        }
+    }
+    //发送消息
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"projectCategorySelected" object:selectedLabel userInfo:nil];
 }
 @end

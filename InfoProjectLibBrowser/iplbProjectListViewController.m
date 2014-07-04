@@ -112,14 +112,17 @@ NSArray *products;
 {
     
     if ([[notification name] isEqualToString:@"projectCategorySelected"]){
-        NSLog (@"Successfully received the test notification!");
-        NSDictionary *dic = [notification userInfo];
-        NSLog(@"category is %@",[dic valueForKey:@"categoryCode"]);
-        NSString *code = [dic valueForKey:@"categoryCode"];
-        if([code isEqualToString:@"All"]){
-            self.categoryCode = nil;
+        NSMutableArray *labels = [notification object];
+        if ([labels count] == 0) {
+            return;
         }else{
-            self.categoryCode = [dic valueForKey:@"categoryCode"];
+            NSMutableString *labelStrs = [NSMutableString new];
+            for (NSString *label in labels) {
+                [labelStrs appendString:label];
+                [labelStrs appendString:@","];
+            }
+            self.filterLabels = labelStrs;
+            NSLog(@"labels is %@",labelStrs);
         }
         [self asyncRequestProjectsDataAndUpdateUI];
     }
@@ -225,8 +228,8 @@ NSArray *products;
 {
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
     //获取项目列表
-    if(self.categoryCode){
-        products = [resp getProjectInfosWithCategory:self.categoryCode];
+    if(self.filterLabels){
+        products = [resp getProjectInfosWithCategory:self.filterLabels];
     }else{
         products = [resp getAllProjectInfos];
     }

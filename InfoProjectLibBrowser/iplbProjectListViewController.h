@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface iplbProjectListViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,UIActionSheetDelegate>
-@property NSString *categoryCode;
+@property NSString *filterLabels;
 extern BOOL isPassLoginView;
 @end
