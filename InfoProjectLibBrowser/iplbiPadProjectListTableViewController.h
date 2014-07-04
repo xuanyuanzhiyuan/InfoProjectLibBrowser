@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iplbiPadProjectListTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,UISplitViewControllerDelegate>
+@interface iplbiPadProjectListTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,UISplitViewControllerDelegate,UIPopoverControllerDelegate>
 @property NSString *categoryCode;
 extern BOOL isPassLoginView;
 @end

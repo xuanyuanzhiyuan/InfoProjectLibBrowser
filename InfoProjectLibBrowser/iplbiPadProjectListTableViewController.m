@@ -27,6 +27,7 @@
 @property BOOL refreshAciton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBtnItem;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property UIView *shadowLayer;
 @end
 
 @implementation iplbiPadProjectListTableViewController
@@ -117,6 +118,7 @@ NSArray *products;
             self.categoryCode = [dic valueForKey:@"categoryCode"];
         }
         [self.masterPopoverController dismissPopoverAnimated:YES];
+        [self.shadowLayer removeFromSuperview];
         [self asyncRequestProjectsDataAndUpdateUI];
     }
 }
@@ -194,13 +196,12 @@ NSArray *products;
 {
     NSLog(@"Will hide left side");
     self.masterPopoverController = pc;
+    self.menuBtnItem = barButtonItem;
+    [pc setDelegate:self];
     barButtonItem.title = @"菜单";
+    
+    
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
-//    [view setTag:108];
-//    [view setBackgroundColor:[UIColor blackColor]];
-//    [view setAlpha:0.7];
-//    [self.view addSubview:view];
     
 }
 
@@ -211,6 +212,26 @@ NSArray *products;
     NSLog(@"Will show left side");
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+    self.menuBtnItem = nil;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc popoverController:(UIPopoverController *)pc willPresentViewController:(UIViewController *)aViewController
+{
+    NSLog(@"xxxxxxxx");
+    NSLog(@"obj is %@",aViewController);
+    if (!self.shadowLayer) {
+        self.shadowLayer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 5000)];
+        [self.shadowLayer setTag:108];
+        [self.shadowLayer setBackgroundColor:[UIColor blackColor]];
+        [self.shadowLayer setAlpha:0.5                                                ];
+    }
+    [self.view addSubview:self.shadowLayer];
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"yyyyyyyy");
+    [self.shadowLayer removeFromSuperview];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

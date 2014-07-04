@@ -109,12 +109,12 @@ NSMutableArray *news;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    CGRect rect=CGRectMake(0,0,25,25);
+    CGRect rect=CGRectMake(cell.contentView.frame.size.width-10,cell.contentView.frame.size.height/2,10,10);
     iplbNews *new = [news objectAtIndex:indexPath.row];
     iplbiPadNewContentViewController *contentViewController = [[iplbiPadNewContentViewController alloc] initWithNewContent:new.content];
     self.popoverViewController = [[UIPopoverController alloc] initWithContentViewController:contentViewController];
-    self.popoverViewController.popoverContentSize = CGSizeMake(350, 180);
-    [self.popoverViewController presentPopoverFromRect:rect inView:cell permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    self.popoverViewController.popoverContentSize = CGSizeMake(320, 120);
+    [self.popoverViewController presentPopoverFromRect:rect inView:cell.contentView permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
     
 }
 

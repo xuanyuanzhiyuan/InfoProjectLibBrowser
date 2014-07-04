@@ -27,10 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.textview = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 350, 180)];
+    self.textview = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 120)];
     self.textview.text = self.newsContent;
+    [self.textview setFont:[UIFont systemFontOfSize:14.0]];
+    [self.textview setScrollEnabled:YES];
+//    NSRange range = NSMakeRange(self.textview.text.length - 1, 1);
+//    [self.textview scrollRangeToVisible:range];
     [self.view addSubview:self.textview];
-    
+    [self.textview scrollRangeToVisible:NSMakeRange([self.textview.text length], 0)];
     [self.textview sizeToFit]; //added
     [self.textview layoutIfNeeded]; //added
     CGRect frame = self.textview.frame;

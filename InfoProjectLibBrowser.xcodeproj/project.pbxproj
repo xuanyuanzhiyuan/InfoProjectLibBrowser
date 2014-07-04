@@ -49,9 +49,7 @@
 		4B96682018D5D5DD00C94357 /* iplbProjectsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96681F18D5D5DD00C94357 /* iplbProjectsRepository.m */; };
 		4B96682218D5E2D100C94357 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B96682118D5E2D100C94357 /* config.plist */; };
 		4B96682818D5E3F000C94357 /* iplbConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96682718D5E3F000C94357 /* iplbConfiguration.m */; };
-		4B990A91195AE48F0046DB8C /* install.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B990A90195AE48F0046DB8C /* install.plist */; };
 		4B9A26B71932E53600319748 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B9A26B61932E53600319748 /* Main_iPad.storyboard */; };
-		4BA943EA195AD25600723FFB /* bc.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BA943E9195AD25600723FFB /* bc.plist */; };
 		4BAD887318E2AFFC005983BA /* iplbUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD887218E2AFFC005983BA /* iplbUserService.m */; };
 		4BAF6CF518DD884D0048BB66 /* iplbProjectCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6CF418DD884D0048BB66 /* iplbProjectCategoriesViewController.m */; };
 		4BB1619118EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB1619018EDB917001F3018 /* UIImage+ImageScaleAndRoundConner.m */; };
@@ -162,9 +160,7 @@
 		4B96682118D5E2D100C94357 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		4B96682618D5E3F000C94357 /* iplbConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbConfiguration.h; sourceTree = "<group>"; };
 		4B96682718D5E3F000C94357 /* iplbConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbConfiguration.m; sourceTree = "<group>"; };
-		4B990A90195AE48F0046DB8C /* install.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = install.plist; sourceTree = "<group>"; };
 		4B9A26B61932E53600319748 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
-		4BA943E9195AD25600723FFB /* bc.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bc.plist; sourceTree = "<group>"; };
 		4BAD887118E2AFFC005983BA /* iplbUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iplbUserService.h; sourceTree = "<group>"; };
 		4BAD887218E2AFFC005983BA /* iplbUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iplbUserService.m; sourceTree = "<group>"; };
 		4BAF6CF318DD884D0048BB66 /* iplbProjectCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iplbProjectCategoriesViewController.h; path = InfoProjectLibBrowser/iplbProjectCategoriesViewController.h; sourceTree = "<group>"; };
@@ -293,8 +289,6 @@
 		4B30721B18D59EFC00A77771 /* InfoProjectLibBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				4B990A90195AE48F0046DB8C /* install.plist */,
-				4BA943E9195AD25600723FFB /* bc.plist */,
 				4BF07F3E193D778100ED747A /* ViewControllers_iPad */,
 				4B9667CC18D5A53700C94357 /* ViewControllers_iPhone */,
 				4B30722418D59EFC00A77771 /* iplbAppDelegate.h */,
@@ -545,7 +539,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = iplb;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = com.gpdi;
 				TargetAttributes = {
 					4B30721118D59EFC00A77771 = {
@@ -583,7 +577,6 @@
 				4B96681B18D5AB3F00C94357 /* projects.png in Resources */,
 				4B96681A18D5AB3F00C94357 /* news.png in Resources */,
 				4BB36955190B66E400D41FD3 /* background.png in Resources */,
-				4BA943EA195AD25600723FFB /* bc.plist in Resources */,
 				4B9A26B71932E53600319748 /* Main_iPad.storyboard in Resources */,
 				4B96682218D5E2D100C94357 /* config.plist in Resources */,
 				4BB566D818EC580B00DA2439 /* placeholder.png in Resources */,
@@ -594,7 +587,6 @@
 				4B30722018D59EFC00A77771 /* InfoPlist.strings in Resources */,
 				4B30722918D59EFC00A77771 /* Main_iPhone.storyboard in Resources */,
 				4BBA286818F1A78300453DD5 /* refresh_release.caf in Resources */,
-				4B990A91195AE48F0046DB8C /* install.plist in Resources */,
 				4B8208EF18E1CBE3009E4E0D /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,7 +702,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -749,7 +740,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -829,7 +819,6 @@
 		4B30724818D59EFC00A77771 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfoProjectLibBrowser.app/InfoProjectLibBrowser";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -852,7 +841,6 @@
 		4B30724918D59EFC00A77771 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InfoProjectLibBrowser.app/InfoProjectLibBrowser";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
