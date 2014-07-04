@@ -185,6 +185,19 @@ iplbProjectDetail *pd;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        titleRowCreated = NO;
+    }
+    if (indexPath.section == 1) {
+        screenShotsRowCreated = NO;
+    }
+    if (indexPath.section == 2) {
+        descInfoRowCreated = NO;
+    }
+}
+
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 3;
