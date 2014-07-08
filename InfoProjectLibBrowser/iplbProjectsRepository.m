@@ -38,6 +38,12 @@
     return [self getProjectInfosWithURL:projectsCategoryUrlStr];
 }
 
+-(NSMutableArray *) getProjectInfosWithLabels:(NSString *)labels
+{
+    NSString *projectsCategoryUrlStr = [NSString stringWithFormat:@"%@%@/%@",[iplbConfiguration getConfiguration:@"ServerRoot"],[iplbConfiguration getConfiguration:@"ProjectList"],labels];
+    return [self getProjectInfosWithURL:projectsCategoryUrlStr];
+}
+
 -(NSMutableArray *) getProjectInfosWithURL:(NSString *)url
 {
     NSDictionary *responseDict = [super dictionaryFromHTTPResponseJSON:url];

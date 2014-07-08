@@ -12,8 +12,7 @@
 +(iplbProjectLabel *) labelWithDictionary:(NSDictionary *)dic
 {
     iplbProjectLabel *label = [[iplbProjectLabel alloc] init];
-    label.chnName = [dic valueForKey:@"chnName"];
-    label.labelCode = [dic valueForKey:@"labelCode"];
+    label.label = [dic valueForKey:@"label"];
     return label;
 }
 @end

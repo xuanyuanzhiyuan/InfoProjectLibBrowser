@@ -7,8 +7,8 @@
 //
 
 #import "iplbLabelFilterTableViewController.h"
-#import "iplbProjectCategoryRepository.h"
-#import "iplbProjectCategory.h"
+#import "iplbProjectLabelRepository.h"
+#import "iplbProjectLabel.h"
 
 @interface iplbLabelFilterTableViewController ()
 
@@ -61,8 +61,8 @@ NSArray *labels;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"labelCell"];
     }
-    iplbProjectCategory *category = [labels objectAtIndex:indexPath.row];
-    cell.textLabel.text = category.name;
+    iplbProjectLabel *label = [labels objectAtIndex:indexPath.row];
+    cell.textLabel.text = label.label;
     return cell;
 }
 
@@ -84,8 +84,8 @@ NSArray *labels;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         dispatch_sync(queue,^{
-            iplbProjectCategoryRepository *repo = [iplbProjectCategoryRepository new];
-            labels = [repo getAllProjectCategories];
+            iplbProjectLabelRepository *repo = [iplbProjectLabelRepository new];
+            labels = [repo getAllLabels];
 
         });
         dispatch_sync(dispatch_get_main_queue(),^{
@@ -104,10 +104,10 @@ NSArray *labels;
 - (IBAction)filterByLabels:(id)sender {
     NSMutableArray *selectedLabel = [NSMutableArray new];
     for (UITableViewCell *cell in [[self tableView] visibleCells]) {
-        if (cell.selected) {
+        if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             NSIndexPath *index = [[self tableView] indexPathForCell:cell];
-            iplbProjectCategory *category = [labels objectAtIndex:index.row];
-            [selectedLabel addObject:category.code];
+            iplbProjectLabel *label = [labels objectAtIndex:index.row];
+            [selectedLabel addObject:label.label];
         }
     }
     //发送消息

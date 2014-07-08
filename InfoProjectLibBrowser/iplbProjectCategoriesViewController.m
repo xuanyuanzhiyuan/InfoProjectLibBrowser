@@ -7,8 +7,8 @@
 //
 
 #import "iplbProjectCategoriesViewController.h"
-#import "iplbProjectCategoryRepository.h"
-#import "iplbProjectCategory.h"
+#import "iplbProjectLabel.h"
+#import "iplbProjectLabelRepository.h"
 
 @interface iplbProjectCategoriesViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelSelectCategoryBI;
@@ -20,7 +20,7 @@
 @end
 
 @implementation iplbProjectCategoriesViewController
-NSArray *categories;
+NSArray *labels;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,7 +35,7 @@ NSArray *categories;
     [super viewDidLoad];
     //下拉刷新
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新产品分类"];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新标签"];
     [self.refreshControl addTarget:self
                 action:@selector(asyncRequestProjectCategoriesAndUpdateUI)
       forControlEvents:UIControlEventValueChanged];
@@ -56,7 +56,7 @@ NSArray *categories;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [categories count];
+    return [labels count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,8 +68,8 @@ NSArray *categories;
     }
     cell.textLabel.font = [UIFont systemFontOfSize:15.0];
     cell.textLabel.textColor = [UIColor darkGrayColor];
-    iplbProjectCategory *category = [categories objectAtIndex:indexPath.row];
-    cell.textLabel.text = category.name;
+    iplbProjectLabel *label = [labels objectAtIndex:indexPath.row];
+    cell.textLabel.text = label.label;
     return cell;
 }
 
@@ -83,13 +83,13 @@ NSArray *categories;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         dispatch_sync(queue,^{
-            iplbProjectCategoryRepository *repo = [iplbProjectCategoryRepository new];
-            categories = [repo getAllProjectCategories];
+            iplbProjectLabelRepository *repo = [iplbProjectLabelRepository new];
+            labels = [repo getAllLabels];
         });
         dispatch_sync(dispatch_get_main_queue(),^{
             [self.cancelSelectCategoryBI setEnabled:YES];
-            if([categories count] == 0){
-                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"服务端响应异常,无法获取产品分类!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            if([labels count] == 0){
+                UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"错误" message:@"服务端响应异常,无法获取产品标签!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
                 [self.refreshControl endRefreshing];
             }else{
@@ -103,7 +103,11 @@ NSArray *categories;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -125,13 +129,14 @@ NSArray *categories;
 - (IBAction)filterByLabels:(id)sender {
     NSMutableArray *selectedLabel = [NSMutableArray new];
     for (UITableViewCell *cell in [[self tableView] visibleCells]) {
-        if (cell.selected) {
+        if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
             NSIndexPath *index = [[self tableView] indexPathForCell:cell];
-            iplbProjectCategory *category = [categories objectAtIndex:index.row];
-            [selectedLabel addObject:category.code];
+            iplbProjectLabel *label = [labels objectAtIndex:index.row];
+            [selectedLabel addObject:label.label];
         }
     }
     //发送消息
     [[NSNotificationCenter defaultCenter] postNotificationName:@"projectCategorySelected" object:selectedLabel userInfo:nil];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 @end

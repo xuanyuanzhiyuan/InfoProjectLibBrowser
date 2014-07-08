@@ -229,7 +229,7 @@ NSArray *products;
     iplbProjectsRepository * resp = [iplbProjectsRepository new];
     //获取项目列表
     if(self.filterLabels){
-        products = [resp getProjectInfosWithCategory:self.filterLabels];
+        products = [resp getProjectInfosWithLabels:self.filterLabels];
     }else{
         products = [resp getAllProjectInfos];
     }

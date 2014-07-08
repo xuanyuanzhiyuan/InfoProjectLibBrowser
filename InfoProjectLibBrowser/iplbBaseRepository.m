@@ -12,6 +12,7 @@
 @implementation iplbBaseRepository
 -(NSMutableDictionary *) dictionaryFromHTTPResponseJSON:(NSString *)url
 {
+    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSMutableDictionary *responseDict = [NSMutableDictionary new];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
     [request startSynchronous];

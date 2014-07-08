@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ServerRoot</key>
-	<string>http://115.28.77.140/infoProjectLibServer</string>
+	<string>http://localhost:8080/ips</string>
 	<key>ProjectLabels</key>
 	<string>/labels</string>
 	<key>ProjectList</key>

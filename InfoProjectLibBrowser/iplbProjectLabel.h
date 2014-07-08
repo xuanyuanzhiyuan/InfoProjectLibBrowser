@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface iplbProjectLabel : NSObject
-@property NSString *chnName;
-@property NSString *labelCode;
+@property NSString *label;
 +(iplbProjectLabel *) labelWithDictionary:(NSDictionary *) dic;
 @end
